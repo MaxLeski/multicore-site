@@ -25,18 +25,19 @@
 
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
-          <li><a href="index.html#oferta" class="nav-link">Oferta</a></li>
-          <li><a href="index.html#modelowanie" class="nav-link">Modelowanie CAD</a></li>
-          <li><a href="index.html#druk3d" class="nav-link">Druk 3D</a></li>
+          <li><a href="index.html" class="nav-link">Główna</a></li>
+          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
+          <li><a href="modelowanie-cad.html" class="nav-link">Modelowanie CAD</a></li>
+          <li><a href="druk-3d.html" class="nav-link">Druk 3D (H2D)</a></li>
+          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="index.html#proces" class="nav-link">Proces</a></li>
           <li><a href="kalkulator.html" class="nav-link active">Kalkulator</a></li>
-          <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="tel:+48533491374" class="btn btn-outline btn-sm">📞 +48 533 491 374</a>
+        <a href="kontakt.html" class="btn btn-primary btn-sm">Kontakt bezpośredni</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -231,42 +232,49 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand-link" style="margin-bottom: 0.75rem;">
-            <div class="brand-logo" style="width: 36px; height: 36px; font-size: 1rem;">M</div>
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 1rem;">
+            <div class="brand-logo">M</div>
             <div class="brand-meta">
-              <span class="brand-name" style="font-size: 1rem;">MULTICORE</span>
+              <span class="brand-name">MULTICORE</span>
               <span class="brand-tagline">Maksym Leski</span>
             </div>
-          </div>
-          <p>Precyzyjne skanowanie 3D, reverse engineering i rekonstrukcja detali z darmowym odbiorem kurierskim.</p>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz automatyzacji.
+          </p>
         </div>
 
         <div>
-          <h4 class="footer-heading">Nawigacja</h4>
-          <ul class="footer-links">
-            <li><a href="index.html#oferta">Oferta Skanowania</a></li>
-            <li><a href="index.html#modelowanie">Modelowanie 3D i CAD</a></li>
-            <li><a href="index.html#druk3d">Druk 3D i Materiały</a></li>
-            <li><a href="realizacje.html">Galeria Realizacji</a></li>
-            <li><a href="kalkulator.html">Kalkulator Wyceny</a></li>
-            <li><a href="index.html#kontakt">Kontakt i Kurier</a></li>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
+            <li><a href="druk-3d.html">Druk 3D (Bambu Lab H2D)</a></li>
+            <li><a href="automatyzacja.html">Automatyzacja & PLC</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Masz nietypowy detal?</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+48533491374">+48 533 491 374</a></li>
-            <li><a href="mailto:maksym.leski@gmail.com">maksym.leski@gmail.com</a></li>
-            <li><span>Wycena w 24h na podstawie zdjęć</span></li>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
+            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
+            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
           </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
+          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; <span class="current-year">2026</span> Multicore Maksym Leski. Wszelkie prawa zastrzeżone.</div>
-        <div style="color: var(--text-dim);">Precyzja pomiarowa • Reverse Engineering</div>
+        <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">High-End 3D & Industrial Automation</div>
       </div>
     </div>
   </footer>

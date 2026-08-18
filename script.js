@@ -417,6 +417,6 @@ Treść wiadomości:
 ${message}`
     );
 
-    window.location.href = `mailto:maksym.leski@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kontakt@multicore.net.pl?subject=${subject}&body=${body}`;
   });
 }

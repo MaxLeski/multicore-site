@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelowanie CAD i Inżynieria Odwrotna - Multicore Maksym Leski</title>
+  <meta
+    name="description"
+    content="Przekształcanie skanów 3D i chmur punktów w parametryczne modele bryłowe CAD (STEP, IGES). Odtwarzanie pękniętych i zużytych części pod obróbkę CNC i formy wtryskowe."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Nagłówek i Nawigacja -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+        <div class="brand-logo">M</div>
+        <div class="brand-meta">
+          <span class="brand-name">MULTICORE</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+        </div>
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Główna</a></li>
+          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
+          <li><a href="modelowanie-cad.html" class="nav-link active">Modelowanie CAD</a></li>
+          <li><a href="druk-3d.html" class="nav-link">Druk 3D (H2D)</a></li>
+          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
+          <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Kalkulator</a></li>
+          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wycena online</a>
+        <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Główna</a>
+          <span class="breadcrumbs-sep">/</span>
+          <a href="index.html#oferta">Oferta</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span>Modelowanie CAD & Reverse Engineering</span>
+        </div>
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Rekonstrukcja geometrii i inżynieria odwrotna
+        </div>
+        <h1>Modelowanie CAD i Rekonstrukcja Geometrii</h1>
+        <p class="subhead">
+          Zamiana siatek trójkątów i uszkodzonych części fizycznych w parametryczne, w pełni edytowalne modele 3D (STEP / IGES) zoptymalizowane pod produkcję maszynową CNC, formy lub druk 3D.
+        </p>
+      </div>
+    </section>
+
+    <!-- Główne Cechy Modelowania CAD -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem;">
+      <div class="container">
+        <div class="spec-grid-4">
+          <div class="spec-card">
+            <div class="spec-icon">🛠️</div>
+            <div class="spec-label">Formaty B-Rep / STEP</div>
+            <div class="spec-value">STEP AP214 / AP242</div>
+            <div class="spec-desc">Parametryczne bryły i powierzchnie NURBS (IGES, Parasolid x_t, SAT).</div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">🩹</div>
+            <div class="spec-label">Odtwarzanie ubytków</div>
+            <div class="spec-value">Kompensacja zużycia</div>
+            <div class="spec-desc">Rekonstrukcja brakujących zębów, odłamanych zatrzasków i wytartych bieżni.</div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">⚙️</div>
+            <div class="spec-label">Gotowość technologiczna</div>
+            <div class="spec-value">CNC / Formy / Druk</div>
+            <div class="spec-desc">Kąty pochylenia formierskiego, optymalizacja promieni frezów i naddatki.</div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">📑</div>
+            <div class="spec-label">Dokumentacja 2D</div>
+            <div class="spec-value">Rysunki wykonawcze</div>
+            <div class="spec-desc">Rysunki techniczne z pasowaniami ISO, tolerancjami geometrycznymi GD&T.</div>
+          </div>
+        </div>
+
+        <!-- 3 Filary Inżynierii Odwrotnej -->
+        <div class="section-head" style="margin-top: 2rem;">
+          <div class="eyebrow">Etapy inżynierii odwrotnej</div>
+          <h2>Od skanu do gotowego modelu produkcyjnego</h2>
+          <p class="subhead">
+            Nie ograniczamy się do automatycznego trasowania – tworzymy czyste, zoptymalizowane drzewa operacji w środowiskach CAD.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="tech-card">
+            <div class="service-icon-wrap">📐</div>
+            <h3>Parametryzacja bryłowa</h3>
+            <p>
+              Wyznaczanie osi symetrii, płaszczyzn bazowych, otworów i gwintów. Tworzenie regularnych figur geometrycznych z idealnymi wymiarami nominalnymi.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">🌊</div>
+            <h3>Modelowanie powierzchniowe (Surfacing)</h3>
+            <p>
+              Modelowanie powierzchni swobodnych klasy A dla elementów karoserii, ergonomicznych chwytów i opływowych kolektorów z zachowaniem ciągłości krzywizny G1/G2.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">🔄</div>
+            <h3>Modyfikacja i usprawnienia (Redesign)</h3>
+            <p>
+              Wzmocnienie newralgicznych miejsc podatnych na pękanie, dodanie użebrowania lub zmiana mocowań pod nowoczesne podzespoły.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study / Datsun -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Przykład wdrożenia</div>
+            <h2>Projekt Datsun 240Z / 280Z</h2>
+            <p style="margin-bottom: 1.25rem;">
+              Kompleksowa inżynieria odwrotna kilkunastu niedostępnych na rynku części wnętrza i karoserii klasycznego Datsuna:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; margin-bottom: 2rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="color: var(--emerald);">✓</span> Odtworzenie pękniętej osłony kolumny kierowniczej z kompensacją skurczu.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="color: var(--emerald);">✓</span> Rekonstrukcja zatrzasków kratek nawiewów i mocowań kokpitu.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="color: var(--emerald);">✓</span> Przygotowanie modeli pod druk 3D z odpornego na temperaturę tworzywa ASA.
+              </li>
+            </ul>
+            <a href="realizacje.html" class="btn btn-outline">Zobacz zdjęcia w galerii ➔</a>
+          </div>
+
+          <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.3);">
+            <h3 style="margin-bottom: 1rem; color: #fff;">Dostarczane formaty plików:</h3>
+            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
+              <span class="material-tag accent">.STEP / .STP</span>
+              <span class="material-tag accent">.IGES / .IGS</span>
+              <span class="material-tag accent">.x_t (Parasolid)</span>
+              <span class="material-tag">.DXF (Wypalanie 2D)</span>
+              <span class="material-tag">.DWG</span>
+              <span class="material-tag">.STL / .3MF (Druk)</span>
+              <span class="material-tag">PDF (Rysunki 2D)</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              Pliki są w 100% kompatybilne z oprogramowaniem CAD/CAM: SolidWorks, Fusion 360, Inventor, Siemens NX, CATIA oraz oprogramowaniem obrabiarek CNC.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section">
+      <div class="container">
+        <div class="subpage-cta">
+          <h2>Potrzebujesz modelu CAD zniszczonej lub niedostępnej części?</h2>
+          <p>
+            Prześlij nam zdjęcia uszkodzonego elementu lub siatkę skanu – ocenimy zakres prac i przygotujemy wycenę rekonstrukcji.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="kalkulator.html" class="btn btn-primary btn-lg">Kalkulator wyceny</a>
+            <a href="kontakt.html" class="btn btn-secondary btn-lg">Skonsultuj projekt CAD</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Stopka -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 1rem;">
+            <div class="brand-logo">M</div>
+            <div class="brand-meta">
+              <span class="brand-name">MULTICORE</span>
+              <span class="brand-tagline">Maksym Leski</span>
+            </div>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz automatyzacji.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
+            <li><a href="druk-3d.html">Druk 3D (Bambu Lab H2D)</a></li>
+            <li><a href="automatyzacja.html">Automatyzacja & PLC</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
+            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
+            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
+          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">High-End 3D & Industrial Automation</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
