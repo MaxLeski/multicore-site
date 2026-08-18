@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realizacje Skanów 3D i Inżynierii Odwrotnej - Multicore Maksym Leski</title>
+  <meta
+    name="description"
+    content="Portfolio zrealizowanych projektów skanowania 3D i inżynierii odwrotnej. Rekonstrukcje elementów zabytkowych (Datsun 240Z/280Z), mechanizmów i części przemysłowych."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Nagłówek i Nawigacja -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+        <div class="brand-logo">M</div>
+        <div class="brand-meta">
+          <span class="brand-name">MULTICORE</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+        </div>
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+        <ul class="nav-menu">
+          <li><a href="index.html#oferta" class="nav-link">Oferta</a></li>
+          <li><a href="index.html#uslugi" class="nav-link">Specjalizacje</a></li>
+          <li><a href="index.html#modelowanie" class="nav-link">Modelowanie CAD</a></li>
+          <li><a href="index.html#druk3d" class="nav-link">Druk 3D</a></li>
+          <li><a href="realizacje.html" class="nav-link active">Realizacje</a></li>
+          <li><a href="index.html#proces" class="nav-link">Proces</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Kalkulator wyceny</a></li>
+          <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń swój detal</a>
+        <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sekcja Hero Portfolio -->
+    <section class="section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Case Studies & Portfolio
+          </div>
+          <h1>Wybrane realizacje inżynierii odwrotnej</h1>
+          <p class="subhead">
+            Zobacz przykłady projektów, w których fizyczne, często uszkodzone lub niedostępne już części zostały precyzyjnie zdigitalizowane, zrekonstruowane w CAD i przygotowane do wytworzenia.
+          </p>
+        </div>
+
+        <!-- Filtry Kategorii -->
+        <div class="filter-tabs">
+          <button type="button" class="filter-tab active" data-filter="all">Wszystkie projekty (7)</button>
+          <button type="button" class="filter-tab" data-filter="interior">Wnętrze pojazdu (3)</button>
+          <button type="button" class="filter-tab" data-filter="exterior">Karoseria & Nadwozie (3)</button>
+          <button type="button" class="filter-tab" data-filter="mechanics">Mechanizmy & Klamki (1)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Siatka Projektów -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="portfolio-grid">
+          
+          <!-- Projekt 1: Osłona kierownicy -->
+          <article class="portfolio-card" data-category="interior">
+            <div class="portfolio-media" 
+                 data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png", "galeria/Datsun_osłona_kierownicy/WhatsApp Image 2026-04-09 at 20.29.52.jpeg"]'
+                 data-gallery-title="Datsun - Osłona kolumny kierownicy">
+              <img src="galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" alt="Datsun osłona kolumny kierownicy" loading="lazy" />
+              <span class="portfolio-photo-count">📷 5 zdjęć</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Wnętrze pojazdu</span>
+              <h3>Datsun - Osłona kierownicy</h3>
+              <p>Złożona geometria obudowy kolumny kierowniczej z wewnętrznymi gniazdami przełączników. Rekonstrukcja pękniętych zaczepów i przygotowanie do druku 3D z materiału odpornego na temperaturę.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png", "galeria/Datsun_osłona_kierownicy/WhatsApp Image 2026-04-09 at 20.29.52.jpeg"]'
+                      data-gallery-title="Datsun - Osłona kolumny kierownicy">
+                Przeglądaj zdjęcia (5) →
+              </button>
+            </div>
+          </article>
+
+          <!-- Projekt 2: Grill / Atrapa -->
+          <article class="portfolio-card" data-category="exterior">
+            <div class="portfolio-media"
+                 data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]'
+                 data-gallery-title="Datsun - Atrapa chłodnicy (Grill)">
+              <img src="galeria/Datsun_grill_datsun/1.png" alt="Datsun atrapa chłodnicy grill" loading="lazy" />
+              <span class="portfolio-photo-count">📷 2 zdjęcia</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Karoseria & Nadwozie</span>
+              <h3>Datsun - Grill przedni</h3>
+              <p>Skanowanie wielkogabarytowego elementu pasa przedniego. Dokładne odwzorowanie profilu krzywizny maski oraz punktów mocowania do nadwozia.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]'
+                      data-gallery-title="Datsun - Atrapa chłodnicy (Grill)">
+                Przeglądaj zdjęcia (2) →
+              </button>
+            </div>
+          </article>
+
+          <!-- Projekt 3: Klamka drzwi -->
+          <article class="portfolio-card" data-category="mechanics">
+            <div class="portfolio-media"
+                 data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/klamka_3.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]'
+                 data-gallery-title="Datsun - Zespół klamki drzwi">
+              <img src="galeria/Datsun_Klamka/klamka.png" alt="Datsun klamka drzwi" loading="lazy" />
+              <span class="portfolio-photo-count">📷 6 zdjęć</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Mechanizmy & Klamki</span>
+              <h3>Datsun - Zespół klamki</h3>
+              <p>Cyfrowa rekonstrukcja mechanizmu klamki zewnętrznej. Odtworzenie osi obrotu, gniazd cięgien zamka oraz przygotowanie modelu bryłowego do obróbki CNC.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/klamka_3.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]'
+                      data-gallery-title="Datsun - Zespół klamki drzwi">
+                Przeglądaj zdjęcia (6) →
+              </button>
+            </div>
+          </article>
+
+          <!-- Projekt 4: Bagażnik -->
+          <article class="portfolio-card" data-category="exterior">
+            <div class="portfolio-media"
+                 data-gallery-photos='["galeria/Datsun_Bagażnik/bagażnik_datsun.png", "galeria/Datsun_Bagażnik/bagażnik.png", "galeria/Datsun_Bagażnik/bagażnik_2.png"]'
+                 data-gallery-title="Datsun - Elementy klapy i bagażnika">
+              <img src="galeria/Datsun_Bagażnik/bagażnik_datsun.png" alt="Datsun elementy bagażnika" loading="lazy" />
+              <span class="portfolio-photo-count">📷 3 zdjęcia</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Karoseria & Nadwozie</span>
+              <h3>Datsun - Elementy bagażnika</h3>
+              <p>Digitalizacja geometrii pokrywy bagażnika i stref przylegania uszczelek. Przygotowanie referencyjnej siatki 3D do prac blacharsko-lakierniczych.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_Bagażnik/bagażnik_datsun.png", "galeria/Datsun_Bagażnik/bagażnik.png", "galeria/Datsun_Bagażnik/bagażnik_2.png"]'
+                      data-gallery-title="Datsun - Elementy klapy i bagażnika">
+                Przeglądaj zdjęcia (3) →
+              </button>
+            </div>
+          </article>
+
+          <!-- Projekt 5: Mocowanie lusterka -->
+          <article class="portfolio-card" data-category="exterior">
+            <div class="portfolio-media"
+                 data-gallery-photos='["galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png", "galeria/Datsun_Mocowanie_pod_lusterko/1.jpeg"]'
+                 data-gallery-title="Datsun - Podstawa mocowania lusterka">
+              <img src="galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png" alt="Datsun mocowanie pod lusterko" loading="lazy" />
+              <span class="portfolio-photo-count">📷 2 zdjęcia</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Karoseria & Nadwozie</span>
+              <h3>Datsun - Mocowanie lusterka</h3>
+              <p>Rekonstrukcja stopy montażowej lusterka bocznego dopasowanej ściśle do promienia krzywizny drzwi pojazdu. Model przygotowany do spiekania laserowego SLS.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png", "galeria/Datsun_Mocowanie_pod_lusterko/1.jpeg"]'
+                      data-gallery-title="Datsun - Podstawa mocowania lusterka">
+                Przeglądaj zdjęcia (2) →
+              </button>
+            </div>
+          </article>
+
+          <!-- Projekt 6: Boczek drzwi -->
+          <article class="portfolio-card" data-category="interior">
+            <div class="portfolio-media"
+                 data-gallery-photos='["galeria/Datsun_boczek_drzwi/3.png", "galeria/Datsun_boczek_drzwi/1.jpeg", "galeria/Datsun_boczek_drzwi/2.jpeg"]'
+                 data-gallery-title="Datsun - Boczek drzwi i mocowania tapicerki">
+              <img src="galeria/Datsun_boczek_drzwi/3.png" alt="Datsun boczek drzwi" loading="lazy" />
+              <span class="portfolio-photo-count">📷 3 zdjęcia</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Wnętrze pojazdu</span>
+              <h3>Datsun - Boczek drzwi</h3>
+              <p>Odtworzenie wewnętrznych wytłoczek oraz punktów kotwienia spinek tapicerskich do szkieletu drzwi.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_boczek_drzwi/3.png", "galeria/Datsun_boczek_drzwi/1.jpeg", "galeria/Datsun_boczek_drzwi/2.jpeg"]'
+                      data-gallery-title="Datsun - Boczek drzwi i mocowania tapicerki">
+                Przeglądaj zdjęcia (3) →
+              </button>
+            </div>
+          </article>
+
+          <!-- Projekt 7: Pozostałe detale wnętrza -->
+          <article class="portfolio-card" data-category="interior">
+            <div class="portfolio-media"
+                 data-gallery-photos='["galeria/Datsun_pozostałe/Airbag_button.png", "galeria/Datsun_pozostałe/konsola_przycsku.png", "galeria/Datsun_pozostałe/pokrywa.png", "galeria/Datsun_pozostałe/pokrywa_2.png", "galeria/Datsun_pozostałe/Zaślepka.png"]'
+                 data-gallery-title="Datsun - Drobne detale, przyciski i zaślepki">
+              <img src="galeria/Datsun_pozostałe/Airbag_button.png" alt="Datsun przyciski i zaślepki" loading="lazy" />
+              <span class="portfolio-photo-count">📷 5 zdjęć</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Wnętrze pojazdu</span>
+              <h3>Datsun - Przyciski i zaślepki</h3>
+              <p>Zbiór małych elementów wykończeniowych wnętrza: przyciski konsoli, zaślepki śrub i pokrywy serwisowe odtworzone 1:1.</p>
+              <button type="button" class="btn btn-secondary btn-sm"
+                      data-gallery-photos='["galeria/Datsun_pozostałe/Airbag_button.png", "galeria/Datsun_pozostałe/konsola_przycsku.png", "galeria/Datsun_pozostałe/pokrywa.png", "galeria/Datsun_pozostałe/pokrywa_2.png", "galeria/Datsun_pozostałe/Zaślepka.png"]'
+                      data-gallery-title="Datsun - Drobne detale, przyciski i zaślepki">
+                Przeglądaj zdjęcia (5) →
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner CTA na dole portfolio -->
+    <section class="section section-highlight">
+      <div class="container" style="text-align: center;">
+        <div class="eyebrow">Twój projekt</div>
+        <h2 style="margin-bottom: 1rem;">Masz detal wymagający rekonstrukcji lub skanowania?</h2>
+        <p class="subhead" style="margin: 0 auto 2rem;">
+          Prześlij zdjęcie lub skorzystaj z kalkulatora, aby otrzymać szybką wycenę. Zamawiam kuriera, który odbierze detal bezpośrednio od Ciebie.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="kalkulator.html" class="btn btn-primary btn-lg">Oblicz wycenę w kalkulatorze →</a>
+          <a href="index.html#kontakt" class="btn btn-secondary btn-lg">Skontaktuj się bezpośrednio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Stopka -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-link" style="margin-bottom: 0.75rem;">
+            <div class="brand-logo" style="width: 36px; height: 36px; font-size: 1rem;">M</div>
+            <div class="brand-meta">
+              <span class="brand-name" style="font-size: 1rem;">MULTICORE</span>
+              <span class="brand-tagline">Maksym Leski</span>
+            </div>
+          </div>
+          <p>Precyzyjne skanowanie 3D, reverse engineering i rekonstrukcja detali z darmowym odbiorem kurierskim.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Nawigacja</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#oferta">Oferta Skanowania</a></li>
+            <li><a href="index.html#modelowanie">Modelowanie 3D i CAD</a></li>
+            <li><a href="index.html#druk3d">Druk 3D i Materiały</a></li>
+            <li><a href="realizacje.html">Galeria Realizacji</a></li>
+            <li><a href="kalkulator.html">Kalkulator Wyceny</a></li>
+            <li><a href="index.html#kontakt">Kontakt i Kurier</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Kontakt Bezpośredni</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+48533491374">+48 533 491 374</a></li>
+            <li><a href="mailto:maksym.leski@gmail.com">maksym.leski@gmail.com</a></li>
+            <li><span>Wycena w 24h na podstawie zdjęć</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span class="current-year">2026</span> Multicore Maksym Leski. Wszelkie prawa zastrzeżone.</div>
+        <div style="color: var(--text-dim);">Precyzja pomiarowa • Reverse Engineering</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal do podglądu zdjęć -->
+  <div class="lightbox-modal" id="siteLightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-dialog">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Zamknij podgląd">✕</button>
+      <button type="button" class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">‹</button>
+      <button type="button" class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Następne zdjęcie">›</button>
+      
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Powiększone zdjęcie realizacji" />
+      </div>
+
+      <div class="lightbox-meta">
+        <div id="lightboxCaption" style="color: #fff; font-weight: 600; margin-bottom: 0.25rem;"></div>
+        <div id="lightboxCounter"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

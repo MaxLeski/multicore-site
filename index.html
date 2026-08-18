@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multicore Maksym Leski - Skanowanie 3D, Reverse Engineering i Automatyzacja Przemysłowa</title>
+  <meta
+    name="description"
+    content="Precyzyjne skanowanie 3D detali, inżynieria odwrotna CAD, druk 3D oraz programowanie systemów sterowania i automatyzacja procesów produkcyjnych. Kurier door-to-door w cenie."
+  />
+  <meta name="keywords" content="skanowanie 3d, reverse engineering, inżynieria odwrotna, rekonstrukcja części, datsun, automatyzacja produkcji, druk 3d, systemy wbudowane, cad, cam" />
+  <meta property="og:title" content="Multicore Maksym Leski - Skanowanie 3D i Inżynieria Odwrotna" />
+  <meta property="og:description" content="Odtwarzanie niedostępnych części, precyzyjne skanowanie 3D, modele CAD i automatyzacja urządzeń przemysłowych." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Nagłówek i Nawigacja -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+        <div class="brand-logo">M</div>
+        <div class="brand-meta">
+          <span class="brand-name">MULTICORE</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+        </div>
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+        <ul class="nav-menu">
+          <li><a href="#oferta" class="nav-link">Oferta</a></li>
+          <li><a href="#uslugi" class="nav-link">Specjalizacje</a></li>
+          <li><a href="#modelowanie" class="nav-link">Modelowanie CAD</a></li>
+          <li><a href="#druk3d" class="nav-link">Druk 3D</a></li>
+          <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
+          <li><a href="#proces" class="nav-link">Proces</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Kalkulator wyceny</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń skan 3D</a>
+        <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sekcja Hero -->
+    <section class="section-hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Inżynieria Precyzyjna & Digitalizacja 3D
+          </div>
+          <h1>Precyzyjne skanowanie 3D, reverse engineering i automatyzacja</h1>
+          <p class="subhead">
+            Pomagam odtwarzać elementy niedostępne na rynku, zużyte części maszyn oraz unikatowe detale motoryzacji zabytkowej. Łączę optyczną digitalizację 3D, parametryczne modelowanie CAD, programowanie sterowników oraz szybkie prototypowanie.
+          </p>
+
+          <div class="hero-actions">
+            <a href="kalkulator.html" class="btn btn-primary btn-lg">
+              <span>Oblicz orientacyjną wycenę</span>
+              <span class="btn-icon">→</span>
+            </a>
+            <a href="realizacje.html" class="btn btn-secondary btn-lg">
+              Zobacz wykonane realizacje
+            </a>
+          </div>
+
+          <div class="hero-badges-row">
+            <div class="hero-badge-item">
+              <div class="hero-badge-icon">⚡</div>
+              <div class="hero-badge-text">
+                <strong>Druk 3D od 2016 r.</strong>
+                <span>10 lat doświadczenia w druku</span>
+              </div>
+            </div>
+            <div class="hero-badge-item">
+              <div class="hero-badge-icon">📦</div>
+              <div class="hero-badge-text">
+                <strong>Kurier door-to-door</strong>
+                <span>Odbiór i odsyłka w cenie</span>
+              </div>
+            </div>
+            <div class="hero-badge-item">
+              <div class="hero-badge-icon">📐</div>
+              <div class="hero-badge-text">
+                <strong>Wysoka dokładność</strong>
+                <span>Tolerancja inżynierska</span>
+              </div>
+            </div>
+            <div class="hero-badge-item">
+              <div class="hero-badge-icon">⚙️</div>
+              <div class="hero-badge-text">
+                <strong>Formaty CAD</strong>
+                <span>STEP, IGES, STL, DWG</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wizualny komponent skanera 3D -->
+        <div class="scanner-visual-box">
+          <div class="scanner-viewport">
+            <div class="grid-mesh"></div>
+            <div class="scan-laser-line"></div>
+            <div class="cad-crosshairs">
+              <div class="cad-crosshair-h"></div>
+              <div class="cad-crosshair-v"></div>
+            </div>
+
+            <div class="cad-target-object">
+              <div class="wireframe-cube">
+                <div class="wireframe-inner"></div>
+              </div>
+            </div>
+
+            <div class="scanner-overlay-stats">
+              <div>SYS: MULTICORE_SCAN_V2</div>
+              <div>RES: 0.02 mm / POINT CLOUD</div>
+              <div>MODE: REVERSE_ENGINEERING</div>
+            </div>
+
+            <div class="scanner-status-tag">
+              <span class="eyebrow-dot"></span>
+              GOTOWY DO POMIARU
+            </div>
+          </div>
+
+          <div class="scanner-meta-bar">
+            <span>PROCES: DIGITALIZACJA CAD</span>
+            <span>STATUS: AKTYWNY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Oferty Głównej -->
+    <section id="oferta" class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Oferta główna</div>
+          <h2>Od fizycznej części do gotowego rozwiązania</h2>
+          <p class="subhead">Kompleksowa obsługa: od bezpiecznego transportu detalu, przez precyzyjny skan i rekonstrukcję geometrii, po produkcję zamiennika lub wdrożenie w maszynie.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">🔍</div>
+            <h3>Skanowanie 3D & Pomiary</h3>
+            <p>Bezdotykowa digitalizacja geometrii o wysokiej rozdzielczości. Obsługuję detale o skomplikowanych kształtach organicznych, części uszkodzone, pęknięte oraz elementy bez dokumentacji technicznej.</p>
+            <div class="service-tags">
+              <span class="service-tag">Optyka 3D</span>
+              <span class="service-tag">Kontrola wymiarowa</span>
+              <span class="service-tag">Pokrycie wysyłek</span>
+            </div>
+          </div>
+
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">📐</div>
+            <h3>Inżynieria Odwrotna (CAD)</h3>
+            <p>Przekształcenie surowej siatki trójkątów (STL/OBJ) w parametryczny, edytowalny model bryłowy CAD (STEP/IGES). Odtwarzam osie symetrii, gwinty, pasowania oraz koryguję zużycie materiału.</p>
+            <div class="service-tags">
+              <span class="service-tag">Modele STEP/IGES</span>
+              <span class="service-tag">Rekonstrukcja ubytków</span>
+              <span class="service-tag">Parametryzacja</span>
+            </div>
+          </div>
+
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">🖨️</div>
+            <h3>Druk 3D i Wytwarzanie</h3>
+            <p>Szybkie prototypowanie oraz produkcja gotowych części z technicznych tworzyw (ABS, ASA odporny na UV, PET-G, nylon, guma TPU) oraz druk laserowy z metali (SLS / DMLS) we współpracy z przemysłowymi partnerami.</p>
+            <div class="service-tags">
+              <span class="service-tag">FDM / SLA / SLS</span>
+              <span class="service-tag">Materiały techniczne</span>
+              <span class="service-tag">Spiekanie metali</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Specjalizacji i Automatyzacji -->
+    <section id="uslugi" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Programowanie & Przemysł</div>
+          <h2>Automatyzacja procesów, robotyka i systemy wbudowane</h2>
+          <p class="subhead">Wieloletnie doświadczenie inżynieryjne w zakładach produkcyjnych pozwala mi projektować układy, które działają niezawodnie w rzeczywistych warunkach przemysłowych.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">🤖</div>
+            <h3>Automatyzacja Linii i Podajników</h3>
+            <p>Praktyczne doświadczenie zdobyte przy optymalizacji i modernizacji linii wytwórczych. Realizowałem m.in. automatyzację podajników blach, integrację robotów przemysłowych oraz modernizację gniazd obróbczych.</p>
+            <div class="service-tags">
+              <span class="service-tag">Robotyka</span>
+              <span class="service-tag">Podajniki</span>
+              <span class="service-tag">Modernizacje</span>
+            </div>
+          </div>
+
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">💻</div>
+            <h3>Systemy Wbudowane & Elektronika</h3>
+            <p>Projektowanie i programowanie dedykowanych układów sterowania, modułów telemetrycznych, akwizycji danych oraz precyzyjnych układów sensoryczno-pomiarowych pod specyfikację klienta.</p>
+            <div class="service-tags">
+              <span class="service-tag">Mikrokontrolery</span>
+              <span class="service-tag">Sensoryka</span>
+              <span class="service-tag">Firmware C/C++</span>
+            </div>
+          </div>
+
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">🛡️</div>
+            <h3>Konstrukcje Mechaniczne & Osprzęt</h3>
+            <p>Projektowanie uchwytów technologicznych, obudów urządzeń, łączników i adapterów dedykowanych pod obrabiarki CNC, linie montażowe lub indywidualne aplikacje warsztatowe.</p>
+            <div class="service-tags">
+              <span class="service-tag">Uchwyty obróbcze</span>
+              <span class="service-tag">Obudowy IP</span>
+              <span class="service-tag">Ergonomia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Modelowania 3D i Prototypowania od Podstaw -->
+    <section id="modelowanie" class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Projektowanie CAD & Fizyczne Prototypy
+          </div>
+          <h2>Modelowanie 3D – od wymagań do gotowego wyrobu</h2>
+          <p class="subhead">
+            Nie masz gotowego modelu ani rysunku? Projektuję elementy od zera na podstawie Twoich wytycznych, szkiców koncepcyjnych, opisu funkcjonalnego lub pomiaru otoczenia montażowego. Dostarczam nie tylko plik CAD, ale fizyczny, przetestowany prototyp.
+          </p>
+        </div>
+
+        <!-- Karty Procesu Projektowego CAD -->
+        <div class="cad-workflow-grid">
+          <div class="cad-step-card">
+            <div class="cad-step-num">01</div>
+            <h3>Analiza wymagań & Dobór materiału</h3>
+            <p>Ustalamy przeznaczenie detalu: obciążenia mechaniczne, temperaturę pracy, pasowania (łożyska, uszczelki) oraz technologię docelowej produkcji (Design for Manufacturing).</p>
+          </div>
+
+          <div class="cad-step-card">
+            <div class="cad-step-num">02</div>
+            <h3>Parametryczny Model CAD 3D</h3>
+            <p>Opracowuję bryłowy i powierzchniowy model 3D w formatach uniwersalnych (STEP, IGES, Parasolid, DWG). Uwzględniam osie symetrii, promienie gięcia i optymalizację pod montaż.</p>
+          </div>
+
+          <div class="cad-step-card">
+            <div class="cad-step-num">03</div>
+            <h3>Wytworzenie i dostawa prototypu</h3>
+            <p>Drukuję funkcjonalny prototyp z wybranego materiału technicznego (ABS, ASA, Nylon, PC, PLA, TPU). Sprawdzasz ergonomię, dopasowanie i działanie mechanizmu we własnym zakresie.</p>
+          </div>
+
+          <div class="cad-step-card">
+            <div class="cad-step-num">04</div>
+            <h3>Optymalizacja i wdrożenie</h3>
+            <p>Wprowadzamy ewentualne korekty po testach praktycznych. Przygotowuję kompletną dokumentację wykonawczą 2D/3D i pomagam przy wdrożeniu do produkcji seryjnej.</p>
+          </div>
+        </div>
+
+        <!-- Przykładowe Typy Projektów -->
+        <div style="margin-top: 3.5rem; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 2.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.3rem; margin: 0;">Co najczęściej projektuję i prototypuję:</h3>
+            <span class="eyebrow" style="margin: 0;">SolidWorks • Fusion • STEP/IGES</span>
+          </div>
+
+          <div class="grid-3">
+            <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+              <strong style="color: #fff; display: block; margin-bottom: 0.3rem;">📱 Obudowy urządzeń i elektroniki</strong>
+              Indywidualne obudowy pod płytki PCB, gniazda złącz, prowadnice światłowodów, zatrzaski montażowe i uszczelnienia o podwyższonym stopniu ochrony IP.
+            </div>
+
+            <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+              <strong style="color: #fff; display: block; margin-bottom: 0.3rem;">🛠️ Przyrządy i jigi produkcyjne</strong>
+              Uchwyty technologiczne, pozycjonery montażowe, sprawdziany kształtu, chwytaki do robotów przemysłowych i osprzęt stanowiskowy.
+            </div>
+
+            <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+              <strong style="color: #fff; display: block; margin-bottom: 0.3rem;">🚗 Elementy adaptacyjne i mechanizmy</strong>
+              Flansze, redukcje, łączniki przewodów, customowe mocowania czujników, dźwignie, koła zębate i elementy restomod/tuning.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Druku 3D i Wytwarzania Addytywnego -->
+    <section id="druk3d" class="section">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Wytwarzanie Addytywne • Doświadczenie od 2016 roku
+          </div>
+          <h2>Precyzyjny druk 3D z materiałów technicznych</h2>
+          <p class="subhead">
+            Zajmuję się technologią druku 3D nieprzerwanie od 2016 roku. Dysponuję wielkogabarytowymi stanowiskami w zamkniętej komorze termicznej oraz szybkimi drukarkami precyzyjnymi, co pozwala na bezskurczowy druk technicznych tworzyw konstrukcyjnych (ABS, ASA, PA, PC, PLA, TPU).
+          </p>
+        </div>
+
+        <!-- Panel Specyfikacji i Parametrów Technicznych -->
+        <div class="print-specs-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0;">Parametry robocze stanowisk druku</span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--emerald); display: flex; align-items: center; gap: 0.4rem;">
+              <span class="eyebrow-dot"></span>
+              ZAMKNIĘTA KOMORA TERMICZNA & HIGH-SPEED
+            </div>
+          </div>
+
+          <div class="spec-grid">
+            <div class="spec-card">
+              <div class="spec-header">
+                <span class="spec-icon">📏</span>
+                <span class="spec-label">Pole robocze</span>
+              </div>
+              <div class="spec-value">do 350 × 300 × 300 mm</div>
+              <div class="spec-desc">Stanowiska wielkogabarytowe dla dużych brył oraz szybkie stanowiska precyzyjne 256 mm.</div>
+            </div>
+
+            <div class="spec-card">
+              <div class="spec-header">
+                <span class="spec-icon">🎯</span>
+                <span class="spec-label">Wysokość warstwy</span>
+              </div>
+              <div class="spec-value">0.08 – 0.28 mm</div>
+              <div class="spec-desc">Od wysokiej gładkości detali optycznych po szybkie, wytrzymałe bryły robocze.</div>
+            </div>
+
+            <div class="spec-card">
+              <div class="spec-header">
+                <span class="spec-icon">🌡️</span>
+                <span class="spec-label">Ekstruzja do</span>
+              </div>
+              <div class="spec-value">300°C</div>
+              <div class="spec-desc">Pełna obróbka termiczna polimerów inżynieryjnych: Nylon, Poliwęglan, ASA, ABS, PLA.</div>
+            </div>
+
+            <div class="spec-card">
+              <div class="spec-header">
+                <span class="spec-icon">🛡️</span>
+                <span class="spec-label">Komora termiczna</span>
+              </div>
+              <div class="spec-value">Zamknięta / Grzana</div>
+              <div class="spec-desc">Eliminacja skurczu materiałowego i doskonała spójność międzywarstwowa (brak rozwarstwień).</div>
+            </div>
+
+            <div class="spec-card">
+              <div class="spec-header">
+                <span class="spec-icon">🧩</span>
+                <span class="spec-label">Geometria & Podpory</span>
+              </div>
+              <div class="spec-value">Multi-materiał</div>
+              <div class="spec-desc">Dedykowane materiały podporowe dla czystych powierzchni nawisów i skomplikowanych kanałów.</div>
+            </div>
+
+            <div class="spec-card">
+              <div class="spec-header">
+                <span class="spec-icon">⚙️</span>
+                <span class="spec-label">Montaż & Postprocessing</span>
+              </div>
+              <div class="spec-value">Wkładki M2–M8</div>
+              <div class="spec-desc">Wtapianie gwintów mosiężnych (heat-set inserts), pasowania pod łożyska, wygładzanie.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Karty Materiałów Inżynieryjnych -->
+        <div class="section-head" style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.5rem;">Szeroki wachlarz tworzyw inżynieryjnych</h3>
+          <p class="subhead">Dobieram materiał w zależności od obciążeń mechanicznych, temperatury pracy oraz kontaktu ze środowiskiem (promieniowanie UV, oleje, chemia).</p>
+        </div>
+
+        <div class="materials-grid">
+          <!-- Materiał 1: ASA & ABS -->
+          <div class="material-card">
+            <div class="material-header">
+              <span class="material-badge">ASA / ABS</span>
+              <span class="material-temp">do ~95°C</span>
+            </div>
+            <h3>Odporność UV & Motoryzacja</h3>
+            <p>Najlepszy wybór do motoryzacji i części zewnętrznych. ASA nie żółknie pod wpływem słońca i cechuje się wysoką udarnością.</p>
+            <ul class="material-features">
+              <li>Elementy karoserii i wnętrza</li>
+              <li>Odporność na warunki atmosferyczne</li>
+              <li>Możliwość lakierowania i szlifowania</li>
+            </ul>
+          </div>
+
+          <!-- Materiał 2: PA / Nylon & PA-CF -->
+          <div class="material-card">
+            <div class="material-header">
+              <span class="material-badge accent-emerald">PA (Nylon) / PA-CF</span>
+              <span class="material-temp">do ~150°C</span>
+            </div>
+            <h3>Odporność na ścieranie & Nośność</h3>
+            <p>Poliamid zbrojony lub czysty o wyjątkowej odporności zmęczeniowej, niskim tarciu i odporności chemicznej na oleje i smary.</p>
+            <ul class="material-features">
+              <li>Koła zębate, tuleje, ślizgi</li>
+              <li>Wysoka wytrzymałość mechaniczna</li>
+              <li>Odporność na paliwa i smary</li>
+            </ul>
+          </div>
+
+          <!-- Materiał 3: PC (Poliwęglan) -->
+          <div class="material-card">
+            <div class="material-header">
+              <span class="material-badge accent-amber">PC (Poliwęglan)</span>
+              <span class="material-temp">do ~120°C</span>
+            </div>
+            <h3>Sztywność & Termoodporność</h3>
+            <p>Konstrukcyjne tworzywo o ekstremalnej sztywności i odporności na pękanie pod obciążeniem udarowym w wysokich temperaturach.</p>
+            <ul class="material-features">
+              <li>Mocowania silników i osprzętu</li>
+              <li>Odporność termiczno-mechaniczna</li>
+              <li>Wysoka precyzja wymiarowa</li>
+            </ul>
+          </div>
+
+          <!-- Materiał 4: PLA -->
+          <div class="material-card">
+            <div class="material-header">
+              <span class="material-badge">PLA</span>
+              <span class="material-temp">Prototypy / Makiety</span>
+            </div>
+            <h3>Precyzja & Gładkość Powierzchni</h3>
+            <p>Bezbłędna dokładność wymiarowa i znakomite odwzorowanie drobnych detali. Idealny do szybkiej weryfikacji kształtu i makiet.</p>
+            <ul class="material-features">
+              <li>Makiety i sprawdziany kształtu</li>
+              <li>Idealna gładkość bez skurczu</li>
+              <li>Ekologiczny polimer biodegradowalny</li>
+            </ul>
+          </div>
+
+          <!-- Materiał 5: TPU & PET-G -->
+          <div class="material-card">
+            <div class="material-header">
+              <span class="material-badge">TPU & PET-G</span>
+              <span class="material-temp">Elastyczność / Chemia</span>
+            </div>
+            <h3>Elastomery & Obudowy</h3>
+            <p>TPU o twardości 85A/95A do elastycznych detali oraz PET-G do szczelnych obudów elektroniki i odporności chemicznej.</p>
+            <ul class="material-features">
+              <li>Uszczelki, odbojniki, tłumiki drgań</li>
+              <li>Wodoodporność i izolacja</li>
+              <li>Odporność chemiczna</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <div style="font-size: 0.95rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 1.5rem;">
+            Potrzebujesz detalu ze <strong>stali nierdzewnej, aluminium lub tytanu</strong>? Realizuję również zamówienia w technologii laserowego spiekania metali <strong>DMLS / SLS</strong> we współpracy ze sprawdzonymi parkami maszynowymi.
+          </div>
+          <a href="#kontakt" class="btn btn-outline">Skonsultuj dobór materiału do swojego projektu →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Wybranych Realizacji (Portfolio Showcase) -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <div class="eyebrow">Portfolio projektowe</div>
+            <h2>Przykładowe realizacje i inżynieria odwrotna</h2>
+            <p class="subhead">Zobacz, jak przebiega digitalizacja i rekonstrukcja unikatowych elementów (np. kultowy Datsun 240Z/280Z).</p>
+          </div>
+          <div>
+            <a href="realizacje.html" class="btn btn-outline">Zobacz całą galerię (7 projektów) →</a>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <!-- Projekt 1 -->
+          <article class="portfolio-card">
+            <div class="portfolio-media" data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png"]' data-gallery-title="Datsun - Osłona kolumny kierownicy">
+              <img src="galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" alt="Datsun osłona kierownicy" loading="lazy" />
+              <span class="portfolio-photo-count">📷 5 zdjęć</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Wnętrze pojazdu</span>
+              <h3>Datsun - Osłona kierownicy</h3>
+              <p>Zeskanowanie zniszczonej obudowy, naprawa geometrii pęknięć, odtworzenie zatrzasków montażowych oraz przygotowanie modelu do wydruku z odpornego tworzywa ASA.</p>
+              <button type="button" class="btn btn-secondary btn-sm" data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png"]' data-gallery-title="Datsun - Osłona kolumny kierownicy">Powiększ zdjęcia</button>
+            </div>
+          </article>
+
+          <!-- Projekt 2 -->
+          <article class="portfolio-card">
+            <div class="portfolio-media" data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]' data-gallery-title="Datsun - Atrapa chłodnicy (Grill)">
+              <img src="galeria/Datsun_grill_datsun/1.png" alt="Datsun grill atrapa" loading="lazy" />
+              <span class="portfolio-photo-count">📷 2 zdjęcia</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Nadwozie i elementy zewnętrzne</span>
+              <h3>Datsun - Grill przedni</h3>
+              <p>Precyzyjne skanowanie wielkogabarytowego grilla o skomplikowanych żebrach aerodynamicznych. Rekonstrukcja symetrii i punktów mocowania do pasa przedniego.</p>
+              <button type="button" class="btn btn-secondary btn-sm" data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]' data-gallery-title="Datsun - Atrapa chłodnicy (Grill)">Powiększ zdjęcia</button>
+            </div>
+          </article>
+
+          <!-- Projekt 3 -->
+          <article class="portfolio-card">
+            <div class="portfolio-media" data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]' data-gallery-title="Datsun - Klamka drzwi zewnętrzna">
+              <img src="galeria/Datsun_Klamka/klamka.png" alt="Datsun klamka drzwi" loading="lazy" />
+              <span class="portfolio-photo-count">📷 6 zdjęć</span>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-category">Mechanizmy & Klamki</span>
+              <h3>Datsun - Zespół klamki drzwi</h3>
+              <p>Digitalizacja mechanizmu ruchomego klamki. Przygotowanie danych do frezowania CNC z aluminium oraz formy odlewniczej.</p>
+              <button type="button" class="btn btn-secondary btn-sm" data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]' data-gallery-title="Datsun - Klamka drzwi zewnętrzna">Powiększ zdjęcia</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja 4 Kroków Procesu -->
+    <section id="proces" class="section">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Proces realizacji</div>
+          <h2>Jak przebiega współpraca krok po kroku</h2>
+          <p class="subhead">Prosty i bezproblemowy proces door-to-door, dzięki któremu nie tracisz czasu na logistykę.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="tech-card process-card">
+            <div class="process-step-header">
+              <div class="process-number">01</div>
+              <h3>Konsultacja i Kurier</h3>
+            </div>
+            <p>Kontaktujesz się ze mną, przesyłasz zdjęcie lub opis detalu. Zamawiam kuriera, który odbiera detal bezpośrednio od Ciebie.</p>
+          </div>
+
+          <div class="tech-card process-card">
+            <div class="process-step-header">
+              <div class="process-number">02</div>
+              <h3>Skanowanie 3D</h3>
+            </div>
+            <p>W odpowiednich warunkach laboratoryjnych wykonuję precyzyjną digitalizację optyczną detalu z dokładnością do setnych części milimetra.</p>
+          </div>
+
+          <div class="tech-card process-card">
+            <div class="process-step-header">
+              <div class="process-number">03</div>
+              <h3>Model CAD / Rekonstrukcja</h3>
+            </div>
+            <p>Oczyszczam siatkę, koryguję geometrię, odtwarzam zerwane gwinty, zatrzaski i tworzę parametryczny plik produkcyjny (STEP/IGES/STL).</p>
+          </div>
+
+          <div class="tech-card process-card">
+            <div class="process-step-header">
+              <div class="process-number">04</div>
+              <h3>Gotowy wyrób i odsyłka</h3>
+            </div>
+            <p>Otrzymujesz pliki cyfrowe lub gotowy wydruk 3D/część, a Twój oryginalny wzorzec odsyłam bezpiecznie pod wskazany adres.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser Kalkulatora Wyceny -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="tech-card" style="background: linear-gradient(135deg, rgba(14, 23, 44, 0.95), rgba(6, 10, 20, 0.98)); border-color: rgba(56, 189, 248, 0.35); padding: 3rem;">
+          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem; align-items: center;">
+            <div>
+              <div class="eyebrow">Szybka kalkulacja</div>
+              <h2>Chcesz sprawdzić szacunkowy koszt skanowania?</h2>
+              <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
+                Skorzystaj z interaktywnego kalkulatora wyceny. Wprowadź orientacyjne gabaryty (Dł x Szer x Wys), stopień złożoności geometrii i wybierz zakres opracowania, aby otrzymać natychmiastową wycenę.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="kalkulator.html" class="btn btn-primary btn-lg">Otwórz kalkulator wyceny →</a>
+                <a href="#kontakt" class="btn btn-secondary btn-lg">Napisz bezpośrednio</a>
+              </div>
+            </div>
+            <div style="background: rgba(6, 10, 20, 0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan); margin-bottom: 0.5rem;">Przykładowe parametry:</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;">
+                ✓ Wymiary gabarytowe [cm]<br />
+                ✓ Stopień skomplikowania (prosty / średni / złożony)<br />
+                ✓ Trudność powierzchni (matowa / ciemna / chrom)<br />
+                ✓ Zakres: surowy skan, siatka STL lub parametryczny CAD<br />
+                ✓ Rabat za dołączone zdjęcie do szybkiej weryfikacji
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Kontaktowa -->
+    <section id="kontakt" class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <div class="eyebrow">Kontakt</div>
+            <h2>Porozmawiajmy o Twoim projekcie</h2>
+            <p class="subhead">
+              Niezależnie od tego, czy potrzebujesz odtworzyć pojedynczy unikatowy detal, czy zoptymalizować pracę stanowiska produkcyjnego – chętnie doradzę najefektywniejsze rozwiązanie.
+            </p>
+
+            <div class="contact-info-list">
+              <a href="tel:+48533491374" class="contact-method-card">
+                <div class="contact-icon">📞</div>
+                <div class="contact-details">
+                  <span>Zadzwoń bezpośrednio</span>
+                  <strong>+48 533 491 374</strong>
+                </div>
+              </a>
+
+              <a href="mailto:maksym.leski@gmail.com" class="contact-method-card">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-details">
+                  <span>Adres e-mail</span>
+                  <strong>maksym.leski@gmail.com</strong>
+                </div>
+              </a>
+
+              <div class="contact-method-card" style="cursor: default;">
+                <div class="contact-icon">📍</div>
+                <div class="contact-details">
+                  <span>Obszar działania</span>
+                  <strong>Polska • Wysyłka Door-to-Door & Projekty On-Site</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formularz szybkiego kontaktu -->
+          <div class="quick-form">
+            <h3 style="margin-bottom: 0.5rem;">Napisz wiadomość</h3>
+            <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Wypełnij poniższe pola, a przygotuję wstępną analizę możliwości technologicznych i wycenę.</p>
+
+            <form id="quickContactForm">
+              <div class="form-row">
+                <label class="form-label" for="contactName">Imię i nazwisko / Firma</label>
+                <input class="input-field" type="text" id="contactName" placeholder="np. Jan Kowalski" required />
+              </div>
+
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                  <label class="form-label" for="contactEmail">Adres E-mail</label>
+                  <input class="input-field" type="email" id="contactEmail" placeholder="jan@firma.pl" required />
+                </div>
+                <div>
+                  <label class="form-label" for="contactPhone">Telefon</label>
+                  <input class="input-field" type="tel" id="contactPhone" placeholder="+48 ..." />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="contactMessage">Opis zadania / detalu</label>
+                <textarea class="textarea-field" id="contactMessage" placeholder="Opisz część, orientacyjne wymiary lub cel projektu (np. uszkodzona obudowa pompy, odtworzenie mocowania)..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Wyślij zapytanie e-mail</span>
+                <span class="btn-icon">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Stopka -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-link" style="margin-bottom: 0.75rem;">
+            <div class="brand-logo" style="width: 36px; height: 36px; font-size: 1rem;">M</div>
+            <div class="brand-meta">
+              <span class="brand-name" style="font-size: 1rem;">MULTICORE</span>
+              <span class="brand-tagline">Maksym Leski</span>
+            </div>
+          </div>
+          <p>Specjalistyczne usługi inżynierii odwrotnej, skanowania 3D, druku 3D oraz automatyzacji procesów przemysłowych.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Nawigacja</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#oferta">Oferta i Skanowanie</a></li>
+            <li><a href="index.html#uslugi">Automatyzacja i Robotyka</a></li>
+            <li><a href="index.html#modelowanie">Modelowanie 3D i CAD</a></li>
+            <li><a href="index.html#druk3d">Druk 3D i Materiały</a></li>
+            <li><a href="realizacje.html">Galeria Realizacji</a></li>
+            <li><a href="kalkulator.html">Kalkulator Wyceny 3D</a></li>
+            <li><a href="index.html#kontakt">Kontakt i Zamówienie Kuriera</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Kontakt Bezpośredni</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+48533491374">+48 533 491 374</a></li>
+            <li><a href="mailto:maksym.leski@gmail.com">maksym.leski@gmail.com</a></li>
+            <li><span>Działalność na terenie całego kraju (kurier w cenie)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span class="current-year">2026</span> Multicore Maksym Leski. Wszelkie prawa zastrzeżone.</div>
+        <div style="color: var(--text-dim);">Precyzja pomiarowa • Reverse Engineering • Przemysł 4.0</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal do podglądu zdjęć -->
+  <div class="lightbox-modal" id="siteLightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-dialog">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Zamknij podgląd">✕</button>
+      <button type="button" class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">‹</button>
+      <button type="button" class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Następne zdjęcie">›</button>
+      
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Powiększone zdjęcie realizacji" />
+      </div>
+
+      <div class="lightbox-meta">
+        <div id="lightboxCaption" style="color: #fff; font-weight: 600; margin-bottom: 0.25rem;"></div>
+        <div id="lightboxCounter"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
