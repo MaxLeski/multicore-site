@@ -256,7 +256,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.5rem, 1.2vw, 1.25rem);
+  gap: clamp(0.35rem, 0.9vw, 1.05rem);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -265,9 +265,9 @@ a:hover {
 
 .nav-link {
   color: var(--text-muted);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  padding: 0.4rem 0.45rem;
+  padding: 0.35rem 0.4rem;
   position: relative;
   transition: var(--transition);
   white-space: nowrap;
