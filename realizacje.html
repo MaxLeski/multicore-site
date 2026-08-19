@@ -3,19 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Realizacje Skanów 3D i Inżynierii Odwrotnej - Multicore Maksym Leski</title>
+  <title>Case Studies inżynierii odwrotnej i skanowania 3D | MULTICORE</title>
   <meta
     name="description"
-    content="Portfolio zrealizowanych projektów skanowania 3D i inżynierii odwrotnej. Rekonstrukcje elementów zabytkowych (Datsun 240Z/280Z), mechanizmów i części przemysłowych."
+    content="Zobacz szczegółowe case studies inżynierii odwrotnej i rekonstrukcji 3D: od uszkodzonego oryginału po parametryczny model CAD STEP i gotowy detal. Projekt Datsun 240Z/280Z."
   />
+  <link rel="canonical" href="https://multicore.net.pl/realizacje.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://multicore.net.pl/realizacje.html" />
+  <meta property="og:title" content="Case Studies inżynierii odwrotnej i skanowania 3D | MULTICORE" />
+  <meta property="og:description" content="Prawdziwe wdrożenia: digitalizacja, odbudowa pękniętych zaczepów w CAD i wykonanie części." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Główna",
+        "item": "https://multicore.net.pl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Realizacje i Case Studies",
+        "item": "https://multicore.net.pl/realizacje.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
 
   <!-- Nagłówek i Nawigacja -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
@@ -26,19 +57,45 @@
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Główna</a></li>
-          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
-          <li><a href="modelowanie-cad.html" class="nav-link">Modelowanie CAD</a></li>
-          <li><a href="druk-3d.html" class="nav-link">Druk 3D</a></li>
-          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
-          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
           <li><a href="realizacje.html" class="nav-link active">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Kalkulator</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń swój detal</a>
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń detal</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -50,173 +107,317 @@
     </div>
   </header>
 
-  <main>
-    <!-- Sekcja Hero Portfolio -->
-    <section class="section" style="padding-bottom: 2rem;">
+  <main id="main">
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
       <div class="container">
-        <div class="section-head center">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Case Studies & Portfolio
-          </div>
-          <h1>Wybrane realizacje inżynierii odwrotnej</h1>
-          <p class="subhead">
-            Zobacz przykłady projektów, w których fizyczne, często uszkodzone lub niedostępne już części zostały precyzyjnie zdigitalizowane, zrekonstruowane w CAD i przygotowane do wytworzenia.
-          </p>
+        <div class="breadcrumbs">
+          <a href="index.html">Główna</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span>Realizacje i Case Studies</span>
         </div>
 
-        <!-- Filtry Kategorii -->
-        <div class="filter-tabs">
-          <button type="button" class="filter-tab active" data-filter="all">Wszystkie projekty (7)</button>
-          <button type="button" class="filter-tab" data-filter="interior">Wnętrze pojazdu (3)</button>
-          <button type="button" class="filter-tab" data-filter="exterior">Karoseria & Nadwozie (3)</button>
-          <button type="button" class="filter-tab" data-filter="mechanics">Mechanizmy & Klamki (1)</button>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Praktyka inżynierska & dowody realizacji
+        </div>
+        <h1>Case Studies inżynierii odwrotnej</h1>
+        <p class="subhead">
+          Nie prezentujemy pojedynczych zdjęć bez kontekstu. Poniżej przedstawiamy rzeczywiste wyzwania techniczne: od stanu wejściowego, przez proces skanowania 3D i modelowania CAD, po gotowy detal funkcjonalny.
+        </p>
+
+        <!-- Filtry tylko istniejących kategorii -->
+        <div class="filter-tabs" style="margin-top: 2rem;">
+          <button type="button" class="filter-tab active" data-filter="all">Wszystkie wdrożenia (6)</button>
+          <button type="button" class="filter-tab" data-filter="automotive">Motoryzacja klasyczna (6)</button>
+          <button type="button" class="filter-tab" data-filter="cad">Inżynieria odwrotna CAD (6)</button>
+          <button type="button" class="filter-tab" data-filter="print">Druk 3D techniczny (4)</button>
         </div>
       </div>
     </section>
 
-    <!-- Siatka Projektów -->
+    <!-- Siatka Case Studies -->
     <section class="section" style="padding-top: 0;">
       <div class="container">
         <div class="portfolio-grid">
           
-          <!-- Projekt 1: Osłona kierownicy -->
-          <article class="portfolio-card" data-category="interior">
+          <!-- Case Study 1: Osłona kolumny kierowniczej Datsun -->
+          <article class="portfolio-card automotive cad print" data-category="automotive">
             <div class="portfolio-media" 
-                 data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png", "galeria/Datsun_osłona_kierownicy/WhatsApp Image 2026-04-09 at 20.29.52.jpeg"]'
-                 data-gallery-title="Datsun - Osłona kolumny kierownicy">
-              <img src="galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" alt="Datsun osłona kolumny kierownicy" loading="lazy" />
-              <span class="portfolio-photo-count">📷 5 zdjęć</span>
+                 data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/WhatsApp Image 2026-04-09 at 20.29.52.jpeg"]'
+                 data-gallery-title="Datsun 240Z/280Z - Osłona kolumny kierowniczej">
+              <img src="galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" alt="Oryginał i skan osłony kolumny Datsun" loading="lazy" />
+              <span class="portfolio-photo-count">📷 5 zdjęć (Skan / CAD / Druk)</span>
             </div>
             <div class="portfolio-body">
-              <span class="portfolio-category">Wnętrze pojazdu</span>
-              <h3>Datsun - Osłona kierownicy</h3>
-              <p>Złożona geometria obudowy kolumny kierowniczej z wewnętrznymi gniazdami przełączników. Rekonstrukcja pękniętych zaczepów i przygotowanie do druku 3D z materiału odpornego na temperaturę.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png", "galeria/Datsun_osłona_kierownicy/WhatsApp Image 2026-04-09 at 20.29.52.jpeg"]'
-                      data-gallery-title="Datsun - Osłona kolumny kierownicy">
-                Przeglądaj zdjęcia (5) →
-              </button>
+              <span class="portfolio-category">Motoryzacja klasyczna • Inżynieria CAD</span>
+              <h3>Datsun 240Z/280Z – Osłona kolumny kierowniczej</h3>
+              
+              <p><strong>Problem klienta:</strong> Oryginalna obudowa z tworzywa popękała ze starości, a newralgiczne wewnętrzne zatrzaski i gniazda śrub zostały wyłamane. Część jest całkowicie niedostępna jako fabryczny oryginał.</p>
+              
+              <div class="case-study-details">
+                <div class="case-study-detail-item">
+                  <strong>Stan wejściowy:</strong>
+                  <span>Połamany, zdeformowany detal z brakującymi ubytkami</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Dlaczego nie suwmiarka:</strong>
+                  <span>Złożone krzywizny ergonomiczne i pochylenia ścianek</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Zakres prac:</strong>
+                  <span>Skan 3D 360°, odbudowa CAD, symetryzacja bryły, druk 3D</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Materiał / Technologia:</strong>
+                  <span>Tworzywo ASA (odporność UV i temp. do 95°C)</span>
+                </div>
+              </div>
+
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                <strong>Rezultat:</strong> Wygenerowano plik STEP z zachowaniem idealnego pasowania do kolumny kierownicy oraz wydrukowano część w technologii FDM z czarnego tworzywa ASA.
+              </p>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-gallery-photos='["galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png", "galeria/Datsun_osłona_kierownicy/Screenshot_1.png", "galeria/Datsun_osłona_kierownicy/2.png", "galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png", "galeria/Datsun_osłona_kierownicy/WhatsApp Image 2026-04-09 at 20.29.52.jpeg"]'
+                        data-gallery-title="Datsun 240Z/280Z - Osłona kolumny kierowniczej">
+                  Przeglądaj zdjęcia (5) ➔
+                </button>
+                <a href="kontakt.html" class="btn btn-outline btn-sm">Wyceń podobny detal</a>
+              </div>
             </div>
           </article>
 
-          <!-- Projekt 2: Grill / Atrapa -->
-          <article class="portfolio-card" data-category="exterior">
+          <!-- Case Study 2: Atrapa chłodnicy (Grill) -->
+          <article class="portfolio-card automotive cad" data-category="automotive">
             <div class="portfolio-media"
                  data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]'
-                 data-gallery-title="Datsun - Atrapa chłodnicy (Grill)">
-              <img src="galeria/Datsun_grill_datsun/1.png" alt="Datsun atrapa chłodnicy grill" loading="lazy" />
+                 data-gallery-title="Datsun 240Z - Grill przedni i kratki">
+              <img src="galeria/Datsun_grill_datsun/1.png" alt="Skan 3D i model grilla Datsun" loading="lazy" />
               <span class="portfolio-photo-count">📷 2 zdjęcia</span>
             </div>
             <div class="portfolio-body">
               <span class="portfolio-category">Karoseria & Nadwozie</span>
-              <h3>Datsun - Grill przedni</h3>
-              <p>Skanowanie wielkogabarytowego elementu pasa przedniego. Dokładne odwzorowanie profilu krzywizny maski oraz punktów mocowania do nadwozia.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]'
-                      data-gallery-title="Datsun - Atrapa chłodnicy (Grill)">
-                Przeglądaj zdjęcia (2) →
-              </button>
+              <h3>Datsun 240Z – Przedni grill i kratki wentylacyjne</h3>
+              
+              <p><strong>Problem klienta:</strong> Konieczność odtworzenia geometrii pasa przedniego po uszkodzeniach blacharskich oraz przygotowanie modelu referencyjnego pod wykonanie nowej partii.</p>
+
+              <div class="case-study-details">
+                <div class="case-study-detail-item">
+                  <strong>Stan wejściowy:</strong>
+                  <span>Wielkogabarytowy, asymetrycznie odkształcony element</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Dlaczego nie suwmiarka:</strong>
+                  <span>Promienie krzywizny pasa przedniego i rozstaw mocowań</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Zakres prac:</strong>
+                  <span>Skan optyczny z markerami, symetryzacja CAD, pliki STEP</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Dostarczone pliki:</strong>
+                  <span>Model STEP AP214, siatka STL wysokiej gęstości</span>
+                </div>
+              </div>
+
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                <strong>Rezultat:</strong> Pełna symetria lewej i prawej strony nadwozia w modelu cyfrowym, idealne dopasowanie otworów pod oryginalne punkty montażowe pasa przedniego.
+              </p>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-gallery-photos='["galeria/Datsun_grill_datsun/1.png", "galeria/Datsun_grill_datsun/grill.png"]'
+                        data-gallery-title="Datsun 240Z - Grill przedni i kratki">
+                  Przeglądaj zdjęcia (2) ➔
+                </button>
+                <a href="kontakt.html" class="btn btn-outline btn-sm">Wyceń podobny detal</a>
+              </div>
             </div>
           </article>
 
-          <!-- Projekt 3: Klamka drzwi -->
-          <article class="portfolio-card" data-category="mechanics">
+          <!-- Case Study 3: Zespół klamki drzwi i mechanizmu zamka -->
+          <article class="portfolio-card automotive cad print" data-category="automotive">
             <div class="portfolio-media"
                  data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/klamka_3.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]'
-                 data-gallery-title="Datsun - Zespół klamki drzwi">
-              <img src="galeria/Datsun_Klamka/klamka.png" alt="Datsun klamka drzwi" loading="lazy" />
+                 data-gallery-title="Datsun - Mechanizm klamki drzwi">
+              <img src="galeria/Datsun_Klamka/klamka.png" alt="Model klamki Datsun" loading="lazy" />
               <span class="portfolio-photo-count">📷 6 zdjęć</span>
             </div>
             <div class="portfolio-body">
               <span class="portfolio-category">Mechanizmy & Klamki</span>
-              <h3>Datsun - Zespół klamki</h3>
-              <p>Cyfrowa rekonstrukcja mechanizmu klamki zewnętrznej. Odtworzenie osi obrotu, gniazd cięgien zamka oraz przygotowanie modelu bryłowego do obróbki CNC.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/klamka_3.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]'
-                      data-gallery-title="Datsun - Zespół klamki drzwi">
-                Przeglądaj zdjęcia (6) →
-              </button>
+              <h3>Datsun – Zespół klamki i mechanizmu zamka</h3>
+              
+              <p><strong>Problem klienta:</strong> Wytarte krzywki i wyrobione gniazda osi powodowały zacinanie się klamki oraz luzy uniemożliwiające precyzyjne ryglowanie drzwi.</p>
+
+              <div class="case-study-details">
+                <div class="case-study-detail-item">
+                  <strong>Stan wejściowy:</strong>
+                  <span>Zużyty odlew ciśnieniowy ze znalu z luzami na osiach</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Dlaczego nie suwmiarka:</strong>
+                  <span>Nieliniowe krzywki sterujące cięgnami zamka</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Zakres prac:</strong>
+                  <span>Mikrometryczny skan 3D, korekta zużycia w CAD, model pod CNC</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Docelowe wykonanie:</strong>
+                  <span>Frezowanie CNC z aluminium + prototypy z PA-CF</span>
+                </div>
+              </div>
+
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                <strong>Rezultat:</strong> Skompensowano luzy eksploatacyjne, przygotowano model CAD STEP z naddatkami pod obróbkę skrawaniem oraz zweryfikowano kinematykę ruchu na wydruku testowym.
+              </p>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-gallery-photos='["galeria/Datsun_Klamka/klamka.png", "galeria/Datsun_Klamka/klamka_2.png", "galeria/Datsun_Klamka/klamka_3.png", "galeria/Datsun_Klamka/1.png", "galeria/Datsun_Klamka/2.png", "galeria/Datsun_Klamka/3.png"]'
+                        data-gallery-title="Datsun - Mechanizm klamki drzwi">
+                  Przeglądaj zdjęcia (6) ➔
+                </button>
+                <a href="kontakt.html" class="btn btn-outline btn-sm">Wyceń podobny detal</a>
+              </div>
             </div>
           </article>
 
-          <!-- Projekt 4: Bagażnik -->
-          <article class="portfolio-card" data-category="exterior">
-            <div class="portfolio-media"
-                 data-gallery-photos='["galeria/Datsun_Bagażnik/bagażnik_datsun.png", "galeria/Datsun_Bagażnik/bagażnik.png", "galeria/Datsun_Bagażnik/bagażnik_2.png"]'
-                 data-gallery-title="Datsun - Elementy klapy i bagażnika">
-              <img src="galeria/Datsun_Bagażnik/bagażnik_datsun.png" alt="Datsun elementy bagażnika" loading="lazy" />
-              <span class="portfolio-photo-count">📷 3 zdjęcia</span>
-            </div>
-            <div class="portfolio-body">
-              <span class="portfolio-category">Karoseria & Nadwozie</span>
-              <h3>Datsun - Elementy bagażnika</h3>
-              <p>Digitalizacja geometrii pokrywy bagażnika i stref przylegania uszczelek. Przygotowanie referencyjnej siatki 3D do prac blacharsko-lakierniczych.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_Bagażnik/bagażnik_datsun.png", "galeria/Datsun_Bagażnik/bagażnik.png", "galeria/Datsun_Bagażnik/bagażnik_2.png"]'
-                      data-gallery-title="Datsun - Elementy klapy i bagażnika">
-                Przeglądaj zdjęcia (3) →
-              </button>
-            </div>
-          </article>
-
-          <!-- Projekt 5: Mocowanie lusterka -->
-          <article class="portfolio-card" data-category="exterior">
+          <!-- Case Study 4: Podstawa mocowania lusterka -->
+          <article class="portfolio-card automotive cad print" data-category="automotive">
             <div class="portfolio-media"
                  data-gallery-photos='["galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png", "galeria/Datsun_Mocowanie_pod_lusterko/1.jpeg"]'
-                 data-gallery-title="Datsun - Podstawa mocowania lusterka">
-              <img src="galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png" alt="Datsun mocowanie pod lusterko" loading="lazy" />
+                 data-gallery-title="Datsun - Stopa montażowa lusterka">
+              <img src="galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png" alt="Mocowanie lusterka bocznego Datsun" loading="lazy" />
               <span class="portfolio-photo-count">📷 2 zdjęcia</span>
             </div>
             <div class="portfolio-body">
               <span class="portfolio-category">Karoseria & Nadwozie</span>
-              <h3>Datsun - Mocowanie lusterka</h3>
-              <p>Rekonstrukcja stopy montażowej lusterka bocznego dopasowanej ściśle do promienia krzywizny drzwi pojazdu. Model przygotowany do spiekania laserowego SLS.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png", "galeria/Datsun_Mocowanie_pod_lusterko/1.jpeg"]'
-                      data-gallery-title="Datsun - Podstawa mocowania lusterka">
-                Przeglądaj zdjęcia (2) →
-              </button>
+              <h3>Datsun – Podstawa mocowania lusterka bocznego</h3>
+              
+              <p><strong>Problem klienta:</strong> Uniwersalne zamienniki lusterek nie przylegały szczelnie do poszycia drzwi, powodując drgania i ryzyko porysowania lakieru.</p>
+
+              <div class="case-study-details">
+                <div class="case-study-detail-item">
+                  <strong>Stan wejściowy:</strong>
+                  <span>Skan poszycia drzwi oraz oryginalnej zniszczonej stopki</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Kluczowe wyzwanie:</strong>
+                  <span>Idealne dopasowanie powierzchni swobodnej do promienia drzwi</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Zakres prac:</strong>
+                  <span>Modelowanie powierzchniowe NURBS klasy A w CAD</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Materiał:</strong>
+                  <span>Tworzywo techniczne odporne na warunki atmosferyczne</span>
+                </div>
+              </div>
+
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                <strong>Rezultat:</strong> 100% przylegania uszczelki do krzywizny blachy drzwi, stabilny montaż lusterka bez drgań podczas jazdy.
+              </p>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-gallery-photos='["galeria/Datsun_Mocowanie_pod_lusterko/lusterko.png", "galeria/Datsun_Mocowanie_pod_lusterko/1.jpeg"]'
+                        data-gallery-title="Datsun - Stopa montażowa lusterka">
+                  Przeglądaj zdjęcia (2) ➔
+                </button>
+                <a href="kontakt.html" class="btn btn-outline btn-sm">Wyceń podobny detal</a>
+              </div>
             </div>
           </article>
 
-          <!-- Projekt 6: Boczek drzwi -->
-          <article class="portfolio-card" data-category="interior">
+          <!-- Case Study 5: Boczek drzwi i wytłoczki tapicerki -->
+          <article class="portfolio-card automotive cad" data-category="automotive">
             <div class="portfolio-media"
                  data-gallery-photos='["galeria/Datsun_boczek_drzwi/3.png", "galeria/Datsun_boczek_drzwi/1.jpeg", "galeria/Datsun_boczek_drzwi/2.jpeg"]'
                  data-gallery-title="Datsun - Boczek drzwi i mocowania tapicerki">
-              <img src="galeria/Datsun_boczek_drzwi/3.png" alt="Datsun boczek drzwi" loading="lazy" />
+              <img src="galeria/Datsun_boczek_drzwi/3.png" alt="Boczek drzwi Datsun" loading="lazy" />
               <span class="portfolio-photo-count">📷 3 zdjęcia</span>
             </div>
             <div class="portfolio-body">
               <span class="portfolio-category">Wnętrze pojazdu</span>
-              <h3>Datsun - Boczek drzwi</h3>
-              <p>Odtworzenie wewnętrznych wytłoczek oraz punktów kotwienia spinek tapicerskich do szkieletu drzwi.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_boczek_drzwi/3.png", "galeria/Datsun_boczek_drzwi/1.jpeg", "galeria/Datsun_boczek_drzwi/2.jpeg"]'
-                      data-gallery-title="Datsun - Boczek drzwi i mocowania tapicerki">
-                Przeglądaj zdjęcia (3) →
-              </button>
+              <h3>Datsun – Boczek drzwi i punkty kotwienia tapicerki</h3>
+              
+              <p><strong>Problem klienta:</strong> Wypaczenie oryginalnych płyt tapicerskich i zerwanie gniazd spinek montażowych uniemożliwiające spasowanie wnętrza.</p>
+
+              <div class="case-study-details">
+                <div class="case-study-detail-item">
+                  <strong>Stan wejściowy:</strong>
+                  <span>Zdeformowana tektura tapicerska i stalowy szkielet drzwi</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Zakres prac:</strong>
+                  <span>Digitalizacja rozstawu otworów w blasze i obrysu tapicerki</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Dostarczone pliki:</strong>
+                  <span>Geometria 2D DXF pod laser / CNC oraz model bryłowy spinek</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Rezultat:</strong>
+                  <span>Precyzyjne wycięcie nowych formatek z wodoodpornego materiału</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-gallery-photos='["galeria/Datsun_boczek_drzwi/3.png", "galeria/Datsun_boczek_drzwi/1.jpeg", "galeria/Datsun_boczek_drzwi/2.jpeg"]'
+                        data-gallery-title="Datsun - Boczek drzwi i mocowania tapicerki">
+                  Przeglądaj zdjęcia (3) ➔
+                </button>
+                <a href="kontakt.html" class="btn btn-outline btn-sm">Wyceń podobny detal</a>
+              </div>
             </div>
           </article>
 
-          <!-- Projekt 7: Pozostałe detale wnętrza -->
-          <article class="portfolio-card" data-category="interior">
+          <!-- Case Study 6: Przyciski konsoli i drobne detale -->
+          <article class="portfolio-card automotive cad print" data-category="automotive">
             <div class="portfolio-media"
                  data-gallery-photos='["galeria/Datsun_pozostałe/Airbag_button.png", "galeria/Datsun_pozostałe/konsola_przycsku.png", "galeria/Datsun_pozostałe/pokrywa.png", "galeria/Datsun_pozostałe/pokrywa_2.png", "galeria/Datsun_pozostałe/Zaślepka.png"]'
-                 data-gallery-title="Datsun - Drobne detale, przyciski i zaślepki">
-              <img src="galeria/Datsun_pozostałe/Airbag_button.png" alt="Datsun przyciski i zaślepki" loading="lazy" />
+                 data-gallery-title="Datsun - Drobne elementy wnętrza i przyciski">
+              <img src="galeria/Datsun_pozostałe/Airbag_button.png" alt="Przyciski i zaślepki Datsun" loading="lazy" />
               <span class="portfolio-photo-count">📷 5 zdjęć</span>
             </div>
             <div class="portfolio-body">
-              <span class="portfolio-category">Wnętrze pojazdu</span>
-              <h3>Datsun - Przyciski i zaślepki</h3>
-              <p>Zbiór małych elementów wykończeniowych wnętrza: przyciski konsoli, zaślepki śrub i pokrywy serwisowe odtworzone 1:1.</p>
-              <button type="button" class="btn btn-secondary btn-sm"
-                      data-gallery-photos='["galeria/Datsun_pozostałe/Airbag_button.png", "galeria/Datsun_pozostałe/konsola_przycsku.png", "galeria/Datsun_pozostałe/pokrywa.png", "galeria/Datsun_pozostałe/pokrywa_2.png", "galeria/Datsun_pozostałe/Zaślepka.png"]'
-                      data-gallery-title="Datsun - Drobne detale, przyciski i zaślepki">
-                Przeglądaj zdjęcia (5) →
-              </button>
+              <span class="portfolio-category">Wnętrze pojazdu • Druk precyzyjny</span>
+              <h3>Datsun – Przyciski konsoli, zaślepki i pokrywy</h3>
+              
+              <p><strong>Problem klienta:</strong> Połamane mikro-zatrzaski w przyciskach deski rozdzielczej oraz brakujące zaślepki śrub montażowych psujące estetykę odrestaurowanego kokpitu.</p>
+
+              <div class="case-study-details">
+                <div class="case-study-detail-item">
+                  <strong>Stan wejściowy:</strong>
+                  <span>Drobne elementy z mikro-ubytkami o wymiarach 10–50 mm</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Zakres prac:</strong>
+                  <span>Skanowanie z dokładnością 0,02 mm, rekonstrukcja zatrzasków w CAD</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Wykonanie:</strong>
+                  <span>Precyzyjny druk 3D z warstwą 0,08 mm z tworzywa technicznego</span>
+                </div>
+                <div class="case-study-detail-item">
+                  <strong>Rezultat:</strong>
+                  <span>Sprężyste, pewne zatrzaskiwanie w gniazdach konsoli</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-gallery-photos='["galeria/Datsun_pozostałe/Airbag_button.png", "galeria/Datsun_pozostałe/konsola_przycsku.png", "galeria/Datsun_pozostałe/pokrywa.png", "galeria/Datsun_pozostałe/pokrywa_2.png", "galeria/Datsun_pozostałe/Zaślepka.png"]'
+                        data-gallery-title="Datsun - Drobne elementy wnętrza i przyciski">
+                  Przeglądaj zdjęcia (5) ➔
+                </button>
+                <a href="kontakt.html" class="btn btn-outline btn-sm">Wyceń podobny detal</a>
+              </div>
             </div>
           </article>
 
@@ -224,21 +425,49 @@
       </div>
     </section>
 
-    <!-- Banner CTA na dole portfolio -->
+    <!-- Banner CTA -->
     <section class="section section-highlight">
       <div class="container" style="text-align: center;">
         <div class="eyebrow">Twój projekt</div>
-        <h2 style="margin-bottom: 1rem;">Masz detal wymagający rekonstrukcji lub skanowania?</h2>
+        <h2 style="margin-bottom: 1rem;">Masz podobny element wymagający inżynierii odwrotnej?</h2>
         <p class="subhead" style="margin: 0 auto 2rem;">
-          Prześlij zdjęcie lub skorzystaj z kalkulatora, aby otrzymać szybką wycenę. Zamawiam kuriera, który odbierze detal bezpośrednio od Ciebie.
+          Prześlij zdjęcia uszkodzonego lub zużytego detalu. Otrzymasz wstępną ocenę możliwości odtworzenia i kosztorys.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="kalkulator.html" class="btn btn-primary btn-lg">Oblicz wycenę w kalkulatorze →</a>
-          <a href="index.html#kontakt" class="btn btn-secondary btn-lg">Skontaktuj się bezpośrednio</a>
+          <a href="kontakt.html" class="btn btn-primary btn-lg">Wyślij zdjęcia do wyceny ➔</a>
+          <a href="kalkulator.html" class="btn btn-secondary btn-lg">Oblicz cenę w kalkulatorze</a>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="siteLightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-dialog">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Zamknij podgląd">✕</button>
+      <button type="button" class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">‹</button>
+      <button type="button" class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Następne zdjęcie">›</button>
+      
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Powiększone zdjęcie z realizacji" />
+      </div>
+
+      <div class="lightbox-meta">
+        <div id="lightboxCaption" style="color: #fff; font-weight: 600; margin-bottom: 0.25rem;"></div>
+        <div id="lightboxCounter"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom Bar na telefonach -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">
+      📞 Zadzwoń
+    </a>
+    <a href="kontakt.html" class="sticky-bar-btn sticky-bar-cta">
+      Wyceń detal ➔
+    </a>
+  </div>
 
   <!-- Stopka -->
   <footer class="site-footer">
@@ -258,30 +487,30 @@
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
-            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
-            <li><a href="druk-3d.html">Druk 3D & Materiały Techniczne</a></li>
-            <li><a href="embedded.html">Automotive Embedded Software</a></li>
-            <li><a href="automatyzacja.html">Dedykowane Urządzenia & Automatyka</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD</a></li>
+            <li><a href="druk-3d.html">Druk 3D</a></li>
+            <li><a href="embedded.html">Embedded</a></li>
+            <li><a href="automatyzacja.html">Automatyzacja</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
-            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
-            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+            <li><a href="kalkulator.html">Cennik i kalkulator</a></li>
+            <li><a href="realizacje.html">Case Studies</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Darmowy kurier door-to-door w obie strony</p>
         </div>
       </div>
 
@@ -292,24 +521,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal do podglądu zdjęć -->
-  <div class="lightbox-modal" id="siteLightbox" aria-hidden="true" role="dialog">
-    <div class="lightbox-dialog">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Zamknij podgląd">✕</button>
-      <button type="button" class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">‹</button>
-      <button type="button" class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Następne zdjęcie">›</button>
-      
-      <div class="lightbox-image-wrap">
-        <img class="lightbox-image" id="lightboxImage" src="" alt="Powiększone zdjęcie realizacji" />
-      </div>
-
-      <div class="lightbox-meta">
-        <div id="lightboxCaption" style="color: #fff; font-weight: 600; margin-bottom: 0.25rem;"></div>
-        <div id="lightboxCounter"></div>
-      </div>
-    </div>
-  </div>
-
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

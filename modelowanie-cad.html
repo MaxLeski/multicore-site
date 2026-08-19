@@ -3,19 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modelowanie CAD i Inżynieria Odwrotna - Multicore Maksym Leski</title>
+  <title>Inżynieria odwrotna i model CAD STEP ze skanu | MULTICORE</title>
   <meta
     name="description"
-    content="Przekształcanie skanów 3D i chmur punktów w parametryczne modele bryłowe CAD (STEP, IGES). Odtwarzanie pękniętych i zużytych części pod obróbkę CNC i formy wtryskowe."
+    content="Przekształcamy skany 3D i zużyte części w parametryczne modele bryłowe CAD (STEP, IGES, Parasolid). Odbudowa pękniętych zatrzasków, kompensacja zużycia i przygotowanie pod CNC."
   />
+  <link rel="canonical" href="https://multicore.net.pl/modelowanie-cad.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://multicore.net.pl/modelowanie-cad.html" />
+  <meta property="og:title" content="Inżynieria odwrotna i model CAD STEP ze skanu | MULTICORE" />
+  <meta property="og:description" content="Parametryczne modele CAD ze skanów 3D pod obróbkę CNC, formy wtryskowe i dokumentację 2D." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/2.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Modelowanie CAD i Inżynieria Odwrotna",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MULTICORE Maksym Leski",
+          "url": "https://multicore.net.pl/"
+        },
+        "description": "Przekształcanie skanów 3D w edytowalne, parametryczne bryły CAD (STEP / IGES / Parasolid) z kompensacją zużycia.",
+        "areaServed": "Polska"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czym różni się plik STL od modelu STEP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plik STL składa się z milionów płaskich trójkątów i nie zawiera informacji o promieniach, osiach otworów czy gwintach – nadaje się głównie do druku 3D. Format STEP to parametryczny model bryłowy (B-Rep), który jest w pełni edytowalny w programach SolidWorks, Inventor, Fusion 360, CATIA oraz na maszynach CNC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czym różni się automatyczne trasowanie od parametrycznego CAD?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Automatyczne trasowanie (Autosurfacing) tylko 'obleka' siatkę płatami powierzchniowymi, przenosząc wszystkie nierówności i zużycie. Modelowanie parametryczne to manualna rekonstrukcja inżynierska: wyznaczanie idealnych płaszczyzn bazowych, regularnych otworów i nominalnych wymiarów."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy mogę otrzymać rysunki wykonawcze 2D?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, oprócz bryły 3D STEP przygotowujemy kompletną dokumentację rysunkową 2D w formacie PDF i DXF z naniesionymi tolerancjami geometrycznymi GD&T i pasowaniami ISO."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
 
   <!-- Nagłówek i Nawigacja -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
@@ -26,19 +84,45 @@
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Główna</a></li>
-          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
-          <li><a href="modelowanie-cad.html" class="nav-link active">Modelowanie CAD</a></li>
-          <li><a href="druk-3d.html" class="nav-link">Druk 3D</a></li>
-          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
-          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link active dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Kalkulator</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wycena online</a>
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń model CAD</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -50,7 +134,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Subpage Hero -->
     <section class="subpage-hero">
       <div class="container">
@@ -59,22 +143,27 @@
           <span class="breadcrumbs-sep">/</span>
           <a href="index.html#oferta">Oferta</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Modelowanie CAD & Reverse Engineering</span>
+          <span>Modelowanie CAD & Inżynieria Odwrotna</span>
         </div>
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Rekonstrukcja geometrii i inżynieria odwrotna
+          Reverse Engineering & Rekonstrukcja Bryłowa
         </div>
-        <h1>Modelowanie CAD i Rekonstrukcja Geometrii</h1>
+        <h1>Inżynieria odwrotna i modelowanie CAD STEP</h1>
         <p class="subhead">
-          Zamiana siatek trójkątów i uszkodzonych części fizycznych w parametryczne, w pełni edytowalne modele 3D (STEP / IGES) zoptymalizowane pod produkcję maszynową CNC, formy lub druk 3D.
+          Przekształcamy siatki skanów 3D i uszkodzone części fizyczne w parametryczne, edytowalne modele bryłowe CAD (STEP, IGES, Parasolid) zoptymalizowane pod obróbkę CNC, formy wtryskowe i dokumentację wykonawczą 2D.
         </p>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="kontakt.html" class="btn btn-primary btn-lg">Prześlij zdjęcia lub siatkę do wyceny ➔</a>
+          <a href="kalkulator.html" class="btn btn-secondary btn-lg">Oblicz koszt w kalkulatorze</a>
+        </div>
       </div>
     </section>
 
-    <!-- Główne Cechy Modelowania CAD -->
-    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem;">
+    <!-- 4 Główne Zdolności CAD -->
+    <section class="section" style="padding-top: 3rem; padding-bottom: 2rem;">
       <div class="container">
         <div class="spec-grid-4">
           <div class="spec-card">
@@ -88,120 +177,175 @@
             <div class="spec-icon">🩹</div>
             <div class="spec-label">Odtwarzanie ubytków</div>
             <div class="spec-value">Kompensacja zużycia</div>
-            <div class="spec-desc">Rekonstrukcja brakujących zębów, odłamanych zatrzasków i wytartych bieżni.</div>
+            <div class="spec-desc">Rekonstrukcja połamanych zatrzasków, wytartych zębów kół i skasowanie luzów.</div>
           </div>
 
           <div class="spec-card">
             <div class="spec-icon">⚙️</div>
-            <div class="spec-label">Gotowość technologiczna</div>
+            <div class="spec-label">Gotowość pod produkcję</div>
             <div class="spec-value">CNC / Formy / Druk</div>
-            <div class="spec-desc">Kąty pochylenia formierskiego, optymalizacja promieni frezów i naddatki.</div>
+            <div class="spec-desc">Pochylenia formierskie, optymalizacja promieni frezów i naddatki technologiczne.</div>
           </div>
 
           <div class="spec-card">
             <div class="spec-icon">📑</div>
-            <div class="spec-label">Dokumentacja 2D</div>
-            <div class="spec-value">Rysunki wykonawcze</div>
-            <div class="spec-desc">Rysunki techniczne z pasowaniami ISO, tolerancjami geometrycznymi GD&T.</div>
+            <div class="spec-label">Rysunki techniczne 2D</div>
+            <div class="spec-value">Format PDF i DXF</div>
+            <div class="spec-desc">Tolerancje geometryczne GD&T, pasowania ISO i tabele wymiarowe.</div>
           </div>
         </div>
 
-        <!-- 3 Filary Inżynierii Odwrotnej -->
-        <div class="section-head" style="margin-top: 2rem;">
-          <div class="eyebrow">Etapy inżynierii odwrotnej</div>
-          <h2>Od skanu do gotowego modelu produkcyjnego</h2>
-          <p class="subhead">
-            Nie ograniczamy się do automatycznego trasowania – tworzymy czyste, zoptymalizowane drzewa operacji w środowiskach CAD.
-          </p>
+        <!-- Różnica STL vs STEP -->
+        <div class="tech-card" style="margin-top: 3.5rem; padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <div class="section-head" style="margin-bottom: 2rem;">
+            <div class="eyebrow">Istotna różnica technologiczna</div>
+            <h2>Siatka STL vs Parametryczny model CAD STEP</h2>
+            <p class="subhead">
+              Dlaczego sam skan 3D nie wystarczy do frezowania CNC lub produkcji seryjnej?
+            </p>
+          </div>
+
+          <div class="grid-2" style="gap: 2rem;">
+            <div style="background: rgba(6, 9, 19, 0.7); border: 1px solid var(--border-card); border-radius: var(--radius-sm); padding: 1.5rem;">
+              <h3 style="color: var(--cyan); margin-bottom: 0.75rem;">Siatka trójkątów (STL / OBJ)</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                <li>❌ Brak informacji o osiach otworów, promieniach i gwintach.</li>
+                <li>❌ Bardzo trudna lub niemożliwa edycja w środowiskach CAD.</li>
+                <li>❌ Przenosi wszelkie zarysowania, zużycie i wady oryginału.</li>
+                <li>✔️ Idealna do bezpośredniego druku 3D (slicery).</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(6, 9, 19, 0.7); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-sm); padding: 1.5rem;">
+              <h3 style="color: var(--emerald); margin-bottom: 0.75rem;">Model parametryczny CAD (STEP / x_t)</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--text-main);">
+                <li>✔️ Prawdziwe płaszczyzny, cylindry, stożki i krzywizny B-Rep.</li>
+                <li>✔️ W 100% edytowalny w SolidWorks, Inventor, Fusion, NX, CATIA.</li>
+                <li>✔️ Skompensowane zużycie i przywrócone wymiary nominalne.</li>
+                <li>✔️ Gotowy do wygenerowania ścieżek CAM pod frezarki CNC.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Filary Inżynierii Odwrotnej -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Metodologia pracy</div>
+          <h2>Jak przebiega proces rekonstrukcji CAD?</h2>
+          <p class="subhead">Nie stosujemy prymitywnego automatycznego trasowania — tworzymy czyste, logiczne drzewa operacji.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-3" style="gap: 1.5rem;">
           <div class="tech-card">
             <div class="service-icon-wrap">📐</div>
-            <h3>Parametryzacja bryłowa</h3>
-            <p>
-              Wyznaczanie osi symetrii, płaszczyzn bazowych, otworów i gwintów. Tworzenie regularnych figur geometrycznych z idealnymi wymiarami nominalnymi.
-            </p>
+            <h3>1. Wyznaczenie baz i symetrii</h3>
+            <p>Identyfikacja głównych płaszczyzn montażowych, osi obrotu, rozstawu śrub i osi symetrii uszkodzonego elementu.</p>
           </div>
 
           <div class="tech-card">
-            <div class="service-icon-wrap">🌊</div>
-            <h3>Modelowanie powierzchniowe (Surfacing)</h3>
-            <p>
-              Modelowanie powierzchni swobodnych klasy A dla elementów karoserii, ergonomicznych chwytów i opływowych kolektorów z zachowaniem ciągłości krzywizny G1/G2.
-            </p>
+            <div class="service-icon-wrap">🩹</div>
+            <h3>2. Odbudowa ubytków i kompensacja</h3>
+            <p>Odtworzenie wyłamanych zatrzasków, przywrócenie grubości zużytych ścianek oraz rekonstrukcja zębów kół przekładni.</p>
           </div>
 
           <div class="tech-card">
             <div class="service-icon-wrap">🔄</div>
-            <h3>Modyfikacja i usprawnienia (Redesign)</h3>
-            <p>
-              Wzmocnienie newralgicznych miejsc podatnych na pękanie, dodanie użebrowania lub zmiana mocowań pod nowoczesne podzespoły.
-            </p>
+            <h3>3. Optymalizacja technologiczna (Redesign)</h3>
+            <p>Wzmocnienie newralgicznych stref podatnych na pęknięcia, dodanie użebrowania lub zmiana mocowań pod nowe komponenty.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Case Study / Datsun -->
-    <section class="section section-highlight">
+    <!-- Obsługiwane formaty -->
+    <section class="section">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow">Przykład wdrożenia</div>
-            <h2>Projekt Datsun 240Z / 280Z</h2>
-            <p style="margin-bottom: 1.25rem;">
-              Kompleksowa inżynieria odwrotna kilkunastu niedostępnych na rynku części wnętrza i karoserii klasycznego Datsuna:
+            <div class="eyebrow">Kompatybilność</div>
+            <h2>Dostarczane formaty plików CAD</h2>
+            <p style="margin-bottom: 1.5rem;">
+              Dostarczamy pliki w formatach uniwersalnych i natywnych, kompatybilnych ze wszystkimi systemami CAD/CAM na rynku:
             </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; margin-bottom: 2rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;">
-                <span style="color: var(--emerald);">✓</span> Odtworzenie pękniętej osłony kolumny kierowniczej z kompensacją skurczu.
-              </li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;">
-                <span style="color: var(--emerald);">✓</span> Rekonstrukcja zatrzasków kratek nawiewów i mocowań kokpitu.
-              </li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;">
-                <span style="color: var(--emerald);">✓</span> Przygotowanie modeli pod druk 3D z odpornego na temperaturę tworzywa ASA.
-              </li>
-            </ul>
-            <a href="realizacje.html" class="btn btn-outline">Zobacz zdjęcia w galerii ➔</a>
+            <div class="materials-cloud" style="margin-bottom: 2rem;">
+              <span class="material-tag accent">.STEP / .STP (AP214 / AP242)</span>
+              <span class="material-tag accent">.IGES / .IGS</span>
+              <span class="material-tag accent">.x_t / .x_b (Parasolid)</span>
+              <span class="material-tag">.DXF / .DWG (Rysunki 2D)</span>
+              <span class="material-tag">.STL / .3MF (Druk 3D)</span>
+              <span class="material-tag">PDF (Dokumentacja 2D)</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-dim);">
+              Gwarancja bezproblemowego otwarcia w oprogramowaniu: SolidWorks, Autodesk Inventor, Fusion 360, Siemens NX, CATIA, PTC Creo, Mastercam i Edgecam.
+            </p>
           </div>
 
-          <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.3);">
-            <h3 style="margin-bottom: 1rem; color: #fff;">Dostarczane formaty plików:</h3>
-            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
-              <span class="material-tag accent">.STEP / .STP</span>
-              <span class="material-tag accent">.IGES / .IGS</span>
-              <span class="material-tag accent">.x_t (Parasolid)</span>
-              <span class="material-tag">.DXF (Wypalanie 2D)</span>
-              <span class="material-tag">.DWG</span>
-              <span class="material-tag">.STL / .3MF (Druk)</span>
-              <span class="material-tag">PDF (Rysunki 2D)</span>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-              Pliki są w 100% kompatybilne z oprogramowaniem CAD/CAM: SolidWorks, Fusion 360, Inventor, Siemens NX, CATIA oraz oprogramowaniem obrabiarek CNC.
+          <!-- Przykład Realizacji Datsun -->
+          <div class="tech-card" style="padding: 2rem; border-color: rgba(56, 189, 248, 0.3);">
+            <span class="eyebrow" style="margin-bottom: 0.75rem;">Przykład z portfolio</span>
+            <h3 style="color: #fff; margin-bottom: 0.5rem;">Osłona kolumny Datsun 240Z</h3>
+            <img src="galeria/Datsun_osłona_kierownicy/2.png" alt="Rekonstrukcja CAD osłony Datsun" style="width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem;" />
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              Skan 3D spękanego oryginału posłużył do wyznaczenia osi kolumny i odbudowy zatrzasków w środowisku CAD. Model posłużył do bezpośredniego druku części zamiennej z tworzywa ASA.
             </p>
+            <a href="realizacje.html" class="btn btn-outline btn-sm" style="margin-top: 0.5rem;">Zobacz więcej case studies ➔</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Banner -->
+    <!-- FAQ -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">FAQ</div>
+          <h2>Częste pytania o modelowanie CAD</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Czy mogę przesłać własny plik skanu STL do zrobienia CAD?</div>
+            <div class="faq-answer">Tak. Jeśli posiadasz już wykonany skan 3D (siatkę STL, OBJ, PLY) z innego źródła, możemy wykonać samą usługę inżynierii odwrotnej i zamienić go na model parametryczny STEP.</div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Jak wygląda akceptacja modelu przed wykonaniem części?</div>
+            <div class="faq-answer">Przesyłamy model w uniwersalnym formacie 3D STEP lub plik podglądowy 3D PDF. Po Twojej weryfikacji i akceptacji wymiarowej przystępujemy do druku 3D lub przekazujemy finalne pliki produkcyjne.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner CTA -->
     <section class="section">
       <div class="container">
         <div class="subpage-cta">
-          <h2>Potrzebujesz modelu CAD zniszczonej lub niedostępnej części?</h2>
+          <h2>Potrzebujesz profesjonalnego modelu CAD ze skanu?</h2>
           <p>
-            Prześlij nam zdjęcia uszkodzonego elementu lub siatkę skanu – ocenimy zakres prac i przygotujemy wycenę rekonstrukcji.
+            Prześlij zdjęcia uszkodzonego elementu lub posiadaną siatkę — ocenimy zakres prac modelarskich i przygotujemy wycenę.
           </p>
           <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="kalkulator.html" class="btn btn-primary btn-lg">Kalkulator wyceny</a>
-            <a href="kontakt.html" class="btn btn-secondary btn-lg">Skonsultuj projekt CAD</a>
+            <a href="kontakt.html" class="btn btn-primary btn-lg">Skonsultuj projekt CAD ➔</a>
+            <a href="kalkulator.html" class="btn btn-secondary btn-lg">Kalkulator wyceny</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Sticky Bottom Bar na telefonach -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">
+      📞 Zadzwoń
+    </a>
+    <a href="kontakt.html" class="sticky-bar-btn sticky-bar-cta">
+      Wycena CAD ➔
+    </a>
+  </div>
 
   <!-- Stopka -->
   <footer class="site-footer">
@@ -221,30 +365,31 @@
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
-            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
-            <li><a href="druk-3d.html">Druk 3D & Materiały Techniczne</a></li>
-            <li><a href="embedded.html">Automotive Embedded Software</a></li>
-            <li><a href="automatyzacja.html">Dedykowane Urządzenia & Automatyka</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
+            <li><a href="druk-3d.html">Druk 3D techniczny</a></li>
+            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Wiedza i Narzędzia</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
-            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
-            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+            <li><a href="kalkulator.html">Cennik i kalkulator</a></li>
+            <li><a href="realizacje.html">Case Studies</a></li>
+            <li><a href="odtwarzanie-czesci.html">Odtwarzanie części</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Darmowy kurier door-to-door w obie strony</p>
         </div>
       </div>
 
@@ -255,6 +400,7 @@
     </div>
   </footer>
 
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

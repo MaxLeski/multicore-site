@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dziękujemy za przesłanie zapytania | MULTICORE</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
+        <div class="brand-logo">M</div>
+        <div class="brand-meta">
+          <span class="brand-name">MULTICORE</span>
+          <span class="brand-tagline">Maksym Leski</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="tel:+48533491374" class="btn btn-outline btn-sm">📞 +48 533 491 374</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container" style="max-width: 800px;">
+      <div class="tech-card" style="padding: 3rem 2.5rem; text-align: center; border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(145deg, rgba(14, 28, 48, 0.9), rgba(8, 14, 28, 0.98));">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); border: 2px solid var(--emerald); display: grid; place-items: center; font-size: 2rem; margin: 0 auto 1.5rem; color: var(--emerald);">
+          ✓
+        </div>
+        
+        <div class="eyebrow" style="color: var(--emerald); border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.1);">
+          Zapytanie zostało przyjęte
+        </div>
+        <h1 style="font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: 1rem;">Dziękuję za kontakt!</h1>
+        <p class="subhead" style="margin: 0 auto 2rem;">
+          Przeanalizuję przesłane informacje i skontaktuję się z Tobą <strong>zwykle w ciągu kilku godzin</strong> z wstępną oceną technologiczną i wyceną.
+        </p>
+
+        <!-- Podsumowanie zapytania -->
+        <div id="inquirySummaryCard" style="text-align: left; background: rgba(6, 9, 19, 0.7); border: 1px solid var(--border-card); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 2.5rem; display: none;">
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--cyan); font-family: var(--font-mono);">
+            📋 Podsumowanie Twojego zgłoszenia:
+          </h3>
+          <div id="inquirySummaryDetails" style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);"></div>
+        </div>
+
+        <!-- Co wydarzy się dalej -->
+        <div style="text-align: left; background: rgba(16, 24, 45, 0.5); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: #fff;">Co wydarzy się dalej?</h3>
+          
+          <div class="process-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div style="font-size: 0.88rem;">
+              <strong style="color: var(--cyan); display: block; margin-bottom: 0.25rem;">1. Weryfikacja detalu</strong>
+              Oceniam geometrię, materiał i trudność optyczną powierzchni na podstawie zdjęć.
+            </div>
+            <div style="font-size: 0.88rem;">
+              <strong style="color: var(--cyan); display: block; margin-bottom: 0.25rem;">2. Kontakt i wycena</strong>
+              Otrzymasz e-mail lub telefon z potwierdzeniem kosztu, harmonogramem i zakresem prac.
+            </div>
+            <div style="font-size: 0.88rem;">
+              <strong style="color: var(--cyan); display: block; margin-bottom: 0.25rem;">3. Kurier door-to-door</strong>
+              Po akceptacji zamawiam darmowego kuriera po odbiór części pod Twoim adresem.
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="index.html" class="btn btn-primary btn-lg">Wróć na stronę główną</a>
+          <a href="realizacje.html" class="btn btn-secondary btn-lg">Zobacz case studies</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center; font-size: 0.85rem; color: var(--text-dim);">
+      © <span class="current-year">2026</span> MULTICORE Maksym Leski. +48 533 491 374 • kontakt@multicore.net.pl
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const raw = sessionStorage.getItem('mc_last_inquiry');
+        if (raw) {
+          const data = JSON.parse(raw);
+          const card = document.getElementById('inquirySummaryCard');
+          const details = document.getElementById('inquirySummaryDetails');
+          if (card && details) {
+            card.style.display = 'block';
+            details.innerHTML = `
+              <div><strong>Osoba / Firma:</strong> ${data.name || 'Brak'}</div>
+              <div><strong>Kontakt:</strong> ${data.email ? 'E-mail: ' + data.email : ''} ${data.phone ? ' | Tel: ' + data.phone : ''} (Preferowany: ${data.preferredContact})</div>
+              <div><strong>Temat:</strong> ${data.topic}</div>
+              <div><strong>Data zgłoszenia:</strong> ${data.submittedAt}</div>
+              ${data.fileNames && data.fileNames.length > 0 ? `<div><strong>Załączone pliki (${data.fileNames.length}):</strong> ${data.fileNames.join(', ')}</div>` : ''}
+              <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-style: italic;">
+                "${data.message ? data.message.replace(/\n/g, '<br/>') : ''}"
+              </div>
+            `;
+          }
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>

@@ -3,19 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projektowanie Dedykowanych Urządzeń i Automatyka - Multicore Maksym Leski</title>
+  <title>Projektowanie maszyn i automatyzacja dedykowana | MULTICORE</title>
   <meta
     name="description"
-    content="Projektowanie dedykowanych urządzeń i stanowisk pod konkretne zastosowania. Doświadczenie w programowaniu sterowników PLC (Siemens) oraz robotów przemysłowych (Kawasaki)."
+    content="Projektowanie i budowa dedykowanych urządzeń, maszyn prototypowych i stanowisk montażowo-testowych. Doświadczenie w programowaniu sterowników PLC Siemens i robotów Kawasaki."
   />
+  <link rel="canonical" href="https://multicore.net.pl/automatyzacja.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://multicore.net.pl/automatyzacja.html" />
+  <meta property="og:title" content="Projektowanie maszyn i automatyzacja dedykowana | MULTICORE" />
+  <meta property="og:description" content="Projektowanie mechaniczne CAD, sterowanie PLC, integracja robotów przemysłowych i budowa maszyn prototypowych." />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Projektowanie Dedykowanych Urządzeń i Automatyka",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MULTICORE Maksym Leski",
+          "url": "https://multicore.net.pl/"
+        },
+        "description": "Projektowanie mechaniczne maszyn w środowisku CAD, wytwarzanie części i integracja sterowników PLC Siemens oraz robotów Kawasaki.",
+        "areaServed": "Polska"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Dla jakich procesów powstają dedykowane maszyny?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dedykowane urządzenia budujemy dla procesów, dla których nie ma gotowych maszyn na rynku: niestandardowy montaż podzespołów, automatyczne stanowiska kontroli wymiarowej, testery szczelności, podajniki detali oraz przyrządy spawalnicze."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Co musi dostarczyć klient, aby rozpocząć projekt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wystarczy opis procesu, założenia wydajnościowe (czas cyklu), próbki detalu lub ich modele 3D oraz wymagania dotyczące przestrzeni roboczej i bezpieczeństwa."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
 
   <!-- Nagłówek i Nawigacja -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
@@ -26,21 +75,47 @@
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Główna</a></li>
-          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
-          <li><a href="modelowanie-cad.html" class="nav-link">Modelowanie CAD</a></li>
-          <li><a href="druk-3d.html" class="nav-link">Druk 3D</a></li>
-          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
-          <li><a href="automatyzacja.html" class="nav-link active">Urządzenia dedykowane</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link active dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Kalkulator</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="kontakt.html" class="btn btn-primary btn-sm">Skonsultuj projekt</a>
+        <a href="#brief" class="btn btn-primary btn-sm">Skonsultuj maszynę</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -50,7 +125,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Subpage Hero -->
     <section class="subpage-hero">
       <div class="container">
@@ -59,135 +134,216 @@
           <span class="breadcrumbs-sep">/</span>
           <a href="index.html#oferta">Oferta</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Dedykowane Urządzenia & Automatyka</span>
+          <span>Dedykowane Urządzenia i Automatyka</span>
         </div>
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Konstrukcja Maszyn & Systemy Sterowania
+          Konstrukcja Maszyn • Sterowanie PLC • Robotyka
         </div>
-        <h1>Projektowanie Dedykowanych Urządzeń i Automatyka</h1>
+        <h1>Projektowanie dedykowanych maszyn i urządzeń</h1>
         <p class="subhead">
-          Specjalizuję się w projektowaniu i budowie dedykowanych maszyn oraz stanowisk pod indywidualne wymagania technologiczne. Łączę projektowanie mechaniczne CAD i druk 3D z doświadczeniem w automatyce przemysłowej (Siemens, Kawasaki).
+          Projektujemy i budujemy niestandardowe maszyny, stanowiska montażowe oraz przyrządy kontrolne pod specyficzne wymagania technologiczne. Łączymy konstrukcję CAD, obróbkę CNC i druk 3D z automatyką przemysłową (Siemens, Kawasaki).
         </p>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="#brief" class="btn btn-primary btn-lg">Skonsultuj budowę urządzenia ➔</a>
+          <a href="tel:+48533491374" class="btn btn-secondary btn-lg">Zadzwoń: +48 533 491 374</a>
+        </div>
       </div>
     </section>
 
-    <!-- 3 Główne Filary -->
+    <!-- 3 Główne Filary Kompetencji -->
     <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem;">
       <div class="container">
         <div class="spec-grid-3">
-          <!-- Filar 1: Dedykowane Urządzenia (Główna specjalizacja) -->
+          <!-- Filar 1 -->
           <div class="spec-card" style="border-color: rgba(56, 189, 248, 0.4); background: linear-gradient(145deg, rgba(14, 23, 48, 0.9), rgba(8, 14, 30, 0.95));">
             <div class="spec-icon" style="font-size: 1.8rem;">⚙️</div>
-            <div class="spec-label" style="color: var(--cyan);">Główna Specjalizacja</div>
-            <div class="spec-value" style="font-size: 1.3rem;">Dedykowane Urządzenia</div>
+            <div class="spec-label" style="color: var(--cyan);">Główny Zakres</div>
+            <div class="spec-value" style="font-size: 1.3rem;">Dedykowane Maszyny i Stanowiska</div>
             <div class="spec-desc" style="color: var(--text-main); font-size: 0.88rem; margin-top: 0.5rem;">
-              Projektowanie i prototypowanie maszyn pod konkretne, niestandardowe procesy – od koncepcji CAD, przez wytwarzanie elementów (CNC / Druk 3D z kompozytów), po montaż i uruchomienie układu.
+              Projektowanie od zera pod nietypowe operacje technologiczne: montaż, prasowanie, pozycjonowanie, podawanie elementów oraz stanowiska End-of-Line.
             </div>
           </div>
 
-          <!-- Filar 2: Sterowniki PLC -->
+          <!-- Filar 2 -->
           <div class="spec-card">
             <div class="spec-icon">🧠</div>
-            <div class="spec-label">Sterowniki PLC</div>
-            <div class="spec-value">Doświadczenie Siemens</div>
+            <div class="spec-label">Automatyka i Sterowniki</div>
+            <div class="spec-value">Sterowniki PLC Siemens</div>
             <div class="spec-desc">
-              Praktyka inżynierska w programowaniu i konfiguracji sterowników w środowisku Siemens TIA Portal oraz obsłudze sygnałów I/O i aparatury kontrolno-pomiarowej.
+              Programowanie sterowników w środowisku Siemens TIA Portal, konfiguracja paneli HMI, obsługa sygnałów I/O, napędów serwo i kurtyn bezpieczeństwa.
             </div>
           </div>
 
-          <!-- Filar 3: Robotyka -->
+          <!-- Filar 3 -->
           <div class="spec-card">
             <div class="spec-icon">🤖</div>
-            <div class="spec-label">Roboty Przemysłowe</div>
-            <div class="spec-value">Doświadczenie Kawasaki</div>
+            <div class="spec-label">Stanowiska Zrobotyzowane</div>
+            <div class="spec-value">Roboty Przemysłowe Kawasaki</div>
             <div class="spec-desc">
-              Doświadczenie w integracji i programowaniu robotów przemysłowych marki Kawasaki – trajektorie ruchu, punkty pobierania i komunikacja ze stanowiskiem.
-            </div>
-          </div>
-        </div>
-
-        <!-- Sekcja z informacją o materiałach wideo -->
-        <div class="tech-card" style="margin-top: 2.5rem; border-color: rgba(56, 189, 248, 0.25); background: linear-gradient(135deg, rgba(16, 24, 45, 0.85), rgba(8, 14, 28, 0.95));">
-          <div class="feature-box">
-            <div class="feature-box-icon" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); color: var(--cyan); font-size: 1.5rem;">
-              🎥
-            </div>
-            <div>
-              <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Materiały wideo z realizacji w przygotowaniu</h3>
-              <p style="margin-bottom: 0.75rem; font-size: 0.95rem; line-height: 1.6;">
-                Wcześniejsze doświadczenia obejmują wdrożenia ze sterownikami <strong>Siemens</strong> oraz stanowiskami zrobotyzowanymi <strong>Kawasaki</strong>.
-              </p>
-              <p style="font-size: 0.9rem; color: var(--cyan); font-family: var(--font-mono);">
-                🎬 Wkrótce dodam w tej sekcji materiały wideo prezentujące działanie maszyn i stanowisk z archiwalnych projektów.
-              </p>
+              Integracja i programowanie robotów przemysłowych (Kawasaki Robotics): trajektorie ruchu, dedykowane chwytaki z kompozytów PA-CF i komunikacja z linią.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Jak wygląda projektowanie urządzenia dedykowanego -->
+    <!-- Etapy powstawania urządzenia -->
     <section class="section section-highlight">
       <div class="container">
         <div class="section-head center">
-          <div class="eyebrow">Etapy realizacji</div>
-          <h2>Jak powstaje urządzenie pod Twoje potrzeby?</h2>
+          <div class="eyebrow">Metodyka inżynierska</div>
+          <h2>Jak powstaje dedykowane urządzenie?</h2>
+          <p class="subhead">Od analizy wymagań po fizyczny montaż, uruchomienie i testy funkcjonalne.</p>
         </div>
 
         <div class="process-grid">
           <div class="tech-card process-card">
             <div class="process-step-header">
               <div class="process-number">01</div>
-              <h3>Analiza wymagań</h3>
+              <h3>Analiza i koncepcja</h3>
             </div>
-            <p>Określenie funkcji maszyny, warunków pracy, cyklu operacji, dokładności i ergonomii obsługi.</p>
+            <p>Określenie funkcji maszyny, warunków pracy, czasu cyklu, ergonomii obsługi i norm bezpieczeństwa maszynowego.</p>
           </div>
 
           <div class="tech-card process-card">
             <div class="process-step-header">
               <div class="process-number">02</div>
-              <h3>Projekt CAD 3D</h3>
+              <h3>Projekt mechaniczny CAD 3D</h3>
             </div>
-            <p>Kompletny model konstrukcyjny w CAD, dobór napędów, prowadnic, czujników i komponentów znormalizowanych.</p>
+            <p>Model bryłowy w CAD, dobór napędów, siłowników pneumatycznych, prowadnic liniowych i czujników.</p>
           </div>
 
           <div class="tech-card process-card">
             <div class="process-step-header">
               <div class="process-number">03</div>
-              <h3>Wytworzenie i Druk</h3>
+              <h3>Wytworzenie podzespołów</h3>
             </div>
-            <p>Produkcja części (frezowanie CNC, precyzyjny druk 3D z wytrzymałych kompozytów węglowych PA-CF).</p>
+            <p>Frezowanie CNC korpusów, precyzyjny druk 3D chwytaków z kompozytów węglowych PA-CF i kompletacja komponentów.</p>
           </div>
 
           <div class="tech-card process-card">
             <div class="process-step-header">
               <div class="process-number">04</div>
-              <h3>Montaż i Uruchomienie</h3>
+              <h3>Montaż, sterowanie i testy</h3>
             </div>
-            <p>Złożenie urządzenia, okablowanie, wgranie logiki sterowania oraz testy funkcjonalne przed przekazaniem.</p>
+            <p>Złożenie układu, okablowanie szafy sterowniczej, wgranie logiki PLC i wielokrotne testy cyklu pracy przed odbiorem.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Banner -->
+    <!-- FAQ -->
     <section class="section">
       <div class="container">
-        <div class="subpage-cta">
-          <h2>Potrzebujesz nietypowego urządzenia lub stanowiska?</h2>
-          <p>
-            Opisz proces, który chcesz usprawnić lub zautomatyzować. Przygotujemy wstępną koncepcję mechaniczną i propozycję realizacji.
-          </p>
-          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="kontakt.html" class="btn btn-primary btn-lg">Skonsultuj budowę urządzenia</a>
-            <a href="tel:+48533491374" class="btn btn-secondary btn-lg">Zadzwoń: +48 533 491 374</a>
+        <div class="section-head center">
+          <div class="eyebrow">FAQ</div>
+          <h2>Pytania o dedykowane maszyny</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Dla jakich problemów warto budować urządzenie dedykowane?</div>
+            <div class="faq-answer">Wszędzie tam, gdzie standardowe maszyny katalogowe nie pasują gabarytowo, są zbyt drogie lub nie obsługują specyficznej geometrii detalu (np. montaż nietypowych uszczelek, automatyczne testowanie szczelności czy pozycjonowanie w ciasnej przestrzeni).</div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Czy zapewniacie wsparcie powdrożeniowe?</div>
+            <div class="faq-answer">Tak. Przekazujemy kompletną dokumentację techniczną, schematy elektryczno-pneumatyczne, kody źródłowe PLC oraz zapewniamy wsparcie przy uruchomieniu i ewentualnych modyfikacjach.</div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Brief Projektowy (Formularz) -->
+    <section id="brief" class="section section-highlight">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-head center" style="margin-bottom: 2rem;">
+          <div class="eyebrow">Formularz briefu</div>
+          <h2>Opisz swoje wymagania dotyczące urządzenia</h2>
+          <p class="subhead">Przeanalizujemy założenia i przygotujemy wstępną koncepcję mechaniczną.</p>
+        </div>
+
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <div id="formStatus" class="form-status"></div>
+
+          <form id="inquiryForm" novalidate>
+            <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="topic" value="automatyzacja" />
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryName">Imię i nazwisko / Firma *</label>
+                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski / Zakład Produkcyjny" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inquiryEmail">Adres e-mail *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="jan@firma.pl" required />
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryPhone">Numer telefonu</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 ..." />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Preferowany kontakt</label>
+                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="phone" /> Telefon
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryMessage">Opis procesu do zautomatyzowania / budowy maszyny *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Opisz operację (np. automatyczne wciskanie tulei, podawanie detali, stanowisko kontrolne), oczekiwany czas cyklu i stopień automatyzacji..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">Załącz rysunek detalu lub schemat (PDF, STEP, ZIP, max 25 MB)</label>
+              <div class="file-dropzone-modern" id="fileDropzone">
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".pdf,.step,.stp,.stl,.zip,.rar,.7z,.jpg,.png" />
+                <div style="font-size: 1.5rem; margin-bottom: 0.35rem;">⚙️</div>
+                <div style="font-weight: 600; color: #fff; font-size: 0.9rem;">
+                  Przeciągnij pliki tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz z dysku</label>
+                </div>
+                <div id="fileList" class="file-items-grid"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.5;">
+              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>. Gwarantujemy pełną poufność.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-track-cta>
+              <span>Wyślij brief urządzenia</span>
+              <span class="btn-icon">➔</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Sticky Bottom Bar na telefonach -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">
+      📞 Zadzwoń
+    </a>
+    <a href="#brief" class="sticky-bar-btn sticky-bar-cta">
+      Brief maszyny ➔
+    </a>
+  </div>
 
   <!-- Stopka -->
   <footer class="site-footer">
@@ -202,35 +358,35 @@
             </div>
           </a>
           <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
-            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz projektowania urządzeń dedykowanych.
+            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz automatyzacji.
           </p>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
-            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
-            <li><a href="druk-3d.html">Druk 3D & Materiały Techniczne</a></li>
-            <li><a href="embedded.html">Automotive Embedded Software</a></li>
-            <li><a href="automatyzacja.html">Dedykowane Urządzenia & Automatyka</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
+            <li><a href="druk-3d.html">Druk 3D techniczny</a></li>
+            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
-            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
-            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+            <li><a href="kalkulator.html">Cennik i kalkulator</a></li>
+            <li><a href="realizacje.html">Case Studies</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Obsługa wysyłkowa door-to-door w całej Polsce</p>
         </div>
       </div>
 
@@ -241,6 +397,7 @@
     </div>
   </footer>
 
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

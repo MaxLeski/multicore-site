@@ -3,19 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalkulator Wyceny Skanowania 3D - Multicore Maksym Leski</title>
+  <title>Cennik skanowania 3D – kalkulator wyceny | MULTICORE</title>
   <meta
     name="description"
-    content="Interaktywny kalkulator orientacyjnej wyceny skanowania 3D, inżynierii odwrotnej i rekonstrukcji CAD. Sprawdź koszt na podstawie gabarytów i stopnia skomplikowania detalu."
+    content="Sprawdź orientacyjny koszt skanowania 3D i modelowania CAD STEP w kalkulatorze online. Wyceń swój detal i prześlij zdjęcia do natychmiastowej weryfikacji inżynierskiej."
   />
+  <link rel="canonical" href="https://multicore.net.pl/kalkulator.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://multicore.net.pl/kalkulator.html" />
+  <meta property="og:title" content="Cennik skanowania 3D – kalkulator wyceny | MULTICORE" />
+  <meta property="og:description" content="Interaktywny kalkulator orientacyjnej wyceny skanowania 3D, inżynierii odwrotnej i rekonstrukcji CAD." />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Główna",
+        "item": "https://multicore.net.pl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cennik i kalkulator",
+        "item": "https://multicore.net.pl/kalkulator.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
 
   <!-- Nagłówek i Nawigacja -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
@@ -26,19 +56,45 @@
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Główna</a></li>
-          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
-          <li><a href="modelowanie-cad.html" class="nav-link">Modelowanie CAD</a></li>
-          <li><a href="druk-3d.html" class="nav-link">Druk 3D</a></li>
-          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
-          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link active">Kalkulator</a></li>
+          <li><a href="kalkulator.html" class="nav-link active">Cennik i kalkulator</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="kontakt.html" class="btn btn-primary btn-sm">Kontakt bezpośredni</a>
+        <a href="#kalkulator-sekcja" class="btn btn-primary btn-sm">Wyceń detal</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -50,49 +106,60 @@
     </div>
   </header>
 
-  <main>
-    <!-- Sekcja Hero Kalkulatora -->
-    <section class="section" style="padding-bottom: 2rem;">
+  <main id="main">
+    <!-- Hero Podstrony -->
+    <section class="subpage-hero">
       <div class="container">
-        <div class="section-head center" style="margin-bottom: 2rem;">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Narzędzie wyceny inżynierskiej
-          </div>
-          <h1>Orientacyjny kalkulator skanowania 3D</h1>
-          <p class="subhead">
-            Wycena bazuje na realnych parametrach technologicznych: przygotowaniu stanowiska pomiarowego, gabarytach detalu, trudności optycznej powierzchni oraz docelowym formacie danych (siatka STL lub parametryczny CAD).
-          </p>
+        <div class="breadcrumbs">
+          <a href="index.html">Główna</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span>Cennik i kalkulator wyceny</span>
         </div>
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Kalkulacja inżynierska on-line
+        </div>
+        <h1>Cennik i kalkulator skanowania 3D</h1>
+        <p class="subhead">
+          Oblicz szacunkowy koszt digitalizacji i rekonstrukcji CAD. Wycena uwzględnia przygotowanie stanowiska pomiarowego, gabaryty, trudność optyczną powierzchni oraz docelowy format (STL vs STEP).
+        </p>
       </div>
     </section>
 
-    <!-- Główny Moduł Kalkulatora -->
-    <section class="section" style="padding-top: 0;">
+    <!-- Moduł Kalkulatora -->
+    <section id="kalkulator-sekcja" class="section" style="padding-top: 1rem;">
       <div class="container">
         <div class="calc-container" id="calcForm">
           
-          <!-- Lewa kolumna: Formularz z kafelkami -->
+          <!-- Lewa kolumna: Pola wejściowe -->
           <div class="calc-form-card">
             
-            <!-- 1. Wymiary -->
+            <!-- 1. Wymiary + przełącznik jednostek -->
             <div class="form-row">
-              <label class="form-label">1. Wymiary gabarytowe detalu</label>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <label class="form-label" style="margin-bottom: 0;">1. Wymiary gabarytowe detalu</label>
+                <div class="unit-toggle-wrap" id="calcUnitToggle">
+                  <button type="button" class="unit-btn active" data-unit="cm">cm</button>
+                  <button type="button" class="unit-btn" data-unit="mm">mm</button>
+                </div>
+              </div>
+
               <div class="dims-grid">
                 <div class="input-with-unit">
-                  <input type="number" id="calcLength" class="input-field" placeholder="Długość" min="1" step="0.5" value="20" />
+                  <input type="number" id="calcLength" class="input-field" placeholder="Długość" min="1" max="300" step="0.5" value="20" />
                   <span class="input-unit">cm</span>
                 </div>
                 <div class="input-with-unit">
-                  <input type="number" id="calcWidth" class="input-field" placeholder="Szerokość" min="1" step="0.5" value="15" />
+                  <input type="number" id="calcWidth" class="input-field" placeholder="Szerokość" min="1" max="300" step="0.5" value="15" />
                   <span class="input-unit">cm</span>
                 </div>
                 <div class="input-with-unit">
-                  <input type="number" id="calcHeight" class="input-field" placeholder="Wysokość" min="1" step="0.5" value="10" />
+                  <input type="number" id="calcHeight" class="input-field" placeholder="Wysokość" min="1" max="300" step="0.5" value="10" />
                   <span class="input-unit">cm</span>
                 </div>
               </div>
-              <span class="form-hint">Podaj maksymalne wymiary zewnętrzne elementu w centymetrach.</span>
+              <span class="form-hint">Podaj maksymalne wymiary zewnętrzne elementu.</span>
             </div>
 
             <!-- 2. Geometria -->
@@ -100,57 +167,57 @@
               <label class="form-label">2. Stopień skomplikowania geometrii</label>
               <input type="hidden" id="calcComplexity" value="medium" />
               <div class="options-grid" id="complexityOptions">
-                <div class="option-tile" data-value="low">
-                  <span class="option-tile-title">Prosty</span>
-                  <span class="option-tile-desc">Płaskie ścianki, proste bryły</span>
+                <div class="option-tile" data-value="low" role="radio" aria-checked="false">
+                  <span class="option-tile-title">Prosty detal</span>
+                  <span class="option-tile-desc">Płaskie ścianki, regularne proste bryły</span>
                 </div>
-                <div class="option-tile selected" data-value="medium">
+                <div class="option-tile selected" data-value="medium" role="radio" aria-checked="true">
                   <span class="option-tile-title">Średnio złożony</span>
-                  <span class="option-tile-desc">Zaokrąglenia, żebra, uchwyty</span>
+                  <span class="option-tile-desc">Żebra, zaokrąglenia, uchwyty, krzywizny</span>
                 </div>
-                <div class="option-tile" data-value="high">
-                  <span class="option-tile-title">Złożony / Techniczny</span>
-                  <span class="option-tile-desc">Cienkie ścianki, gwinty, organiczne</span>
+                <div class="option-tile" data-value="high" role="radio" aria-checked="false">
+                  <span class="option-tile-title">Złożony techniczny</span>
+                  <span class="option-tile-desc">Cienkie ścianki, gwinty, kształty organiczne</span>
                 </div>
               </div>
             </div>
 
-            <!-- 3. Powierzchnia i optyka -->
+            <!-- 3. Powierzchnia -->
             <div class="form-row">
-              <label class="form-label">3. Powierzchnia i warunki skanowania</label>
+              <label class="form-label">3. Właściwości optyczne powierzchni</label>
               <input type="hidden" id="calcSurface" value="easy" />
               <div class="options-grid" id="surfaceOptions">
-                <div class="option-tile selected" data-value="easy">
+                <div class="option-tile selected" data-value="easy" role="radio" aria-checked="true">
                   <span class="option-tile-title">Standardowa</span>
-                  <span class="option-tile-desc">Matowa, jasna, tworzywo/metal</span>
+                  <span class="option-tile-desc">Matowa, jasna (tworzywo, surowy metal)</span>
                 </div>
-                <div class="option-tile" data-value="difficult">
-                  <span class="option-tile-title">Problematyczna</span>
-                  <span class="option-tile-desc">Ciemna, błyszcząca, chrom</span>
+                <div class="option-tile" data-value="difficult" role="radio" aria-checked="false">
+                  <span class="option-tile-title">Ciemna / Błyszcząca</span>
+                  <span class="option-tile-desc">Czarny plastik, polerowany metal, chrom</span>
                 </div>
-                <div class="option-tile" data-value="very-difficult">
+                <div class="option-tile" data-value="very-difficult" role="radio" aria-checked="false">
                   <span class="option-tile-title">Bardzo trudna</span>
-                  <span class="option-tile-desc">Przezroczysta, głębokie otwory</span>
+                  <span class="option-tile-desc">Element przezroczysty, głębokie wąskie szczeliny</span>
                 </div>
               </div>
             </div>
 
             <!-- 4. Zakres usługi -->
             <div class="form-row">
-              <label class="form-label">4. Docelowy zakres opracowania danych</label>
+              <label class="form-label">4. Docelowy format i zakres opracowania danych</label>
               <input type="hidden" id="calcScope" value="mesh" />
               <div class="options-grid" id="scopeOptions">
-                <div class="option-tile" data-value="scan">
+                <div class="option-tile" data-value="scan" role="radio" aria-checked="false">
                   <span class="option-tile-title">Sam skan 3D</span>
-                  <span class="option-tile-desc">Surowa chmura punktów</span>
+                  <span class="option-tile-desc">Surowa chmura punktów / siatka OBJ</span>
                 </div>
-                <div class="option-tile selected" data-value="mesh">
+                <div class="option-tile selected" data-value="mesh" role="radio" aria-checked="true">
                   <span class="option-tile-title">Skan + Siatka STL</span>
                   <span class="option-tile-desc">Oczyszczona bryła pod druk 3D</span>
                 </div>
-                <div class="option-tile" data-value="cad">
+                <div class="option-tile" data-value="cad" role="radio" aria-checked="false">
                   <span class="option-tile-title">Model CAD (STEP)</span>
-                  <span class="option-tile-desc">Reverse Engineering, pod CNC</span>
+                  <span class="option-tile-desc">Parametryczna bryła pod CNC / formy</span>
                 </div>
               </div>
             </div>
@@ -160,30 +227,13 @@
               <label class="form-label">5. Tryb realizacji zlecenia</label>
               <input type="hidden" id="calcMode" value="standard" />
               <div class="options-grid" id="modeOptions">
-                <div class="option-tile selected" data-value="standard">
+                <div class="option-tile selected" data-value="standard" role="radio" aria-checked="true">
                   <span class="option-tile-title">Standardowy</span>
-                  <span class="option-tile-desc">5-7 dni roboczych</span>
+                  <span class="option-tile-desc">5–7 dni roboczych</span>
                 </div>
-                <div class="option-tile" data-value="fast">
+                <div class="option-tile" data-value="fast" role="radio" aria-checked="false">
                   <span class="option-tile-title">Ekspresowy</span>
-                  <span class="option-tile-desc">Priorytet stanowiska</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 6. Zdjęcie przedmiotu -->
-            <div class="form-row">
-              <label class="form-label">6. Dołącz zdjęcie detalu (Opcjonalnie)</label>
-              <div class="dropzone" id="calcDropzone">
-                <input type="file" id="calcPhoto" class="dropzone-input" accept="image/*" />
-                <div class="dropzone-icon">📷</div>
-                <div class="dropzone-text">
-                  Przeciągnij i upuść zdjęcie detalu lub <strong>kliknij, aby wybrać plik</strong>
-                </div>
-                <div class="form-hint">Dołączenie zdjęcia przyspiesza weryfikację i daje <strong>rabat -30 zł</strong> w kalkulacji.</div>
-                
-                <div class="dropzone-preview" id="calcPhotoPreview">
-                  <img id="calcPreviewImg" src="" alt="Podgląd wgranego detalu" />
+                  <span class="option-tile-desc">Priorytetowe stanowisko pomiarowe</span>
                 </div>
               </div>
             </div>
@@ -194,40 +244,136 @@
           <aside class="calc-result-card">
             <span class="result-badge">Wycena orientacyjna</span>
             
-            <div class="price-display">
-              <div class="price-val" id="calcPriceVal">0</div>
-              <div class="price-currency">zł netto</div>
+            <div id="calcEmptyState" style="display: none; padding: 2rem 1rem; text-align: center; color: var(--text-muted);">
+              Uzupełnij wymiary detalu powyżej, aby zobaczyć orientacyjną cenę.
             </div>
 
-            <p class="price-disclaimer">
-              Cena orientacyjna. Ostateczny koszt potwierdzam po obejrzeniu detalu lub zdjęć pod kątem trudno dostępnych powierzchni i wymaganych tolerancji.
-            </p>
-
-            <div class="breakdown-box">
-              <div class="breakdown-title">
-                <span>Składowe kalkulacji</span>
-                <span>Wartość</span>
+            <div id="calcResultState">
+              <div class="price-display">
+                <div class="price-val" id="calcPriceVal">---</div>
+                <div class="price-currency">zł netto</div>
               </div>
-              <ul class="breakdown-items" id="calcBreakdownList">
-                <!-- Generowane przez JS -->
-              </ul>
-            </div>
 
-            <button type="button" class="btn btn-primary btn-lg" id="calcSendQuoteBtn" style="width: 100%; margin-bottom: 1rem;">
-              <span>Wyślij to zapytanie</span>
-              <span class="btn-icon">→</span>
-            </button>
+              <div id="calcPriceRange" style="font-size: 0.85rem; color: var(--cyan); font-family: var(--font-mono); margin-bottom: 1rem;">
+                Przedział szacunkowy: od ~530 do ~680 zł netto
+              </div>
+
+              <p class="price-disclaimer">
+                Cena ma charakter orientacyjny. Ostateczny koszt potwierdzamy po analizie przesłanych zdjęć lub fizycznego detalu pod kątem trudno dostępnych powierzchni i tolerancji.
+              </p>
+
+              <div class="breakdown-box">
+                <div class="breakdown-title">
+                  <span>Składowe kalkulacji</span>
+                  <span>Wartość</span>
+                </div>
+                <ul class="breakdown-items" id="calcBreakdownList">
+                  <!-- Generowane przez JS -->
+                </ul>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-lg" id="calcSendQuoteBtn" style="width: 100%; margin-bottom: 1rem;" data-track-cta>
+                <span>Wyślij zdjęcia i potwierdź wycenę</span>
+                <span class="btn-icon">➔</span>
+              </button>
+            </div>
 
             <div style="font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
-              🚚 <strong>Kurier door-to-door w cenie:</strong> po akceptacji wyceny zamawiam kuriera po odbiór detalu od Ciebie.<br />
-              🔒 Gwarancja poufności i bezpieczeństwa powierzonego elementu.
+              🚚 <strong>Kurier door-to-door w cenie:</strong> po akceptacji wyceny zamawiamy kuriera po odbiór detalu od Ciebie.<br />
+              🔒 Gwarancja poufności powierzonego elementu.
             </div>
           </aside>
 
         </div>
       </div>
     </section>
+
+    <!-- Sekcja: Od czego zależy cena i co zawiera usługa -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Przejrzyste zasady</div>
+          <h2>Co zawiera i od czego zależy cena skanowania?</h2>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3 style="color: #fff; margin-bottom: 0.75rem;">1. Przygotowanie i kalibracja</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Każde skanowanie wymaga kalibracji optyki, naniesienia zmywalnych markerów referencyjnych lub zastosowania matującego preparatu sublimacyjnego dla powierzchni ciemnych/błyszczących.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3 style="color: #fff; margin-bottom: 0.75rem;">2. Gabaryt i czas pomiaru</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Większe elementy wymagają skanowania wielopozycyjnego pod wieloma kątami, łączenia kilkunastu chmur punktów i zaawansowanego usuwania szumów geometrycznych.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3 style="color: #fff; margin-bottom: 0.75rem;">3. Format danych (STL vs STEP)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Siatka STL to siatka trójkątów do druku 3D. Model CAD (STEP) wymaga manualnej inżynierii odwrotnej — wyznaczenia osi, odbudowy promieni, płaszczyzn i otworów nominalnych.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabela porównawcza formatów danych -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Porównanie formatów</div>
+          <h2>Jaki format pliku wybrać?</h2>
+        </div>
+
+        <div class="tech-table-wrap">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Format wyjściowy</th>
+                <th>Charakterystyka</th>
+                <th>Zastosowanie</th>
+                <th>Cena bazowa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tech-table-param"><strong>Surowy skan 3D</strong> (OBJ / PLY / ASC)</td>
+                <td>Chmura punktów lub surowa siatka ze stanowiska pomiarowego.</td>
+                <td>Wizualizacja, archiwizacja cyfrowa, wstępna inspekcja.</td>
+                <td class="tech-table-value">od 350 zł netto</td>
+              </tr>
+              <tr>
+                <td class="tech-table-param"><strong>Skan + Siatka STL</strong> (STL / 3MF)</td>
+                <td>Siatka oczyszczona z szumów, zamknięta („wodoszczelna”), wyrównana w układzie współrzędnych.</td>
+                <td>Bezpośredni druk 3D, wizualizacja CGI, inspekcja wymiarowa.</td>
+                <td class="tech-table-value">od 590 zł netto</td>
+              </tr>
+              <tr>
+                <td class="tech-table-param"><strong>Model parametryczny CAD</strong> (STEP / IGES / x_t)</td>
+                <td>Pełna inżynieria odwrotna (B-Rep), edytowalne drzewo operacji, kompensacja zużycia, nominalne wymiary.</td>
+                <td>Obróbka CNC, formy wtryskowe, modyfikacje konstrukcyjne CAD, rysunki wykonawcze 2D.</td>
+                <td class="tech-table-value">od 1400 zł netto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Sticky Bottom Bar na telefonach -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">
+      📞 Zadzwoń
+    </a>
+    <a href="#kalkulator-sekcja" class="sticky-bar-btn sticky-bar-cta">
+      Kalkulator ➔
+    </a>
+  </div>
 
   <!-- Stopka -->
   <footer class="site-footer">
@@ -247,30 +393,31 @@
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
-            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
-            <li><a href="druk-3d.html">Druk 3D & Materiały Techniczne</a></li>
-            <li><a href="embedded.html">Automotive Embedded Software</a></li>
-            <li><a href="automatyzacja.html">Dedykowane Urządzenia & Automatyka</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
+            <li><a href="druk-3d.html">Druk 3D techniczny</a></li>
+            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
-            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
-            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+            <li><a href="kalkulator.html">Cennik i kalkulator</a></li>
+            <li><a href="realizacje.html">Case Studies (Datsun)</a></li>
+            <li><a href="kontakt.html">Kontakt i wycena</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Darmowy kurier door-to-door w obie strony</p>
         </div>
       </div>
 
@@ -281,6 +428,7 @@
     </div>
   </footer>
 
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

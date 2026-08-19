@@ -3,23 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multicore Maksym Leski - Skanowanie 3D, Inżynieria Odwrotna i Druk 3D</title>
+  <title>Skanowanie 3D i inżynieria odwrotna części | MULTICORE</title>
   <meta
     name="description"
-    content="Kompleksowa inżynieria 3D: precyzyjne skanowanie 3D do 0.02 mm, modelowanie parametryczne CAD (STEP), przemysłowy druk 3D FDM oraz projektowanie urządzeń dedykowanych. Darmowy kurier door-to-door."
+    content="Odtwarzamy uszkodzone i niedostępne części: od precyzyjnego skanu 3D (do 0,02 mm) po parametryczny model CAD STEP i gotowy detal z tworzyw technicznych. Bezpłatny kurier door-to-door w całej Polsce."
   />
-  <meta name="keywords" content="skanowanie 3d, reverse engineering, inżynieria odwrotna, rekonstrukcja części, druk 3d, automatyzacja produkcji, cad, cam" />
-  <meta property="og:title" content="Multicore Maksym Leski - Skanowanie 3D i Inżynieria Odwrotna" />
-  <meta property="og:description" content="Odtwarzanie niedostępnych części, precyzyjne skanowanie 3D, modele CAD i przemysłowy druk 3D." />
+  <meta name="keywords" content="skanowanie 3d, inżynieria odwrotna, reverse engineering, model cad step, odtwarzanie części, druk 3d pa-cf, regeneracja części maszyn" />
+  <link rel="canonical" href="https://multicore.net.pl/" />
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://multicore.net.pl/" />
+  <meta property="og:title" content="Skanowanie 3D i inżynieria odwrotna części | MULTICORE" />
+  <meta property="og:description" content="Odtwarzamy uszkodzone i niedostępne części od skanu 3D do pliku STEP lub gotowego detalu. Kurier door-to-door w cenie." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://multicore.net.pl/" />
+  <meta property="twitter:title" content="Skanowanie 3D i inżynieria odwrotna części | MULTICORE" />
+  <meta property="twitter:description" content="Precyzyjne skanowanie 3D do 0,02 mm, modelowanie parametryczne CAD (STEP) i druk przemysłowy." />
+  <meta property="twitter:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://multicore.net.pl/#organization",
+        "name": "MULTICORE Maksym Leski",
+        "url": "https://multicore.net.pl/",
+        "logo": "https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png",
+        "image": "https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png",
+        "description": "Precyzyjne skanowanie 3D, inżynieria odwrotna CAD, wytwarzanie części z kompozytów technicznych oraz oprogramowanie embedded.",
+        "telephone": "+48533491374",
+        "email": "kontakt@multicore.net.pl",
+        "priceRange": "$$",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Polska"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://multicore.net.pl/#person",
+        "name": "Maksym Leski",
+        "jobTitle": "Inżynier / Właściciel MULTICORE",
+        "worksFor": {
+          "@id": "https://multicore.net.pl/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://multicore.net.pl/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czy sam skan 3D wystarczy do wykonania części na CNC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nie, surowy skan to siatka trójkątów (STL/OBJ). Obrabiarki CNC oraz formy wtryskowe wymagają parametrycznego modelu bryłowego CAD (format STEP / IGES), który tworzymy w procesie inżynierii odwrotnej."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy można odtworzyć pęknięty lub zużyty element?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Skanujemy ocalałe fragmenty i bazując na wiedzy inżynierskiej, osiach symetrii oraz geometrii współpracującej, rekonstruujemy ubytki i kompensujemy wytarte powierzchnie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak wygląda odbiór i zwrot powierzonego elementu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Obsługujemy klientów z całej Polski w modelu door-to-door. Po akceptacji wyceny zamawiamy kuriera, który odbiera część pod wskazanym adresem, a po skanowaniu bezpiecznie ją odsyła."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy podpisujecie umowę o zachowaniu poufności (NDA)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Na życzenie klienta przed przekazaniem dokumentacji lub wysyłką fizycznego detalu podpisujemy standardową umowę o zachowaniu poufności (NDA)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
 
   <!-- Nagłówek i Nawigacja -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
@@ -30,19 +116,45 @@
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link active">Główna</a></li>
-          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
-          <li><a href="modelowanie-cad.html" class="nav-link">Modelowanie CAD</a></li>
-          <li><a href="druk-3d.html" class="nav-link">Druk 3D</a></li>
-          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
-          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Kalkulator</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wycena online</a>
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń detal</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -54,311 +166,564 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Sekcja Hero -->
     <section class="section-hero">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">
             <span class="eyebrow-dot"></span>
-            Inżynieria Odwrotna • Skanowanie 3D • Druk Przemysłowy
+            Skanowanie 3D • Inżynieria odwrotna • Druk techniczny
           </div>
-          <h1>Od uszkodzonej części do gotowego detalu produkcyjnego</h1>
+          <h1>Odtworzymy uszkodzoną lub niedostępną część — od skanu 3D do pliku STEP albo gotowego detalu</h1>
           <p class="subhead">
-            Łączymy precyzyjną metrologię optyczną ze skanowaniem 3D (do 0.02 mm), parametryczną inżynierią odwrotną CAD oraz drukiem 3D z tworzyw konstrukcyjnych i kompozytów węglowych.
+            Precyzyjnie skanujemy fizyczny element, odbudowujemy brakującą geometrię w CAD i przygotowujemy model do CNC, formy lub druku 3D. Obsługujemy klientów z całej Polski, a kurier odbiera i zwraca detal pod wskazany adres.
           </p>
 
           <div class="hero-actions">
-            <a href="kalkulator.html" class="btn btn-primary btn-lg">
-              <span>Wyceń skanowanie w kalkulatorze</span>
+            <a href="#formularz" class="btn btn-primary btn-lg" data-track-cta>
+              <span>Wyślij zdjęcia i otrzymaj wycenę</span>
               <span class="btn-icon">➔</span>
             </a>
-            <a href="realizacje.html" class="btn btn-secondary btn-lg">
-              <span>Zobacz realizacje (Datsun)</span>
+            <a href="kalkulator.html" class="btn btn-secondary btn-lg">
+              <span>Sprawdź orientacyjną cenę</span>
             </a>
           </div>
 
-          <!-- Trust Badges -->
-          <div class="hero-badges-row">
-            <div class="hero-badge-item">
-              <div class="hero-badge-icon">🚚</div>
-              <div class="hero-badge-text">
-                <strong>Kurier Door-to-Door</strong>
-                <span>Odbiór i zwrot w cenie</span>
-              </div>
-            </div>
+          <div style="margin-top: 1rem; font-size: 0.92rem; color: var(--text-dim);">
+            Wolisz porozmawiać? <a href="tel:+48533491374" style="color: var(--cyan); font-weight: 700;">+48 533 491 374</a>
+          </div>
 
+          <!-- Sygnały zaufania (Trust Badges) -->
+          <div class="hero-badges-row">
             <div class="hero-badge-item">
               <div class="hero-badge-icon">🎯</div>
               <div class="hero-badge-text">
-                <strong>0.02 mm Dokładności</strong>
-                <span>Certyfikowana metrologia</span>
+                <strong>Dokładność do 0,02 mm</strong>
+                <span>Pomiary optyczne i stykowe</span>
               </div>
             </div>
 
             <div class="hero-badge-item">
-              <div class="hero-badge-icon">⚡</div>
+              <div class="hero-badge-icon">🚚</div>
               <div class="hero-badge-text">
-                <strong>Druk Kompozytowy</strong>
-                <span>Komora 65°C & Dual-Extrusion</span>
+                <strong>Kurier door-to-door</strong>
+                <span>Odbiór i zwrot w obie strony</span>
+              </div>
+            </div>
+
+            <div class="hero-badge-item">
+              <div class="hero-badge-icon">📁</div>
+              <div class="hero-badge-text">
+                <strong>Pliki STEP, STL i 2D</strong>
+                <span>Pełna gotowość pod produkcję</span>
+              </div>
+            </div>
+
+            <div class="hero-badge-item">
+              <div class="hero-badge-icon">⏱️</div>
+              <div class="hero-badge-text">
+                <strong>Szybka odpowiedź</strong>
+                <span>Wstępna ocena zwykle w kilka godzin</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Wizualizacja Skanera / CAD -->
+        <!-- Wizualny Schemat Procesu z Prawdziwym Projektem -->
         <div>
-          <div class="scanner-visual-box">
-            <div class="scanner-viewport">
-              <div class="grid-mesh"></div>
-              <div class="scan-laser-line"></div>
+          <div class="tech-card" style="padding: 1.75rem; border-color: rgba(56, 189, 248, 0.3); background: linear-gradient(145deg, rgba(14, 24, 48, 0.85), rgba(8, 14, 28, 0.95));">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.75rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); text-transform: uppercase;">Przebieg inżynierii odtworzeniowej</span>
+              <span class="eyebrow-dot"></span>
+            </div>
 
-              <div class="cad-crosshairs">
-                <div class="cad-crosshair-h"></div>
-                <div class="cad-crosshair-v"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div style="background: rgba(6,9,19,0.7); border-radius: var(--radius-sm); padding: 0.75rem; border: 1px solid var(--border-subtle);">
+                <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-dim); display: block; margin-bottom: 0.4rem;">1. ORYGINAŁ / USZKODZENIE</span>
+                <img src="galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" alt="Oryginalna pęknięta część Datsun" style="width: 100%; height: 110px; object-fit: cover; border-radius: 4px;" />
               </div>
 
-              <div class="cad-target-object">
-                <div class="wireframe-cube">
-                  <div class="wireframe-inner"></div>
-                </div>
+              <div style="background: rgba(6,9,19,0.7); border-radius: var(--radius-sm); padding: 0.75rem; border: 1px solid var(--border-subtle);">
+                <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--cyan); display: block; margin-bottom: 0.4rem;">2. SKAN 3D (CHMURA / STL)</span>
+                <img src="galeria/Datsun_osłona_kierownicy/Screenshot_1.png" alt="Siatka skanu 3D" style="width: 100%; height: 110px; object-fit: cover; border-radius: 4px;" />
               </div>
 
-              <div class="scanner-overlay-stats">
-                <div>METROLOGY CORE v2.6</div>
-                <div>RES: 0.020 mm | 360°</div>
-                <div>POINT DENSITY: ULTRA</div>
+              <div style="background: rgba(6,9,19,0.7); border-radius: var(--radius-sm); padding: 0.75rem; border: 1px solid var(--border-subtle);">
+                <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--blue-light); display: block; margin-bottom: 0.4rem;">3. MODEL PARAMETRYCZNY CAD</span>
+                <img src="galeria/Datsun_osłona_kierownicy/2.png" alt="Odbudowa bryły CAD ze spójnymi zatrzaskami" style="width: 100%; height: 110px; object-fit: cover; border-radius: 4px;" />
               </div>
 
-              <div class="scanner-status-tag">
-                <span class="eyebrow-dot"></span>
-                <span>SYSTEM ACTIVE</span>
+              <div style="background: rgba(6,9,19,0.7); border-radius: var(--radius-sm); padding: 0.75rem; border: 1px solid var(--border-subtle);">
+                <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--emerald); display: block; margin-bottom: 0.4rem;">4. GOTOWY DETAL (ASA / CNC)</span>
+                <img src="galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png" alt="Gotowy wydruk odporny na temperaturę" style="width: 100%; height: 110px; object-fit: cover; border-radius: 4px;" />
               </div>
             </div>
 
-            <div class="scanner-meta-bar">
-              <span>MULTICORE ENGINEERING LAB</span>
-              <span>PARK: DUAL-EXTRUSION FDM</span>
+            <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Przykład z projektu Datsun 240Z/280Z: odtworzenie połamanych zaczepów, symetryzacja bryły i wykonanie części funkcjonalnej z materiału odpornego na temperaturę.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4 Główne Filary Oferty (Karty Prowadzące do Podstron) -->
-    <section id="oferta" class="section section-highlight">
-      <div class="container">
-        <div class="section-head center">
-          <div class="eyebrow">Nasze specjalizacje</div>
-          <h2>Dedykowane obszary inżynierii i produkcji</h2>
-          <p class="subhead">
-            Wybierz interesującą Cię kategorię, aby zapoznać się ze szczegółowymi parametrami, technologią i możliwościami.
-          </p>
-        </div>
-
-        <div class="grid-2" style="gap: 2rem;">
-          <!-- Karta 1: Skanowanie 3D -->
-          <div class="tech-card service-card">
-            <div class="service-icon-wrap">🎯</div>
-            <h3>Skanowanie 3D & Digitalizacja</h3>
-            <p>
-              Bezkontaktowy pomiar geometrii z dokładnością do 0.02 mm. Digitalizacja części o skomplikowanych kształtach organicznych, odlewów oraz podzespołów motoryzacyjnych.
-            </p>
-            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
-              <span class="material-tag accent">Dokładność 0.02 mm</span>
-              <span class="material-tag">Formaty: STL, OBJ, PLY</span>
-              <span class="material-tag">Darmowy kurier</span>
-            </div>
-            <a href="skanowanie-3d.html" class="btn btn-outline" style="width: 100%;">
-              Zobacz pełną specyfikację skanowania ➔
-            </a>
-          </div>
-
-          <!-- Karta 2: Modelowanie CAD -->
-          <div class="tech-card service-card">
-            <div class="service-icon-wrap">📐</div>
-            <h3>Modelowanie CAD & Reverse Engineering</h3>
-            <p>
-              Przekształcanie siatek trójkątów w parametryczne bryły CAD (STEP, IGES). Odtwarzanie pękniętych zatrzasków, rekonstrukcja zużytych zębów i przygotowanie pod CNC.
-            </p>
-            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
-              <span class="material-tag accent">Formaty: STEP, IGES, x_t</span>
-              <span class="material-tag">Rysunki techniczne 2D</span>
-              <span class="material-tag">Optymalizacja CNC</span>
-            </div>
-            <a href="modelowanie-cad.html" class="btn btn-outline" style="width: 100%;">
-              Zobacz ofertę modelowania CAD ➔
-            </a>
-          </div>
-
-          <!-- Karta 3: Druk 3D & Materiały Techniczne -->
-          <div class="tech-card service-card">
-            <div class="service-icon-wrap">⚡</div>
-            <h3>Druk 3D & Materiały Techniczne</h3>
-            <p>
-              Precyzyjny druk 3D FDM w podgrzewanej komorze roboczej (do 65°C) z podwójną głowicą do dedykowanych podpór. Części konstrukcyjne z kompozytów węglowych (PA-CF) i tworzyw technicznych (PC, ASA, ABS, TPU).
-            </p>
-            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
-              <span class="material-tag accent">Pole do 325×320×325 mm</span>
-              <span class="material-tag accent">Podwójna głowica (Dual Extrusion)</span>
-              <span class="material-tag">PA-CF, PC, ASA, TPU</span>
-            </div>
-            <a href="druk-3d.html" class="btn btn-outline" style="width: 100%;">
-              Poznaj możliwości druku 3D ➔
-            </a>
-          </div>
-
-          <!-- Karta 4: Dedykowane Urządzenia & Automatyka -->
-          <div class="tech-card service-card">
-            <div class="service-icon-wrap">⚙️</div>
-            <h3>Dedykowane Urządzenia & Automatyka</h3>
-            <p>
-              Specjalizacja w projektowaniu i budowie dedykowanych maszyn oraz stanowisk pod indywidualne zastosowania. Wieloletnie doświadczenie z PLC Siemens i robotami Kawasaki.
-            </p>
-            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
-              <span class="material-tag accent">Urządzenia dedykowane</span>
-              <span class="material-tag accent">PLC Siemens</span>
-              <span class="material-tag">Roboty Kawasaki</span>
-            </div>
-            <a href="automatyzacja.html" class="btn btn-outline" style="width: 100%;">
-              Zobacz szczegóły i realizacje ➔
-            </a>
-          </div>
-
-          <!-- Karta 5: Inżynieria Oprogramowania Embedded -->
-          <div class="tech-card service-card" style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(16, 26, 52, 0.85), rgba(8, 14, 28, 0.95)); border-color: rgba(56, 189, 248, 0.35);">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
-              <div class="service-icon-wrap" style="font-size: 1.8rem; background: rgba(56, 189, 248, 0.15); color: var(--cyan);">💻</div>
-              <div style="flex: 1; min-width: 260px;">
-                <div class="eyebrow" style="margin-bottom: 0.35rem; color: var(--cyan);">Firmware • Sterowniki Pojazdów • Bezprzewodowy Transfer Mocy</div>
-                <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Inżynieria Oprogramowania Embedded</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.92rem; line-height: 1.6;">
-                  Projektowanie i rozwój oprogramowania wbudowanego (C/C++): sterowniki mikroprocesorowe dla elektromobilności i pojazdów, ładowarki indukcyjne (standard Qi), dedykowany firmware na mikrokontrolery 32-bitowe oraz bezpieczne bootloadery.
-                </p>
-                <div class="materials-cloud" style="margin-bottom: 1.25rem;">
-                  <span class="material-tag accent">Sterowniki pojazdów (CAN / LIN)</span>
-                  <span class="material-tag accent">Ładowarki indukcyjne Qi</span>
-                  <span class="material-tag accent">Firmware C/C++ (ARM/STM32)</span>
-                  <span class="material-tag">Bootloadery & UDS</span>
-                  <span class="material-tag">Standard MISRA C</span>
-                </div>
-                <a href="embedded.html" class="btn btn-primary btn-sm">
-                  Poznaj opcje i ofertę Embedded ➔
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Oś Czasu Procesu -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head center">
-          <div class="eyebrow">Przebieg współpracy</div>
-          <h2>Proces w 4 prostych krokach</h2>
-          <p class="subhead">Od wysłania detalu po gotowy plik produkcyjny lub gotowy wydruk 3D.</p>
-        </div>
-
-        <div class="process-grid">
-          <div class="tech-card process-card">
-            <div class="process-step-header">
-              <div class="process-number">01</div>
-              <h3>Wycena i zamówienie</h3>
-            </div>
-            <p>Podajesz orientacyjne wymiary w kalkulatorze online lub przesyłasz zdjęcia detalu.</p>
-          </div>
-
-          <div class="tech-card process-card">
-            <div class="process-step-header">
-              <div class="process-number">02</div>
-              <h3>Odbiór kurierem</h3>
-            </div>
-            <p>Zamawiamy darmowego kuriera pod Twój adres, który bezpiecznie dostarcza element do naszego laboratorium.</p>
-          </div>
-
-          <div class="tech-card process-card">
-            <div class="process-step-header">
-              <div class="process-number">03</div>
-              <h3>Skan, CAD i Druk</h3>
-            </div>
-            <p>Wykonujemy skan metrologiczny 360°, tworzymy model parametryczny CAD i opcjonalnie drukujemy część z materiałów technicznych.</p>
-          </div>
-
-          <div class="tech-card process-card">
-            <div class="process-step-header">
-              <div class="process-number">04</div>
-              <h3>Dostarczenie i zwrot</h3>
-            </div>
-            <p>Otrzymujesz kompletne pliki produkcyjne (STEP/STL), a fizyczny wzorzec wraca kurierem pod Twoje drzwi.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wyróżnione Realizacje (Datsun) -->
+    <!-- Sekcja "Co potrzebujesz zrobić?" (Karty problemowe) -->
     <section class="section section-highlight">
       <div class="container">
         <div class="section-head center">
-          <div class="eyebrow">Portfolio i case studies</div>
-          <h2>Zrealizowane projekty rekonstrukcji</h2>
-          <p class="subhead">
-            Zobacz przykłady odtworzonych elementów wnętrza i karoserii klasycznego Datsuna 240Z/280Z.
-          </p>
+          <div class="eyebrow">Zastosowania i potrzeby</div>
+          <h2>Co potrzebujesz zrobić?</h2>
+          <p class="subhead">Wybierz problem, z którym się mierzysz — przeprowadzimy Cię przez cały proces inżynieryjny.</p>
         </div>
 
-        <div class="grid-3" style="margin-bottom: 2.5rem;">
-          <div class="tech-card">
-            <div class="gallery-img-wrap" style="height: 200px; background: #0c1427; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1.25rem; display: grid; place-items: center;">
-              <img src="galeria/oslona-kierownicy-3.jpg" alt="Osłona kolumny kierownicy Datsun" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='galeria/oslona-kierownicy-1.jpg'" />
-            </div>
-            <h3>Osłona kolumny kierowniczej</h3>
-            <p style="font-size: 0.9rem;">Skan 3D pękniętego oryginału, odbudowa geometrii CAD z zatrzaskami i druk z odpornego na UV tworzywa ASA.</p>
+        <div class="grid-4" style="gap: 1.5rem;">
+          <!-- Karta 1 -->
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">🩹</div>
+            <h3>Odtworzyć część bez dokumentacji</h3>
+            <p>
+              Masz uszkodzony, zużyty lub niedostępny element. Zeskanujemy go, odbudujemy geometrię i przygotujemy do wykonania.
+            </p>
+            <a href="odtwarzanie-czesci.html" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              Zobacz szczegóły ➔
+            </a>
           </div>
 
-          <div class="tech-card">
-            <div class="gallery-img-wrap" style="height: 200px; background: #0c1427; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1.25rem; display: grid; place-items: center;">
-              <img src="galeria/grill-1.jpg" alt="Grill przedni Datsun" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='galeria/datsun-1.jpg'" />
-            </div>
-            <h3>Grill i kratki wentylacyjne</h3>
-            <p style="font-size: 0.9rem;">Precyzyjne odwzorowanie krzywizny zderzaka i mocowań, symetryzacja modelu oraz przygotowanie pod formę.</p>
+          <!-- Karta 2 -->
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">📐</div>
+            <h3>Uzyskać model CAD lub rysunek</h3>
+            <p>
+              Zamienimy fizyczną część albo siatkę STL na edytowalny model STEP/IGES i kompletną dokumentację techniczną 2D.
+            </p>
+            <a href="modelowanie-cad.html" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              Inżynieria CAD ➔
+            </a>
           </div>
 
-          <div class="tech-card">
-            <div class="gallery-img-wrap" style="height: 200px; background: #0c1427; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1.25rem; display: grid; place-items: center;">
-              <img src="galeria/klamki-1.jpg" alt="Klamki i mechanizmy Datsun" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='galeria/datsun-1.jpg'" />
-            </div>
-            <h3>Klamki i mechanizmy zamków</h3>
-            <p style="font-size: 0.9rem;">Odtworzenie wytartych krzywek i dźwigni pod obróbkę frezarską CNC z aluminium oraz druk z kompozytu PA-CF.</p>
+          <!-- Karta 3 -->
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">⚡</div>
+            <h3>Wykonać techniczny wydruk 3D</h3>
+            <p>
+              Dobierzemy materiał (PA-CF, PC, ASA, TPU) i wykonamy część funkcjonalną, prototyp, uchwyt, obudowę lub krótką serię.
+            </p>
+            <a href="druk-3d.html" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              Materiały druku ➔
+            </a>
           </div>
-        </div>
 
-        <div style="text-align: center;">
-          <a href="realizacje.html" class="btn btn-primary btn-lg">
-            Zobacz całą galerię i zdjęcia w wysokiej rozdzielczości ➔
-          </a>
+          <!-- Karta 4 -->
+          <div class="tech-card service-card">
+            <div class="service-icon-wrap">🔍</div>
+            <h3>Sprawdzić geometrię detalu</h3>
+            <p>
+              Porównamy wykonany element z modelem nominalnym CAD i przygotujemy dokładną mapę odchyłek wymiarowych (Color Map).
+            </p>
+            <a href="kontrola-jakosci-3d.html" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              Kontrola jakości ➔
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Teaser Kalkulatora -->
+    <!-- Sekcja "Dla kogo" (Grupy klientów) -->
     <section class="section">
       <div class="container">
-        <div class="subpage-cta">
-          <div class="eyebrow" style="margin-bottom: 0.75rem;">Natychmiastowa wycena online</div>
-          <h2>Oblicz szacunkowy koszt skanowania 3D</h2>
-          <p>
-            Nasz kalkulator natychmiast wyliczy orientacyjną cenę na podstawie gabarytów i złożoności detalu, wraz z bezpłatną przesyłką kurierską w obie strony.
-          </p>
-          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="kalkulator.html" class="btn btn-primary btn-lg">Otwórz kalkulator wyceny ➔</a>
-            <a href="kontakt.html" class="btn btn-secondary btn-lg">Formularz kontaktowy</a>
+        <div class="section-head center">
+          <div class="eyebrow">Branże i klienci</div>
+          <h2>Dla kogo realizujemy projekty?</h2>
+          <p class="subhead">Rozwiązujemy realne problemy inżynieryjne w zakładach produkcyjnych, warsztatach i działach R&D.</p>
+        </div>
+
+        <div class="grid-4" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <div class="service-icon-wrap">🏭</div>
+            <h3>Utrzymanie ruchu i produkcja</h3>
+            <p style="font-size: 0.9rem;">
+              Części maszyn bez dokumentacji, nagłe awarie, elementy wycofane z produkcji, koła zębate, korpusy i zużyte prowadnice.
+            </p>
           </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">🔬</div>
+            <h3>Konstruktorzy i działy R&D</h3>
+            <p style="font-size: 0.9rem;">
+              Prototypy, digitalizacja makiet, tworzenie parametrycznej dokumentacji CAD, optymalizacja pod obróbkę CNC i formy.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">🏎️</div>
+            <h3>Motoryzacja klasyczna i renowacja</h3>
+            <p style="font-size: 0.9rem;">
+              Odtwarzanie niedostępnych elementów wnętrza, mocowań, kratek, obudów wskaźników, klamek i detali nadwozia aut zabytkowych.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">📦</div>
+            <h3>Producenci krótkich serii</h3>
+            <p style="font-size: 0.9rem;">
+              Przyrządy spawalnicze, szablony wiertarskie, chwytaki robotów, obudowy elektroniki i części z kompozytów węglowych.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Zaufania i Bezpieczeństwa -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Bezpieczeństwo współpracy</div>
+          <h2>Dlaczego możesz bezpiecznie powierzyć nam swój unikatowy detal?</h2>
+          <p class="subhead">Wiemy, że powierzasz nam często jedyny, unikatowy egzemplarz części. Dbamy o pełne bezpieczeństwo.</p>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <div class="service-icon-wrap">🤝</div>
+            <h3>Bezpośredni kontakt z inżynierem</h3>
+            <p>Od pierwszego telefonu po odbiór plików rozmawiasz bezpośrednio ze specjalistą prowadzącym Twój projekt, bez pośredników.</p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">🔒</div>
+            <h3>Poufność i umowa NDA</h3>
+            <p>Wszystkie pliki i detale traktujemy jako ściśle poufne. Na życzenie przed rozpoczęciem prac podpisujemy formalną umowę NDA.</p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">📦</div>
+            <h3>Bezpieczny transport door-to-door</h3>
+            <p>Ubezpieczona przesyłka kurierska w obie strony. Część fizyczna po wykonaniu pomiaru wraca nienaruszona pod Twój adres.</p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">📷</div>
+            <h3>Dokumentacja przyjęcia</h3>
+            <p>Rejestrujemy stan elementu w momencie dostarczenia i ustalamy dokładny zakres kompensacji ubytków przed rozpoczęciem modelowania.</p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">✅</div>
+            <h3>Akceptacja modelu przed wytworzeniem</h3>
+            <p>Przesyłamy model 3D do weryfikacji wymiarowej przed uruchomieniem druku 3D lub zleceniem obróbki maszynowej.</p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">💾</div>
+            <h3>Archiwizacja plików produkcyjnych</h3>
+            <p>Bezpiecznie przechowujemy opracowane pliki CAD i siatki skanu, umożliwiając szybkie domówienie kolejnych sztuk w przyszłości.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Podsumowanie Oferty Specjalistycznej -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Nasze specjalizacje</div>
+          <h2>Dedykowane ścieżki technologiczne</h2>
+        </div>
+
+        <div class="grid-2" style="gap: 2rem;">
+          <!-- Karta 1: 3D & CAD -->
+          <div class="tech-card">
+            <div class="service-icon-wrap">📐</div>
+            <h3>Skanowanie 3D & Inżynieria Odwrotna CAD</h3>
+            <p style="margin-bottom: 1.25rem;">
+              Bezkontaktowy pomiar geometrii z dokładnością do 0,02 mm i przekształcanie siatek w parametryczne bryły CAD (STEP, IGES, Parasolid). Rekonstrukcja pękniętych zatrzasków i przygotowanie pod CNC.
+            </p>
+            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
+              <span class="material-tag accent">Dokładność do 0,02 mm</span>
+              <span class="material-tag">STEP, IGES, Parasolid</span>
+              <span class="material-tag">Dokumentacja 2D</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="skanowanie-3d.html" class="btn btn-outline btn-sm">Skanowanie 3D</a>
+              <a href="modelowanie-cad.html" class="btn btn-outline btn-sm">Modelowanie CAD</a>
+            </div>
+          </div>
+
+          <!-- Karta 2: Druk 3D -->
+          <div class="tech-card">
+            <div class="service-icon-wrap">⚡</div>
+            <h3>Przemysłowy Druk 3D FDM</h3>
+            <p style="margin-bottom: 1.25rem;">
+              Wytwarzanie części z kompozytów węglowych (PA-CF) oraz tworzyw technicznych (PC, ASA, TPU). Podgrzewana komora (do 65°C) ograniczająca naprężenia i podwójna głowica do dedykowanych podpór.
+            </p>
+            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
+              <span class="material-tag accent">Kompozyty PA-CF</span>
+              <span class="material-tag">Odporność UV (ASA)</span>
+              <span class="material-tag">Poliwęglan (PC)</span>
+            </div>
+            <a href="druk-3d.html" class="btn btn-outline btn-sm">Oferta druku 3D ➔</a>
+          </div>
+
+          <!-- Karta 3: Embedded (Osobny funnel) -->
+          <div class="tech-card" style="border-color: rgba(56, 189, 248, 0.35); background: linear-gradient(135deg, rgba(16, 26, 52, 0.85), rgba(8, 14, 28, 0.95));">
+            <div class="service-icon-wrap">💻</div>
+            <h3>Oprogramowanie Embedded i Firmware</h3>
+            <p style="margin-bottom: 1.25rem;">
+              Projektowanie i rozwój firmware'u w C/C++ dla mikrokontrolerów 32-bitowych (ARM Cortex/STM32), obsługa magistral CAN, CAN FD, LIN, protokołów UDS, standardu MISRA C oraz systemów ładowania indukcyjnego Qi (FOD).
+            </p>
+            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
+              <span class="material-tag accent">Embedded C/C++</span>
+              <span class="material-tag">CAN / LIN / UDS</span>
+              <span class="material-tag">Bezprzewodowe Qi</span>
+            </div>
+            <a href="embedded.html" class="btn btn-primary btn-sm">Odrębna oferta Embedded ➔</a>
+          </div>
+
+          <!-- Karta 4: Automatyzacja -->
+          <div class="tech-card">
+            <div class="service-icon-wrap">⚙️</div>
+            <h3>Dedykowane Urządzenia i Automatyka</h3>
+            <p style="margin-bottom: 1.25rem;">
+              Projektowanie maszyn i stanowisk montażowo-testowych od koncepcji mechanicznej CAD, przez produkcję części, po integrację sterowników PLC Siemens i robotów przemysłowych Kawasaki.
+            </p>
+            <div class="materials-cloud" style="margin-bottom: 1.5rem;">
+              <span class="material-tag accent">Stanowiska dedykowane</span>
+              <span class="material-tag">PLC Siemens</span>
+              <span class="material-tag">Roboty Kawasaki</span>
+            </div>
+            <a href="automatyzacja.html" class="btn btn-outline btn-sm">Urządzenia dedykowane ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja "O firmie" -->
+    <section id="o-firmie" class="section section-highlight">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">O firmie</div>
+            <h2>MULTICORE Maksym Leski</h2>
+            <p style="margin-bottom: 1.25rem;">
+              Specjalizuję się w inżynierii odtworzeniowej, precyzyjnym skanowaniu 3D oraz wdrażaniu nietypowych rozwiązań technicznych dla przemysłu, motoryzacji i działów badawczo-rozwojowych.
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
+              Łączę praktyczną wiedzę z zakresu metrologii optycznej, modelowania powierzchniowego CAD, wytwarzania addytywnego oraz oprogramowania systemów wbudowanych. Klienci współpracują ze mną bezpośrednio — co gwarantuje precyzję ustaleń, dyskrecję oraz brak zbędnych opóźnień komunikacyjnych.
+            </p>
+
+            <div style="background: rgba(6, 9, 19, 0.6); border: 1px solid var(--border-card); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem;">
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); margin-bottom: 0.5rem; text-transform: uppercase;">
+                Model działania firmy:
+              </div>
+              <p style="font-size: 0.9rem; color: #fff; margin: 0;">
+                📦 <strong>Obsługa klientów z całej Polski w modelu wysyłkowym door-to-door.</strong> Darmowy odbiór i zwrot powierzonej części kurierem w cenie usługi.
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="tel:+48533491374" class="btn btn-primary btn-sm">📞 +48 533 491 374</a>
+              <a href="mailto:kontakt@multicore.net.pl" class="btn btn-outline btn-sm">✉️ kontakt@multicore.net.pl</a>
+            </div>
+          </div>
+
+          <div class="tech-card" style="padding: 2.25rem; border-color: rgba(56, 189, 248, 0.3);">
+            <h3 style="color: #fff; margin-bottom: 1.25rem;">Dane i standardy inżynierskie:</h3>
+            
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.92rem; color: var(--text-muted);">
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="color: var(--cyan);">▸</span>
+                <div><strong>Zakres terytorialny:</strong> Cała Polska (wysyłka kurierska)</div>
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="color: var(--cyan);">▸</span>
+                <div><strong>Godziny kontaktu:</strong> Poniedziałek – Piątek: 08:00 – 18:00</div>
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="color: var(--cyan);">▸</span>
+                <div><strong>Czas odpowiedzi:</strong> Wstępna ocena zwykle w ciągu kilku godzin</div>
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="color: var(--cyan);">▸</span>
+                <div><strong>Poufność:</strong> Możliwość podpisania umowy NDA przed wysyłką</div>
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="color: var(--cyan);">▸</span>
+                <div><strong>Formaty CAD:</strong> STEP, IGES, Parasolid x_t, rysunki PDF</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja FAQ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Najczęstsze pytania</div>
+          <h2>Odpowiedzi na pytania inżynierskie</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <div class="faq-question">
+              <span class="faq-question-icon">?</span>
+              Czy sam skan 3D wystarczy do wykonania części na maszynie CNC?
+            </div>
+            <div class="faq-answer">
+              Nie. Surowy skan to siatka trójkątów (STL/OBJ). Obrabiarki CNC, elektrodrążarki oraz formy wtryskowe wymagają parametrycznego modelu bryłowego CAD (format STEP / IGES), który tworzymy w procesie inżynierii odwrotnej.
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question">
+              <span class="faq-question-icon">?</span>
+              Czy można odtworzyć pęknięty, niekompletny lub wytarty element?
+            </div>
+            <div class="faq-answer">
+              Tak. Skanujemy ocalałe fragmenty, a następnie na podstawie osi symetrii, geometrii współpracującej i wiedzy konstrukcyjnej rekonstruujemy ubytki, kompensując zużycie materiału.
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question">
+              <span class="faq-question-icon">?</span>
+              Jak wygląda logistyka i transport części?
+            </div>
+            <div class="faq-answer">
+              Obsługujemy całą Polskę w modelu door-to-door. Po zaakceptowaniu wyceny zamawiamy kuriera pod Twój adres. Po wykonaniu pomiaru element jest zabezpieczany i odsyłany kurierem pod Twoje drzwi.
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question">
+              <span class="faq-question-icon">?</span>
+              Czy podpisujecie umowę o poufności (NDA)?
+            </div>
+            <div class="faq-answer">
+              Tak. Wszelkie materiały, modele CAD i detale traktujemy poufnie. Na życzenie klienta podpisujemy formalną umowę NDA przed otrzymaniem plików lub części.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Główny Formularz Zapytania Ofertowego (P0 Konwersja) -->
+    <section id="formularz" class="section section-highlight">
+      <div class="container" style="max-width: 920px;">
+        <div class="section-head center" style="margin-bottom: 2rem;">
+          <div class="eyebrow">Wycena i kontakt</div>
+          <h2>Wyślij zdjęcia i otrzymaj wstępną wycenę</h2>
+          <p class="subhead">
+            Opisz swój detal, podaj orientacyjne wymiary lub załącz zdjęcia. Odpowiemy ze wstępną oceną technologiczną zwykle w ciągu kilku godzin.
+          </p>
+        </div>
+
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <!-- Podsumowanie z kalkulatora (jeśli użytkownik przeszedł z kalkulatora) -->
+          <div id="formCalcSummary" style="display: none; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: #fff;">
+            <div id="formCalcSummaryContent"></div>
+          </div>
+
+          <div id="formStatus" class="form-status"></div>
+
+          <form id="inquiryForm" novalidate>
+            <!-- Honeypot -->
+            <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
+
+            <!-- 1. Czego dotyczy zapytanie -->
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryTopic">1. Czego dotyczy Twoje zapytanie? *</label>
+              <select class="input-field" id="inquiryTopic" name="topic" required style="background: var(--bg-main);">
+                <option value="skanowanie">Skanowanie 3D detalu</option>
+                <option value="cad">Model CAD / Inżynieria odwrotna (STEP)</option>
+                <option value="druk">Techniczny druk 3D</option>
+                <option value="kompletna_usluga" selected>Kompletna usługa: Skan + CAD + Wykonanie części</option>
+                <option value="embedded">Oprogramowanie Embedded / Firmware</option>
+                <option value="automatyzacja">Urządzenie dedykowane / Automatyzacja</option>
+                <option value="inne">Inne zapytanie inżynierskie</option>
+              </select>
+            </div>
+
+            <!-- 2. Imię / Firma & Kontakt -->
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryName">2. Imię i nazwisko lub nazwa firmy *</label>
+                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski / Firma Sp. z o.o." required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inquiryEmail">3. Adres e-mail (do wyceny) *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="jan@firma.pl" />
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryPhone">4. Numer telefonu</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 500 000 000" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">5. Preferowany sposób kontaktu</label>
+                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="phone" /> Telefon
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Opis problemu -->
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryMessage">6. Opis detalu, problemu lub wymagania *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Opisz część (materiał, orientacyjne wymiary, uszkodzenia, docelowe zastosowanie lub wymagania techniczne)..." required></textarea>
+            </div>
+
+            <!-- 4. Dodawanie plików -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">7. Załącz zdjęcia lub pliki modelu (Opcjonalnie, max 25 MB)</label>
+              <div class="file-dropzone-modern" id="fileDropzone">
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".jpg,.jpeg,.png,.webp,.pdf,.step,.stp,.stl,.iges,.igs,.zip,.rar,.7z" />
+                <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📁</div>
+                <div style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">
+                  Przeciągnij i upuść pliki tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz z dysku</label>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">
+                  Obsługiwane formaty: JPG, PNG, WEBP, PDF, STEP, STL, ZIP (do 25 MB łącznie).
+                </div>
+                <div id="fileList" class="file-items-grid"></div>
+              </div>
+            </div>
+
+            <!-- Zgoda i polityka -->
+            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;">
+              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>. Twoje dane i pliki są przetwarzane wyłącznie w celu przygotowania wyceny technicznej i realizacji usługi.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Wyślij zapytanie o wycenę</span>
+              <span class="btn-icon">➔</span>
+            </button>
+          </form>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Sticky Bottom Bar na telefonach -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">
+      📞 Zadzwoń
+    </a>
+    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">
+      Wyceń detal ➔
+    </a>
+  </div>
 
   <!-- Stopka -->
   <footer class="site-footer">
@@ -373,45 +738,47 @@
             </div>
           </a>
           <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
-            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz projektowania urządzeń dedykowanych.
+            Kompleksowe usługi inżynierii odwrotnej, precyzyjnego skanowania 3D, druku przemysłowego oraz oprogramowania embedded.
           </p>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta i technologie</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
-            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
-            <li><a href="druk-3d.html">Druk 3D & Materiały Techniczne</a></li>
-            <li><a href="embedded.html">Automotive Embedded Software</a></li>
-            <li><a href="automatyzacja.html">Dedykowane Urządzenia & Automatyka</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D detali</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
+            <li><a href="druk-3d.html">Druk 3D PA-CF i ASA</a></li>
+            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Wycena i wiedza</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
-            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
-            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+            <li><a href="kalkulator.html">Cennik i kalkulator</a></li>
+            <li><a href="realizacje.html">Case Studies (Datsun)</a></li>
+            <li><a href="odtwarzanie-czesci.html">Odtwarzanie bez dokumentacji</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności (RODO)</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Obsługa wysyłkowa door-to-door w całej Polsce</p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">High-End 3D & Industrial Automation</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">High-End 3D & Embedded Engineering</div>
       </div>
     </div>
   </footer>
 
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

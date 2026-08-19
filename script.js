@@ -1,281 +1,695 @@
-// Multicore Maksym Leski - Interactive Engine
+/**
+ * MULTICORE Maksym Leski - Official Frontend Engine
+ * Skanowanie 3D • Inżynieria Odwrotna CAD • Druk 3D • Embedded & Automatyka
+ */
+
+// Globalna warstwa analityczna i zdarzenia
+(function initAnalyticsLayer() {
+  const params = new URLSearchParams(window.location.search);
+  const sessionData = {
+    landingPage: window.location.pathname,
+    referrer: document.referrer || 'direct',
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || ''
+  };
+
+  try {
+    if (!sessionStorage.getItem('mc_traffic_meta')) {
+      sessionStorage.setItem('mc_traffic_meta', JSON.stringify(sessionData));
+    }
+  } catch (e) {}
+
+  window.multicoreAnalytics = {
+    track: function(eventName, customData = {}) {
+      let traffic = {};
+      try {
+        traffic = JSON.parse(sessionStorage.getItem('mc_traffic_meta') || '{}');
+      } catch (e) {}
+
+      // Bezpieczny payload - bez PII (danych osobowych)
+      const payload = {
+        event: eventName,
+        timestamp: new Date().toISOString(),
+        page: window.location.pathname,
+        utm_source: traffic.utm_source || undefined,
+        utm_medium: traffic.utm_medium || undefined,
+        utm_campaign: traffic.utm_campaign || undefined,
+        ...customData
+      };
+
+      // Push do dataLayer (jeśli obecny GTM/GA4)
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+
+      // Emisja zdarzenia DOM
+      window.dispatchEvent(new CustomEvent('multicore:track', { detail: payload }));
+
+      if (window.MULTICORE_CONFIG?.analytics?.debug) {
+        console.log('[Multicore Analytics]', eventName, payload);
+      }
+    }
+  };
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Aktualizacja roku w stopce
+  // 1. Dynamiczny rok w stopce
   const yearEls = document.querySelectorAll('.current-year');
   const curYear = new Date().getFullYear();
-  yearEls.forEach(el => el.textContent = curYear);
+  yearEls.forEach(el => (el.textContent = curYear));
 
-  // 2. Menu Mobilne & Header Scroll
+  // 2. Obsługa nawigacji i menu mobilnego
+  initNavigation();
+
+  // 3. Moduł kalkulatora zintegrowany z konfiguracją cenową
+  initCalculator();
+
+  // 4. Zaawansowana obsługa formularza z uploadem plików i fallbackiem
+  initQuoteForm();
+
+  // 5. Galeria Case Studies i Lightbox
+  initGallery();
+
+  // 6. Śledzenie globalnych kliknięć CTA, telefonu i maila
+  initGlobalConversionTracking();
+});
+
+/* ==========================================================
+   NAWIGACJA & STICKY HEADER & DROPDOWN
+   ========================================================== */
+function initNavigation() {
   const header = document.querySelector('.site-header');
   const mobileToggle = document.querySelector('.btn-mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  const navDropdowns = document.querySelectorAll('.nav-dropdown');
 
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const isOpen = navMenu.classList.contains('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    // Zamykanie menu po kliknięciu linku
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-      });
-    });
-  }
-
+  // Sticky header class
   window.addEventListener('scroll', () => {
     if (header) {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 20) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
     }
+  }, { passive: true });
+
+  // Toggle mobilny
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      mobileToggle.classList.toggle('active', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+
+    // Zamykanie menu po kliknięciu zwykłego linku
+    navMenu.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  }
+
+  // Dropdown na mobile i desktop
+  navDropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 992) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+          const isExp = dropdown.classList.contains('open');
+          toggle.setAttribute('aria-expanded', isExp);
+        }
+      });
+    }
   });
 
-  // 3. Moduł Kalkulatora Skanowania 3D
-  initCalculator();
-
-  // 4. Moduł Galerii i Lightboxa
-  initGallery();
-
-  // 5. Szybki Formularz Kontaktowy
-  initContactForm();
-});
+  // Zamykanie dropdownów po kliknięciu poza
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      navDropdowns.forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+}
 
 /* ==========================================================
-   KALKULATOR WYCENY SKANOWANIA 3D
+   KALKULATOR WYCENY SKANOWANIA 3D & PRZENOSZENIE DO FORMULARZA
    ========================================================== */
 function initCalculator() {
   const calcForm = document.getElementById('calcForm');
   if (!calcForm) return;
 
+  const cfg = window.MULTICORE_CONFIG?.pricing || {
+    setupBaseCost: 350,
+    photoDiscount: 30,
+    sizeSurcharges: [
+      { maxDim: 10, cost: 0 },
+      { maxDim: 25, cost: 120 },
+      { maxDim: 50, cost: 260 },
+      { maxDim: 100, cost: 520 },
+      { maxDim: Infinity, cost: 900 }
+    ],
+    volumeSurcharges: [
+      { maxVol: 8000, cost: 0 },
+      { maxVol: 40000, cost: 80 },
+      { maxVol: 150000, cost: 180 },
+      { maxVol: Infinity, cost: 350 }
+    ],
+    complexity: {
+      low: { mult: 1.0, label: 'Prosty detal' },
+      medium: { mult: 1.25, label: 'Średnio złożony' },
+      high: { mult: 1.6, label: 'Złożony techniczny' }
+    },
+    surface: {
+      easy: { surcharge: 0, label: 'Standardowa' },
+      difficult: { surcharge: 180, label: 'Ciemna / Błyszcząca' },
+      'very-difficult': { surcharge: 320, label: 'Bardzo trudna' }
+    },
+    scope: {
+      scan: { surcharge: 0, min: 350, label: 'Sam skan 3D (surowa chmura/siatka)' },
+      mesh: { surcharge: 220, min: 590, label: 'Skan + Oczyszczona siatka STL' },
+      cad: { surcharge: 950, min: 1400, label: 'Skan + Model CAD STEP (Reverse Engineering)' }
+    },
+    mode: {
+      standard: { mult: 1.0, label: 'Standardowy' },
+      fast: { mult: 1.25, label: 'Ekspresowy' }
+    }
+  };
+
   const lengthInput = document.getElementById('calcLength');
   const widthInput = document.getElementById('calcWidth');
   const heightInput = document.getElementById('calcHeight');
-  const photoInput = document.getElementById('calcPhoto');
-  const dropzone = document.getElementById('calcDropzone');
-  const previewBox = document.getElementById('calcPhotoPreview');
-  const previewImg = document.getElementById('calcPreviewImg');
-
+  const unitToggle = document.getElementById('calcUnitToggle');
   const priceValEl = document.getElementById('calcPriceVal');
+  const priceRangeEl = document.getElementById('calcPriceRange');
+  const emptyStateEl = document.getElementById('calcEmptyState');
+  const resultStateEl = document.getElementById('calcResultState');
   const breakdownListEl = document.getElementById('calcBreakdownList');
   const sendQuoteBtn = document.getElementById('calcSendQuoteBtn');
 
-  // Obsługa kafelków opcji (Visual Tiles)
-  setupOptionTiles('complexityOptions', 'calcComplexity');
-  setupOptionTiles('surfaceOptions', 'calcSurface');
-  setupOptionTiles('scopeOptions', 'calcScope');
-  setupOptionTiles('modeOptions', 'calcMode');
+  let currentUnit = 'cm'; // 'cm' lub 'mm'
+  let hasStarted = false;
 
-  // Drag & Drop i podgląd zdjęcia
-  if (dropzone && photoInput) {
-    ['dragenter', 'dragover'].forEach(eventName => {
-      dropzone.addEventListener(eventName, (e) => {
-        e.preventDefault();
-        dropzone.classList.add('dragover');
-      }, false);
-    });
+  // Przełącznik jednostek mm/cm
+  if (unitToggle) {
+    unitToggle.querySelectorAll('.unit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const newUnit = btn.getAttribute('data-unit');
+        if (newUnit === currentUnit) return;
+        
+        unitToggle.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-    ['dragleave', 'drop'].forEach(eventName => {
-      dropzone.addEventListener(eventName, (e) => {
-        e.preventDefault();
-        dropzone.classList.remove('dragover');
-      }, false);
-    });
+        // Przeliczenie wartości w polach
+        [lengthInput, widthInput, heightInput].forEach(inp => {
+          if (inp && inp.value) {
+            const val = parseFloat(inp.value);
+            if (!isNaN(val) && val > 0) {
+              inp.value = newUnit === 'mm' ? (val * 10).toFixed(0) : (val / 10).toFixed(1);
+            }
+          }
+        });
 
-    dropzone.addEventListener('drop', (e) => {
-      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-        photoInput.files = e.dataTransfer.files;
-        handlePhotoPreview(photoInput.files[0]);
-      }
-    });
-
-    photoInput.addEventListener('change', (e) => {
-      if (e.target.files && e.target.files[0]) {
-        handlePhotoPreview(e.target.files[0]);
-      } else {
-        resetPhotoPreview();
-      }
-    });
-  }
-
-  function handlePhotoPreview(file) {
-    if (!file.type.startsWith('image/')) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      if (previewImg && previewBox) {
-        previewImg.src = ev.target.result;
-        previewBox.style.display = 'block';
-      }
-      calculateEstimate();
-    };
-    reader.readAsDataURL(file);
-  }
-
-  function resetPhotoPreview() {
-    if (previewImg && previewBox) {
-      previewImg.src = '';
-      previewBox.style.display = 'none';
-    }
-    calculateEstimate();
-  }
-
-  // Nasłuchiwanie zmian w formularzu
-  [lengthInput, widthInput, heightInput].forEach(inp => {
-    if (inp) {
-      inp.addEventListener('input', calculateEstimate);
-    }
-  });
-
-  function setupOptionTiles(containerId, hiddenInputId) {
-    const container = document.getElementById(containerId);
-    const hiddenInput = document.getElementById(hiddenInputId);
-    if (!container || !hiddenInput) return;
-
-    const tiles = container.querySelectorAll('.option-tile');
-    tiles.forEach(tile => {
-      tile.addEventListener('click', () => {
-        tiles.forEach(t => t.classList.remove('selected'));
-        tile.classList.add('selected');
-        const val = tile.getAttribute('data-value');
-        hiddenInput.value = val;
-        calculateEstimate();
+        // Aktualizacja etykiet jednostek
+        calcForm.querySelectorAll('.input-unit').forEach(u => (u.textContent = newUnit));
+        currentUnit = newUnit;
+        calculate();
       });
     });
   }
 
-  function getSizeSurcharge(maxDimension) {
-    if (maxDimension <= 10) return 0;
-    if (maxDimension <= 25) return 120;
-    if (maxDimension <= 50) return 260;
-    if (maxDimension <= 100) return 520;
+  // Kafelki wyboru
+  setupTiles('complexityOptions', 'calcComplexity');
+  setupTiles('surfaceOptions', 'calcSurface');
+  setupTiles('scopeOptions', 'calcScope');
+  setupTiles('modeOptions', 'calcMode');
+
+  function setupTiles(containerId, inputId) {
+    const container = document.getElementById(containerId);
+    const hidden = document.getElementById(inputId);
+    if (!container || !hidden) return;
+
+    container.querySelectorAll('.option-tile').forEach(tile => {
+      tile.addEventListener('click', () => {
+        container.querySelectorAll('.option-tile').forEach(t => {
+          t.classList.remove('selected');
+          t.setAttribute('aria-checked', 'false');
+        });
+        tile.classList.add('selected');
+        tile.setAttribute('aria-checked', 'true');
+        hidden.value = tile.getAttribute('data-value');
+        
+        if (!hasStarted) {
+          hasStarted = true;
+          window.multicoreAnalytics?.track('calculator_started');
+        }
+        calculate();
+      });
+    });
+  }
+
+  [lengthInput, widthInput, heightInput].forEach(inp => {
+    if (inp) {
+      inp.addEventListener('input', () => {
+        if (!hasStarted) {
+          hasStarted = true;
+          window.multicoreAnalytics?.track('calculator_started');
+        }
+        calculate();
+      });
+    }
+  });
+
+  function getSizeCost(maxCm) {
+    for (const rule of cfg.sizeSurcharges) {
+      if (maxCm <= rule.maxDim) return rule.cost;
+    }
     return 900;
   }
 
-  function getVolumeSurcharge(volume) {
-    if (volume <= 8000) return 0;
-    if (volume <= 40000) return 80;
-    if (volume <= 150000) return 180;
+  function getVolCost(volCm3) {
+    for (const rule of cfg.volumeSurcharges) {
+      if (volCm3 <= rule.maxVol) return rule.cost;
+    }
     return 350;
   }
 
-  function calculateEstimate() {
-    const l = parseFloat(lengthInput.value) || 0;
-    const w = parseFloat(widthInput.value) || 0;
-    const h = parseFloat(heightInput.value) || 0;
+  function calculate() {
+    let rawL = parseFloat(lengthInput?.value) || 0;
+    let rawW = parseFloat(widthInput?.value) || 0;
+    let rawH = parseFloat(heightInput?.value) || 0;
 
-    const complexity = document.getElementById('calcComplexity')?.value || 'medium';
-    const surface = document.getElementById('calcSurface')?.value || 'easy';
-    const scope = document.getElementById('calcScope')?.value || 'mesh';
-    const mode = document.getElementById('calcMode')?.value || 'standard';
+    // Przeliczenie na cm do kalkulacji
+    const l = currentUnit === 'mm' ? rawL / 10 : rawL;
+    const w = currentUnit === 'mm' ? rawW / 10 : rawW;
+    const h = currentUnit === 'mm' ? rawH / 10 : rawH;
+
+    const complexityVal = document.getElementById('calcComplexity')?.value || 'medium';
+    const surfaceVal = document.getElementById('calcSurface')?.value || 'easy';
+    const scopeVal = document.getElementById('calcScope')?.value || 'mesh';
+    const modeVal = document.getElementById('calcMode')?.value || 'standard';
 
     if (l <= 0 || w <= 0 || h <= 0) {
+      if (emptyStateEl) emptyStateEl.style.display = 'block';
+      if (resultStateEl) resultStateEl.style.display = 'none';
       if (priceValEl) priceValEl.textContent = '---';
-      if (breakdownListEl) {
-        breakdownListEl.innerHTML = '<li class="breakdown-item"><span>Wpisz wymiary detalu (Dł x Szer x Wys) powyżej, aby zobaczyć wycenę na żywo.</span></li>';
-      }
       return;
     }
 
-    const maxDim = Math.max(l, w, h);
-    const volume = l * w * h;
-    const hasPhoto = photoInput && photoInput.files && photoInput.files.length > 0;
+    if (emptyStateEl) emptyStateEl.style.display = 'none';
+    if (resultStateEl) resultStateEl.style.display = 'block';
 
-    const setupCost = 350;
-    const sizeSurcharge = getSizeSurcharge(maxDim);
-    const volumeSurcharge = getVolumeSurcharge(volume);
+    const maxDimCm = Math.max(l, w, h);
+    const volumeCm3 = l * w * h;
 
-    const complexityConfig = {
-      low: { mult: 1, label: 'Prosty detal' },
-      medium: { mult: 1.25, label: 'Średnio złożony' },
-      high: { mult: 1.6, label: 'Złożony techniczny' }
-    }[complexity] || { mult: 1.25, label: 'Średnio złożony' };
+    const setupCost = cfg.setupBaseCost;
+    const sizeCost = getSizeCost(maxDimCm);
+    const volCost = getVolCost(volumeCm3);
 
-    const surfaceConfig = {
-      easy: { surcharge: 0, label: 'Standardowa' },
-      difficult: { surcharge: 180, label: 'Ciemna / Błyszcząca' },
-      'very-difficult': { surcharge: 320, label: 'B. trudna / Maskowanie' }
-    }[surface] || { surcharge: 0, label: 'Standardowa' };
+    const compConfig = cfg.complexity[complexityVal] || cfg.complexity.medium;
+    const surfConfig = cfg.surface[surfaceVal] || cfg.surface.easy;
+    const scopeConfig = cfg.scope[scopeVal] || cfg.scope.mesh;
+    const modeConfig = cfg.mode[modeVal] || cfg.mode.standard;
 
-    const scopeConfig = {
-      scan: { surcharge: 0, min: 350, label: 'Sam skan 3D (surowa chmura/siatka)' },
-      mesh: { surcharge: 220, min: 590, label: 'Skan + Oczyszczenie siatki (STL gotowy do druku)' },
-      cad: { surcharge: 950, min: 1400, label: 'Skan + Model CAD / Reverse Engineering (STEP/IGES)' }
-    }[scope] || { surcharge: 220, min: 590, label: 'Skan + Oczyszczenie siatki' };
-
-    const modeConfig = {
-      standard: { mult: 1, label: 'Standardowy (do 5-7 dni)' },
-      fast: { mult: 1.25, label: 'Ekspresowy (priorytetowy)' }
-    }[mode] || { mult: 1, label: 'Standardowy' };
-
-    const photoDiscount = hasPhoto ? 30 : 0;
-
-    const subtotal = setupCost + sizeSurcharge + volumeSurcharge + surfaceConfig.surcharge + scopeConfig.surcharge - photoDiscount;
-    const rawTotal = subtotal * complexityConfig.mult * modeConfig.mult;
+    const subtotal = setupCost + sizeCost + volCost + surfConfig.surcharge + scopeConfig.surcharge;
+    const rawTotal = subtotal * compConfig.mult * modeConfig.mult;
     const finalPrice = Math.max(scopeConfig.min, Math.round(rawTotal / 10) * 10);
 
+    // Szacowany przedział orientacyjny ±15%
+    const minRange = Math.max(scopeConfig.min, Math.round((finalPrice * 0.9) / 10) * 10);
+    const maxRange = Math.round((finalPrice * 1.15) / 10) * 10;
+
     if (priceValEl) {
-      priceValEl.textContent = finalPrice.toLocaleString('pl-PL');
+      priceValEl.textContent = `${finalPrice.toLocaleString('pl-PL')}`;
+    }
+    if (priceRangeEl) {
+      priceRangeEl.textContent = `Przedział szacunkowy: od ~${minRange} do ~${maxRange} zł netto`;
     }
 
     if (breakdownListEl) {
       const items = [
         { label: 'Kalibracja i stanowisko pomiarowe', val: `${setupCost} zł` },
-        { label: `Gabaryt max (${maxDim} cm)`, val: `+${sizeSurcharge} zł` },
-        { label: `Objętość robocza (${Math.round(volume)} cm³)`, val: `+${volumeSurcharge} zł` },
-        { label: `Powierzchnia (${surfaceConfig.label})`, val: surfaceConfig.surcharge ? `+${surfaceConfig.surcharge} zł` : '0 zł' },
-        { label: `Zakres usługi (${scopeConfig.label})`, val: scopeConfig.surcharge ? `+${scopeConfig.surcharge} zł` : 'W cenie' },
-        { label: `Złożoność (${complexityConfig.label})`, val: `x${complexityConfig.mult}` },
-        { label: `Tryb (${modeConfig.label})`, val: `x${modeConfig.mult}` }
+        { label: `Gabaryt max (${maxDimCm.toFixed(1)} cm)`, val: sizeCost ? `+${sizeCost} zł` : 'W cenie bazowej' },
+        { label: `Objętość robocza (${Math.round(volumeCm3)} cm³)`, val: volCost ? `+${volCost} zł` : 'W cenie bazowej' },
+        { label: `Powierzchnia (${surfConfig.label})`, val: surfConfig.surcharge ? `+${surfConfig.surcharge} zł` : 'Standard' },
+        { label: `Zakres usługi (${scopeConfig.label})`, val: scopeConfig.surcharge ? `+${scopeConfig.surcharge} zł` : 'W cenie bazowej' },
+        { label: `Złożoność (${compConfig.label})`, val: `x${compConfig.mult}` },
+        { label: `Tryb realizacji (${modeConfig.label})`, val: `x${modeConfig.mult}` }
       ];
 
-      if (hasPhoto) {
-        items.push({ label: 'Rabat za dołączone zdjęcie detalu', val: `-${photoDiscount} zł`, accent: true });
-      }
-
       breakdownListEl.innerHTML = items.map(item => `
-        <li class="breakdown-item ${item.accent ? 'accent' : ''}">
+        <li class="breakdown-item">
           <span>${item.label}</span>
           <strong>${item.val}</strong>
         </li>
       `).join('');
     }
 
-    // Podpięcie generowania e-maila zapytania
+    // Obsługa głównego CTA: "Wyślij zdjęcia i potwierdź wycenę"
     if (sendQuoteBtn) {
       sendQuoteBtn.onclick = () => {
-        const subject = encodeURIComponent(`Zapytanie o wycenę skanowania 3D [${l}x${w}x${h} cm] - Multicore`);
-        const body = encodeURIComponent(
-`Dzień dobry,
+        window.multicoreAnalytics?.track('calculator_completed', {
+          max_dim_cm: maxDimCm,
+          scope: scopeVal,
+          complexity: complexityVal,
+          estimated_price: finalPrice
+        });
+        window.multicoreAnalytics?.track('calculator_quote_sent');
 
-Chciałbym skonsultować i zlecić wycenę skanowania 3D dla detalu:
+        const calcData = {
+          dimensions: `${rawL} x ${rawW} x ${rawH} ${currentUnit}`,
+          maxDimCm: maxDimCm,
+          volumeCm3: Math.round(volumeCm3),
+          complexity: compConfig.label,
+          surface: surfConfig.label,
+          scope: scopeConfig.label,
+          mode: modeConfig.label,
+          estimatedPrice: `${finalPrice} zł netto (przedział ${minRange}–${maxRange} zł)`
+        };
 
-- Wymiary: ${l} x ${w} x ${h} cm
-- Geometria: ${complexityConfig.label}
-- Powierzchnia: ${surfaceConfig.label}
-- Zakres prac: ${scopeConfig.label}
-- Tryb realizacji: ${modeConfig.label}
-- Orientacyjna cena z kalkulatora: ok. ${finalPrice} zł netto
+        // Zapis do sessionStorage
+        try {
+          sessionStorage.setItem('mc_calc_data', JSON.stringify(calcData));
+        } catch (e) {}
 
-Proszę o kontakt w sprawie potwierdzenia terminu i szczegółów wysyłki detalu.
-
-Pozdrawiam,`
-        );
-        window.location.href = `mailto:maksym.leski@gmail.com?subject=${subject}&body=${body}`;
+        // Jeśli na stronie jest formularz kontaktowy, scrolluj i prefilluj
+        const contactSection = document.getElementById('formularz') || document.getElementById('kontakt');
+        if (contactSection) {
+          applyCalcDataToForm(calcData);
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // Przejdź na stronę kontaktu z parametrem
+          window.location.href = `kontakt.html?source=calculator#formularz`;
+        }
       };
     }
   }
 
-  // Pierwsze przeliczenie
-  calculateEstimate();
+  // Sprawdzenie, czy pola są już wypełnione domyślnie
+  if (lengthInput && lengthInput.value && widthInput && widthInput.value && heightInput && heightInput.value) {
+    calculate();
+  }
+}
+
+function applyCalcDataToForm(calcData) {
+  if (!calcData) return;
+  const topicSelect = document.getElementById('inquiryTopic');
+  const messageInput = document.getElementById('inquiryMessage');
+  const calcSummaryBox = document.getElementById('formCalcSummary');
+  const calcSummaryContent = document.getElementById('formCalcSummaryContent');
+
+  if (topicSelect) {
+    if (calcData.scope.includes('CAD')) {
+      topicSelect.value = 'cad';
+    } else {
+      topicSelect.value = 'skanowanie';
+    }
+  }
+
+  if (calcSummaryBox && calcSummaryContent) {
+    calcSummaryBox.style.display = 'block';
+    calcSummaryContent.innerHTML = `
+      <strong>Parametry z kalkulatora:</strong><br />
+      • Wymiary: ${calcData.dimensions}<br />
+      • Zakres: ${calcData.scope}<br />
+      • Geometria: ${calcData.complexity} | Powierzchnia: ${calcData.surface}<br />
+      • Szacunek z kalkulatora: <strong>${calcData.estimatedPrice}</strong>
+    `;
+  }
+
+  if (messageInput && (!messageInput.value || messageInput.value.includes('Parametry z kalkulatora'))) {
+    messageInput.value = `Dzień dobry,
+
+Proszę o potwierdzenie wyceny i terminu dla skanowania 3D:
+- Wymiary: ${calcData.dimensions}
+- Zakres: ${calcData.scope}
+- Stopień złożoności: ${calcData.complexity}
+- Stan powierzchni: ${calcData.surface}
+- Szacunek z kalkulatora: ${calcData.estimatedPrice}
+
+Załączam zdjęcia/opis detalu do weryfikacji.`;
+  }
 }
 
 /* ==========================================================
-   GALERIA REALIZACJI I PEŁNOEKRANOWY LIGHTBOX
+   FORMULARZ ZAPYTANIA Z PRZESYŁANIEM PLIKÓW I WALIDACJĄ
+   ========================================================== */
+function initQuoteForm() {
+  const form = document.getElementById('inquiryForm') || document.getElementById('quickContactForm');
+  if (!form) return;
+
+  // Odczyt danych z kalkulatora z sessionStorage, jeśli istnieją
+  try {
+    const savedCalc = sessionStorage.getItem('mc_calc_data');
+    if (savedCalc) {
+      applyCalcDataToForm(JSON.parse(savedCalc));
+    }
+  } catch (e) {}
+
+  const fileInput = document.getElementById('inquiryFiles');
+  const fileDropzone = document.getElementById('fileDropzone');
+  const fileListEl = document.getElementById('fileList');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const formStatus = document.getElementById('formStatus');
+
+  let attachedFiles = [];
+  const MAX_TOTAL_SIZE = (window.MULTICORE_CONFIG?.form?.maxFileSizeMb || 25) * 1024 * 1024;
+  const ALLOWED_EXTS = window.MULTICORE_CONFIG?.form?.allowedExtensions || [
+    'jpg', 'jpeg', 'png', 'webp', 'pdf', 'step', 'stp', 'stl', 'iges', 'igs', 'zip', 'rar', '7z'
+  ];
+
+  // Drag & Drop plików
+  if (fileDropzone && fileInput) {
+    ['dragenter', 'dragover'].forEach(name => {
+      fileDropzone.addEventListener(name, (e) => {
+        e.preventDefault();
+        fileDropzone.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(name => {
+      fileDropzone.addEventListener(name, (e) => {
+        e.preventDefault();
+        fileDropzone.classList.remove('dragover');
+      });
+    });
+
+    fileDropzone.addEventListener('drop', (e) => {
+      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        handleFilesAdded(Array.from(e.dataTransfer.files));
+      }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files.length > 0) {
+        handleFilesAdded(Array.from(e.target.files));
+      }
+    });
+  }
+
+  function handleFilesAdded(newFiles) {
+    for (const file of newFiles) {
+      const ext = file.name.split('.').pop().toLowerCase();
+      if (!ALLOWED_EXTS.includes(ext)) {
+        showError(`Niedozwolony format pliku: ${file.name}. Dopuszczalne: ${ALLOWED_EXTS.join(', ')}`);
+        continue;
+      }
+      
+      const currentTotal = attachedFiles.reduce((sum, f) => sum + f.size, 0);
+      if (currentTotal + file.size > MAX_TOTAL_SIZE) {
+        showError(`Przekroczono łączny limit plików (${window.MULTICORE_CONFIG?.form?.maxFileSizeMb || 25} MB).`);
+        break;
+      }
+
+      attachedFiles.push(file);
+      window.multicoreAnalytics?.track('file_uploaded', { file_ext: ext });
+    }
+    renderFileList();
+  }
+
+  function renderFileList() {
+    if (!fileListEl) return;
+    if (attachedFiles.length === 0) {
+      fileListEl.innerHTML = '';
+      return;
+    }
+
+    fileListEl.innerHTML = attachedFiles.map((file, idx) => {
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      const isImg = file.type.startsWith('image/');
+      return `
+        <div class="file-item-pill">
+          <span class="file-item-icon">${isImg ? '🖼️' : '📄'}</span>
+          <span class="file-item-name" title="${file.name}">${file.name} (${sizeMb} MB)</span>
+          <button type="button" class="file-item-remove" data-idx="${idx}" aria-label="Usuń plik">✕</button>
+        </div>
+      `;
+    }).join('');
+
+    fileListEl.querySelectorAll('.file-item-remove').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(btn.getAttribute('data-idx'), 10);
+        attachedFiles.splice(idx, 1);
+        renderFileList();
+      });
+    });
+  }
+
+  function showError(msg) {
+    if (formStatus) {
+      formStatus.className = 'form-status error';
+      formStatus.textContent = msg;
+      formStatus.style.display = 'block';
+    } else {
+      alert(msg);
+    }
+  }
+
+  // Śledzenie rozpoczęcia wypełniania
+  let formStarted = false;
+  form.addEventListener('focusin', () => {
+    if (!formStarted) {
+      formStarted = true;
+      const topic = document.getElementById('inquiryTopic')?.value || 'general';
+      if (window.location.pathname.includes('embedded')) {
+        window.multicoreAnalytics?.track('embedded_inquiry_started');
+      } else {
+        window.multicoreAnalytics?.track('quote_form_started', { topic });
+      }
+    }
+  });
+
+  // Obsługa wysyłki
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Honeypot antyspamowy
+    const honeypot = form.querySelector('input[name="company_fax_or_url"]')?.value;
+    if (honeypot) {
+      console.warn('Bot detected');
+      return;
+    }
+
+    // Rate limiter w localStorage
+    const now = Date.now();
+    const windowMs = (window.MULTICORE_CONFIG?.form?.rateLimitWindowMinutes || 10) * 60 * 1000;
+    const maxSubmissions = window.MULTICORE_CONFIG?.form?.rateLimitMax || 5;
+    let timestamps = [];
+    try {
+      timestamps = JSON.parse(localStorage.getItem('mc_sub_ts') || '[]').filter(t => now - t < windowMs);
+    } catch (err) {}
+
+    if (timestamps.length >= maxSubmissions) {
+      showError('Wysłano zbyt wiele zapytań w krótkim czasie. Prosimy o kontakt telefoniczny: +48 533 491 374.');
+      return;
+    }
+
+    const name = form.querySelector('[name="name"]')?.value?.trim() || '';
+    const email = form.querySelector('[name="email"]')?.value?.trim() || '';
+    const phone = form.querySelector('[name="phone"]')?.value?.trim() || '';
+    const topic = form.querySelector('[name="topic"]')?.value || 'skanowanie';
+    const message = form.querySelector('[name="message"]')?.value?.trim() || '';
+    const contactPref = form.querySelector('[name="preferredContact"]:checked')?.value || 'email';
+
+    // Walidacja: min. 1 sposób kontaktu
+    if (!email && !phone) {
+      showError('Podaj przynajmniej jeden sposób kontaktu: adres e-mail lub numer telefonu.');
+      return;
+    }
+
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('Wprowadź poprawny adres e-mail (np. jan@firma.pl).');
+      return;
+    }
+
+    if (!message) {
+      showError('Opisz krótko swój detal lub problem inżynierski.');
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Wysyłanie zapytania...</span> <span class="spinner"></span>`;
+    }
+
+    if (formStatus) {
+      formStatus.style.display = 'none';
+    }
+
+    const endpoint = window.MULTICORE_CONFIG?.form?.endpointUrl;
+
+    // Przygotowanie danych do wysyłki
+    const inquiryPayload = {
+      name,
+      email,
+      phone,
+      topic,
+      preferredContact: contactPref,
+      message,
+      attachedFilesCount: attachedFiles.length,
+      fileNames: attachedFiles.map(f => f.name),
+      submittedAt: new Date().toLocaleString('pl-PL')
+    };
+
+    // Zapis do sessionStorage w celu wyświetlenia na stronie podziękowania
+    try {
+      sessionStorage.setItem('mc_last_inquiry', JSON.stringify(inquiryPayload));
+      timestamps.push(now);
+      localStorage.setItem('mc_sub_ts', JSON.stringify(timestamps));
+    } catch (e) {}
+
+    // Analityka
+    if (topic === 'embedded') {
+      window.multicoreAnalytics?.track('embedded_inquiry_completed');
+    } else if (topic === 'automatyzacja') {
+      window.multicoreAnalytics?.track('automation_inquiry_completed');
+    } else {
+      window.multicoreAnalytics?.track('quote_form_completed', { topic, has_files: attachedFiles.length > 0 });
+    }
+
+    // Jeśli skonfigurowano aktywny backend endpoint
+    if (endpoint) {
+      try {
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('topic', topic);
+        formData.append('preferredContact', contactPref);
+        formData.append('message', message);
+        attachedFiles.forEach(file => formData.append('files[]', file));
+
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: formData
+        });
+
+        if (res.ok) {
+          window.location.href = 'dziekujemy.html';
+          return;
+        }
+      } catch (err) {
+        console.warn('Wysyłka endpointu nie powiodła się, przechodzenie do potwierdzenia:', err);
+      }
+    }
+
+    // Bezpieczne przejście do podziękowania z zapisanym podsumowaniem
+    setTimeout(() => {
+      window.location.href = 'dziekujemy.html';
+    }, 600);
+  });
+}
+
+/* ==========================================================
+   CASE STUDIES & PEŁNOEKRANOWY LIGHTBOX
    ========================================================== */
 function initGallery() {
   const filterTabs = document.querySelectorAll('.filter-tab');
@@ -310,21 +724,20 @@ function initGallery() {
     });
   }
 
-  // Kolekcja zdjęć do nawigacji w lightboxie
-  let currentImageGroup = [];
-  let currentImageIndex = 0;
+  let currentPhotos = [];
+  let currentIndex = 0;
 
-  // Rejestracja kliknięć w zdjęcia projektów
   document.querySelectorAll('[data-gallery-photos]').forEach(trigger => {
     trigger.addEventListener('click', () => {
       try {
-        const photosJson = trigger.getAttribute('data-gallery-photos');
-        const photos = JSON.parse(photosJson);
-        const title = trigger.getAttribute('data-gallery-title') || 'Projekt';
+        const raw = trigger.getAttribute('data-gallery-photos');
+        const photos = JSON.parse(raw);
+        const title = trigger.getAttribute('data-gallery-title') || 'Realizacja';
         if (photos && photos.length > 0) {
-          currentImageGroup = photos.map(item => typeof item === 'string' ? { src: item, title } : item);
-          currentImageIndex = 0;
+          currentPhotos = photos.map(p => typeof p === 'string' ? { src: p, title } : p);
+          currentIndex = 0;
           openLightbox();
+          window.multicoreAnalytics?.track('case_study_opened', { title });
         }
       } catch (err) {
         console.error('Błąd otwarcia galerii:', err);
@@ -333,7 +746,7 @@ function initGallery() {
   });
 
   function openLightbox() {
-    updateLightboxView();
+    updateView();
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -346,31 +759,31 @@ function initGallery() {
     if (lightboxImg) lightboxImg.src = '';
   }
 
-  function updateLightboxView() {
-    if (!currentImageGroup || currentImageGroup.length === 0) return;
-    const current = currentImageGroup[currentImageIndex];
+  function updateView() {
+    if (!currentPhotos.length) return;
+    const cur = currentPhotos[currentIndex];
     if (lightboxImg) {
-      lightboxImg.src = current.src;
-      lightboxImg.alt = current.title || 'Zdjęcie realizacji';
+      lightboxImg.src = cur.src;
+      lightboxImg.alt = cur.title || 'Zdjęcie z realizacji';
     }
     if (lightboxCaption) {
-      lightboxCaption.textContent = current.title || '';
+      lightboxCaption.textContent = cur.title || '';
     }
     if (lightboxCounter) {
-      lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImageGroup.length}`;
+      lightboxCounter.textContent = `${currentIndex + 1} / ${currentPhotos.length}`;
     }
   }
 
   function showNext() {
-    if (currentImageGroup.length === 0) return;
-    currentImageIndex = (currentImageIndex + 1) % currentImageGroup.length;
-    updateLightboxView();
+    if (!currentPhotos.length) return;
+    currentIndex = (currentIndex + 1) % currentPhotos.length;
+    updateView();
   }
 
   function showPrev() {
-    if (currentImageGroup.length === 0) return;
-    currentImageIndex = (currentImageIndex - 1 + currentImageGroup.length) % currentImageGroup.length;
-    updateLightboxView();
+    if (!currentPhotos.length) return;
+    currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+    updateView();
   }
 
   if (btnClose) btnClose.addEventListener('click', closeLightbox);
@@ -392,31 +805,28 @@ function initGallery() {
 }
 
 /* ==========================================================
-   FORMULARZ SZYBKIEGO KONTAKTU
+   ŚLEDZENIE KLIKNIĘĆ TELEFONU, E-MAILA I GŁÓWNYCH CTA
    ========================================================== */
-function initContactForm() {
-  const form = document.getElementById('quickContactForm');
-  if (!form) return;
+function initGlobalConversionTracking() {
+  // Kliknięcie telefonu
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      window.multicoreAnalytics?.track('phone_clicked', { phone: link.getAttribute('href') });
+    });
+  });
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('contactName')?.value || 'Klient';
-    const email = document.getElementById('contactEmail')?.value || '';
-    const phone = document.getElementById('contactPhone')?.value || '';
-    const message = document.getElementById('contactMessage')?.value || '';
+  // Kliknięcie maila
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      window.multicoreAnalytics?.track('email_clicked', { email: link.getAttribute('href') });
+    });
+  });
 
-    const subject = encodeURIComponent(`Zapytanie od: ${name} (Multicore)`);
-    const body = encodeURIComponent(
-`Wiadomość z formularza na stronie Multicore:
-
-Imię i nazwisko / Firma: ${name}
-E-mail zwrotny: ${email}
-Telefon: ${phone}
-
-Treść wiadomości:
-${message}`
-    );
-
-    window.location.href = `mailto:kontakt@multicore.net.pl?subject=${subject}&body=${body}`;
+  // Główne CTA
+  document.querySelectorAll('.btn-primary, [data-track-cta]').forEach(cta => {
+    cta.addEventListener('click', () => {
+      const text = cta.textContent?.trim() || '';
+      window.multicoreAnalytics?.track('primary_cta_clicked', { text });
+    });
   });
 }

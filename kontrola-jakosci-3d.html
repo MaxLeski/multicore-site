@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontrola jakości i mapa odchyłek 3D | MULTICORE</title>
+  <meta
+    name="description"
+    content="Inspekcja geometryczna i kontrola jakości 3D. Porównanie wyprodukowanego detalu z nominalnym modelem CAD (Color Map Deviation) z dokładnością do 0,02 mm."
+  />
+  <link rel="canonical" href="https://multicore.net.pl/kontrola-jakosci-3d.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://multicore.net.pl/kontrola-jakosci-3d.html" />
+  <meta property="og:title" content="Kontrola jakości i mapa odchyłek 3D | MULTICORE" />
+  <meta property="og:description" content="Bezkontaktowa inspekcja wymiarowa, raporty odchyłek i weryfikacja pierwszych sztuk produkcyjnych (FAI)." />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Kontrola Jakości 3D i Inspekcja Geometryczna",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "MULTICORE Maksym Leski",
+      "url": "https://multicore.net.pl/"
+    },
+    "description": "Porównanie optycznego skanu 3D z nominalnym modelem CAD i generowanie kolorowych map odchyłek.",
+    "areaServed": "Polska"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
+        <div class="brand-logo">M</div>
+        <div class="brand-meta">
+          <span class="brand-name">MULTICORE</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+        </div>
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Główna</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
+          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#formularz" class="btn btn-primary btn-sm">Zleć inspekcję</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Główna</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span>Kontrola jakości i mapa odchyłek</span>
+        </div>
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Metrologia Optyczna & Raporty Odchyłek
+        </div>
+        <h1>Kontrola jakości 3D i kolorowe mapy odchyłek geometrycznych</h1>
+        <p class="subhead">
+          Weryfikujemy dokładność wykonania części po obróbce CNC, odlewnictwie lub druku 3D. Porównujemy fizyczny detal z nominalnym modelem CAD, generując czytelny raport odchyłek (Color Deviation Map).
+        </p>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="#formularz" class="btn btn-primary btn-lg">Zleć raport inspekcji ➔</a>
+          <a href="skanowanie-3d.html" class="btn btn-secondary btn-lg">Specyfikacja skanowania 3D</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3>🗺️ Kolorowa mapa odchyłek (Color Map)</h3>
+            <p>Natychmiastowa wizualna identyfikacja stref naddatków (kolor czerwony) i podcięć/zapadnięć (kolor niebieski) względem bryły nominalnej CAD.</p>
+          </div>
+          <div class="tech-card">
+            <h3>📐 Tolerancje geometryczne GD&T</h3>
+            <p>Weryfikacja płaskości, prostopadłości, współosiowości otworów oraz pozycji baz montażowych zgodnie z normami ISO.</p>
+          </div>
+          <div class="tech-card">
+            <h3>📑 Raport kontrolny PDF</h3>
+            <p>Gotowy dokument kontroli jakości dla klienta lub działu odbioru technicznego z tabelami punktów pomiarowych.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formularz -->
+    <section id="formularz" class="section section-highlight">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-head center" style="margin-bottom: 2rem;">
+          <div class="eyebrow">Formularz zlecenia</div>
+          <h2>Wyceń inspekcję jakościową</h2>
+          <p class="subhead">Prześlij model CAD i opisz detal do weryfikacji.</p>
+        </div>
+
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <div id="formStatus" class="form-status"></div>
+
+          <form id="inquiryForm" novalidate>
+            <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="topic" value="kontrola_jakosci" />
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryName">Imię i nazwisko / Firma *</label>
+                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inquiryEmail">Adres e-mail *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="jan@firma.pl" required />
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryPhone">Telefon kontaktowy</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 ..." />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Preferowany kontakt</label>
+                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="phone" /> Telefon
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryMessage">Opis detalu i krytycznych wymiarów *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj gabaryty, materiał, wymagane tolerancje (np. ±0,05 mm) oraz czy posiadasz nominalny model CAD w formacie STEP..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">Załącz model nominalny CAD lub zdjęcia detalu (STEP, PDF, JPG, max 25 MB)</label>
+              <div class="file-dropzone-modern" id="fileDropzone">
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".step,.stp,.pdf,.jpg,.png,.zip" />
+                <div style="font-size: 1.5rem; margin-bottom: 0.35rem;">📊</div>
+                <div style="font-weight: 600; color: #fff; font-size: 0.9rem;">
+                  Przeciągnij pliki tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz pliki</label>
+                </div>
+                <div id="fileList" class="file-items-grid"></div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-track-cta>
+              <span>Wyślij zapytanie o kontrolę jakości</span>
+              <span class="btn-icon">➔</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">📞 Zadzwoń</a>
+    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Zleć inspekcję ➔</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Kontrola Jakości 3D • Color Map Deviation • Raporty GD&T</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

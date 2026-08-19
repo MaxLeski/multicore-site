@@ -3,19 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Druk 3D i Prototypowanie Inżynieryjne - Multicore Maksym Leski</title>
+  <title>Druk 3D części technicznych PA-CF, PC i ASA | MULTICORE</title>
   <meta
     name="description"
-    content="Przemysłowy druk 3D z materiałów kompozytowych i technicznych (PA-CF, PC, ASA, ABS, TPU). Pole robocze 325x320x325 mm, grzana komora do 65°C, podwójny ekstruder i wysoka dokładność wymiarowa."
+    content="Przemysłowy druk 3D FDM z kompozytów węglowych i tworzyw konstrukcyjnych (PA-CF, PC, ASA, ABS, TPU). Grzana komora do 65°C, podwójna głowica do podpór i tolerancje do ±0,1 mm."
   />
+  <link rel="canonical" href="https://multicore.net.pl/druk-3d.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://multicore.net.pl/druk-3d.html" />
+  <meta property="og:title" content="Druk 3D części technicznych PA-CF, PC i ASA | MULTICORE" />
+  <meta property="og:description" content="Wytrzymałe części funkcjonalne, prototypy i zamienniki z kompozytów węglowych oraz tworzyw technicznych." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy_2.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Przemysłowy Druk 3D FDM",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MULTICORE Maksym Leski",
+          "url": "https://multicore.net.pl/"
+        },
+        "description": "Wytwarzanie addytywne z kompozytów z włóknem węglowym (PA-CF) oraz tworzyw inżynieryjnych (PC, ASA, TPU) w podgrzewanej komorze roboczej.",
+        "areaServed": "Polska"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czy kompozyt PA-CF może zastąpić metal lub aluminium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "W wielu zastosowaniach konstrukcyjnych (uchwyty, korpusy, obudowy, przyrządy spawalnicze) nylon wzmocniony ciętym włóknem węglowym (PA-CF) z powodzeniem zastępuje elementy frezowane z aluminium, oferując wysoką sztywność przy masie niższej o ok. 50%. Wymaga to jednak analizy kierunku obciążeń i temperatury pracy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy wydruki nadają się do komory silnika samochodu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, pod warunkiem doboru odpowiedniego materiału. Tworzywa takie jak ASA (odporność termiczna do 95°C i odporność na UV) oraz PA-CF / PC (odporność do 130–140°C po wygrzaniu) znakomicie sprawdzają się w komorze silnika, w kontakcie z olejami i oparami paliw."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jakie tolerancje wymiarowe są osiągalne w druku 3D?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "W naszej technologii FDM z aktywną komorą grzewczą osiągamy powtarzalność geometryczną rzędu ±0,1 mm na elementach do 100 mm. Dokładność zależy od geometrii, orientacji ułożenia warstw oraz wybranego skurczu tworzywa."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
 
   <!-- Nagłówek i Nawigacja -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-link" aria-label="Strona główna Multicore">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
@@ -26,19 +84,45 @@
       <nav aria-label="Główna nawigacja">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Główna</a></li>
-          <li><a href="skanowanie-3d.html" class="nav-link">Skanowanie 3D</a></li>
-          <li><a href="modelowanie-cad.html" class="nav-link">Modelowanie CAD</a></li>
-          <li><a href="druk-3d.html" class="nav-link active">Druk 3D</a></li>
-          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
-          <li><a href="automatyzacja.html" class="nav-link">Automatyzacja</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link active dropdown-toggle" aria-expanded="false">
+              Oferta
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
+              </a>
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP/IGES ze skanu</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Druk 3D techniczny</strong>
+                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Embedded i firmware</strong>
+                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Urządzenia dedykowane</strong>
+                <span>Projektowanie maszyn, PLC i robotyka</span>
+              </a>
+            </div>
+          </li>
+
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Kalkulator</a></li>
+          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wycena online</a>
+        <a href="kontakt.html" class="btn btn-primary btn-sm">Wyceń wydruk</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -50,7 +134,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Subpage Hero -->
     <section class="subpage-hero">
       <div class="container">
@@ -59,96 +143,101 @@
           <span class="breadcrumbs-sep">/</span>
           <a href="index.html#oferta">Oferta</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Druk 3D & Prototypowanie</span>
+          <span>Druk 3D Techniczny</span>
         </div>
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Przemysłowy druk 3D FDM / Dual-Extrusion
+          Przemysłowe Wytwarzanie Addytywne FDM
         </div>
-        <h1>Druk 3D i Prototypowanie Inżynieryjne</h1>
+        <h1>Precyzyjny druk 3D z kompozytów i tworzyw konstrukcyjnych</h1>
         <p class="subhead">
-          Wytwarzanie wytrzymałych części funkcjonalnych, zamienników niedostępnych podzespołów oraz serii prototypowych z zaawansowanych kompozytów i tworzyw konstrukcyjnych.
+          Produkcja wytrzymałych części funkcjonalnych, zamienników niedostępnych elementów oraz serii prototypowych z kompozytów węglowych (PA-CF), poliwęglanu (PC), ASA i elastomerów TPU.
         </p>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="kontakt.html" class="btn btn-primary btn-lg">Wyślij plik do wyceny wydruku ➔</a>
+          <a href="kalkulator.html" class="btn btn-secondary btn-lg">Kalkulator skanowania i druku</a>
+        </div>
       </div>
     </section>
 
-    <!-- Kluczowe Możliwości Technologiczne -->
-    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem;">
+    <!-- 4 Główne Parametry Parku Maszynowego -->
+    <section class="section" style="padding-top: 3rem; padding-bottom: 2rem;">
       <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Możliwości produkcyjne</div>
-          <h2>Co możesz osiągnąć dzięki naszej technologii druku?</h2>
-          <p class="subhead">
-            Przemysłowe parametry procesu zapewniają części o wytrzymałości zbliżonej do detali formowanych wtryskowo lub obrabianych skrawaniem.
-          </p>
-        </div>
-
         <div class="spec-grid-4">
           <div class="spec-card">
             <div class="spec-icon">📐</div>
-            <div class="spec-label">Pole robocze (Gabaryty)</div>
+            <div class="spec-label">Pole robocze (Gabaryt)</div>
             <div class="spec-value">Do 325 × 320 × 325 mm</div>
-            <div class="spec-desc">Produkcja dużych elementów w jednym kawałku – bez konieczności osłabiającego dzielenia i klejenia.</div>
-          </div>
-
-          <div class="spec-card">
-            <div class="spec-icon">🎯</div>
-            <div class="spec-label">Dokładność i Pasowania</div>
-            <div class="spec-value">Tolerancje do ±0.1 mm</div>
-            <div class="spec-desc">Wysoka powtarzalność geometryczna, precyzyjne otwory pod łożyska, gwinty i gniazda montażowe.</div>
+            <div class="spec-desc">Produkcja dużych obudów, kolektorów i paneli w jednym kawałku bez osłabiającego klejenia.</div>
           </div>
 
           <div class="spec-card">
             <div class="spec-icon">🔥</div>
-            <div class="spec-label">Ogrzewana komora robocza</div>
+            <div class="spec-label">Grzana komora robocza</div>
             <div class="spec-value">Aktywne grzanie (do 65°C)</div>
-            <div class="spec-desc">Brak skurczu materiałowego, pełna spójność międzywarstwowa i brak pękania części technicznych.</div>
+            <div class="spec-desc">Ograniczenie naprężeń skurczowych, doskonała spójność międzywarstwowa i brak pękania.</div>
           </div>
 
           <div class="spec-card">
             <div class="spec-icon">⚡</div>
             <div class="spec-label">Dedykowane podpory</div>
             <div class="spec-value">Podwójna głowica</div>
-            <div class="spec-desc">Czyste usuwanie podpór bez naruszania gładkości powierzchni przy skomplikowanych kanałach i skosach.</div>
+            <div class="spec-desc">Druk podpór ze specjalnego materiału ułatwiającego czyste usuwanie ze skosów i gwintów.</div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">🎯</div>
+            <div class="spec-label">Tolerancje wymiarowe</div>
+            <div class="spec-value">Do ±0,1 mm</div>
+            <div class="spec-desc">Precyzyjne gniazda pod łożyska, gwintowane wkładki mosiężne i ciasne pasowania.</div>
           </div>
         </div>
 
-        <!-- Tabela Możliwości -->
+        <!-- Uczciwe Porównanie Tworzyw Konstrukcyjnych -->
+        <div class="section-head" style="margin-top: 3.5rem;">
+          <div class="eyebrow">Wybór materiału</div>
+          <h2>Uczciwe porównanie tworzyw i kompozytów</h2>
+          <p class="subhead">
+            Dobieramy materiał pod realne warunki pracy: temperaturę, kontakt z chemią, odporność na słońce (UV) i obciążenia udarowe.
+          </p>
+        </div>
+
         <div class="tech-table-wrap">
           <table class="tech-table">
             <thead>
               <tr>
-                <th>Zdolność produkcyjna</th>
-                <th>Zakres / Parametr</th>
-                <th>Korzyść dla Twojego produktu</th>
+                <th>Materiał</th>
+                <th>Odporność temp.</th>
+                <th>Kluczowe właściwości</th>
+                <th>Zastosowanie</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="tech-table-param">Maksymalne gabaryty detalu</td>
-                <td class="tech-table-value">325 × 320 × 325 mm</td>
-                <td>Możliwość druku kompletnych osłon, kolektorów, obudów czy paneli w całości.</td>
+                <td class="tech-table-param"><strong>PA-CF</strong> (Nylon + Włókno węglowe)</td>
+                <td>do 130–150°C</td>
+                <td>Ekstremalna sztywność, niska masa, wysoka odporność na zużycie ścierne i oleje.</td>
+                <td>Uchwyty obrabiarek, koła zębate, ramiona robotów, zamienniki aluminium.</td>
               </tr>
               <tr>
-                <td class="tech-table-param">Wysokość warstwy (Rozdzielczość Z)</td>
-                <td class="tech-table-value">0.08 mm – 0.28 mm</td>
-                <td>Gładkie powierzchnie, wysoka estetyka wizualna oraz ostrość krawędzi i drobnych napisów.</td>
+                <td class="tech-table-param"><strong>ASA</strong> (Akrylonitryl-styren-akrylan)</td>
+                <td>do 90–95°C</td>
+                <td>100% odporności na promieniowanie UV i warunki atmosferyczne, nie żółknie i nie kruszeje.</td>
+                <td>Elementy karoserii, kratki, obudowy wskaźników, części zewnętrzne aut.</td>
               </tr>
               <tr>
-                <td class="tech-table-param">Temperatura przetwarzania</td>
-                <td class="tech-table-value">Ekstruder do 350°C / Komora do 65°C</td>
-                <td>Możliwość bezpiecznego druku tworzyw konstrukcyjnych wysokotemperaturowych (PC, PA, ASA).</td>
+                <td class="tech-table-param"><strong>PC</strong> (Poliwęglan)</td>
+                <td>do 110–125°C</td>
+                <td>Bardzo wysoka udarność (odporność na uderzenia) i wytrzymałość dielektryczna.</td>
+                <td>Osłony maszyn, obudowy elektroniki wysokiej mocy, części pod obciążenia.</td>
               </tr>
               <tr>
-                <td class="tech-table-param">Druk wielomateriałowy (Dual Extrusion)</td>
-                <td class="tech-table-value">2 materiały w jednym cyklu</td>
-                <td>Możliwość łączenia twardego rdzenia z elastyczną uszczelką lub stosowania podpór rozpuszczalnych.</td>
-              </tr>
-              <tr>
-                <td class="tech-table-param">Kondycjonowanie materiału</td>
-                <td class="tech-table-value">Aktywne suszenie kompozytów</td>
-                <td>Brak mikropęcherzy w strukturze tworzywa, 100% szczelności i pełna odporność udarowa.</td>
+                <td class="tech-table-param"><strong>TPU</strong> (Termoplastyczny poliuretan)</td>
+                <td>do 80°C</td>
+                <td>Elastyczność gumopodobna (twardość 95A / 90A Shore'a), tłumienie drgań, odporność na ścieranie.</td>
+                <td>Uszczelki techniczne, odbojniki, chwytaki, osłony przeciwpyłowe.</td>
               </tr>
             </tbody>
           </table>
@@ -156,98 +245,95 @@
       </div>
     </section>
 
-    <!-- Materiały Techniczne -->
+    <!-- Kiedy druk, a kiedy CAD -->
     <section class="section section-highlight">
       <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Baza materiałowa</div>
-          <h2>Tworzywa konstrukcyjne dopasowane do obciążeń i środowiska</h2>
-          <p class="subhead">
-            Dobieramy materiał pod konkretne wymagania: od wysokiej sztywności mechanicznej po odporność na UV, paliwa i wysoką temperaturę.
-          </p>
-        </div>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Dobór technologii</div>
+            <h2>Kiedy sam wydruk 3D wystarczy, a kiedy potrzebujesz modelu CAD?</h2>
+            <p style="margin-bottom: 1.25rem;">
+              Jeśli posiadasz już gotowy, poprawny model cyfrowy (STEP / STL), możemy od razu uruchomić produkcję na drukarce 3D.
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
+              Jeśli Twój detal jest <strong>uszkodzony, połamany lub zużyty</strong>, sam skan 3D nie wystarczy — niezbędny jest etap inżynierii odwrotnej CAD, aby skompensować zużycie i odbudować brakujące zatrzaski przed drukiem.
+            </p>
 
-        <div class="grid-3">
-          <div class="tech-card">
-            <h3>Kompozyty z włóknem węglowym (CF)</h3>
-            <p>Niezwykle sztywne, lekkie i odporne mechanicznie tworzywa, stanowiące w wielu konstrukcjach bezpośrednią alternatywę dla frezowanego aluminium.</p>
-            <div class="materials-cloud">
-              <span class="material-tag accent">PA-CF (Nylon + Włókno węglowe)</span>
-              <span class="material-tag accent">PET-CF</span>
-              <span class="material-tag accent">PC-CF</span>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="kontakt.html" class="btn btn-primary btn-sm">Prześlij plik do oceny</a>
+              <a href="modelowanie-cad.html" class="btn btn-outline btn-sm">Zobacz proces CAD ➔</a>
             </div>
           </div>
 
-          <div class="tech-card">
-            <h3>Tworzywa odporne na UV i chemię</h3>
-            <p>Materiały dedykowane do pracy na zewnątrz, w komorze silnika, w kontakcie z olejami, płynami eksploatacyjnymi i światłem słonecznym.</p>
-            <div class="materials-cloud">
-              <span class="material-tag">ASA (pełna odporność na UV)</span>
-              <span class="material-tag">ABS (wysoka udarność)</span>
-              <span class="material-tag">PC (Poliwęglan - wysoka temp.)</span>
-              <span class="material-tag">PETG (odporność chemiczna)</span>
-            </div>
-          </div>
-
-          <div class="tech-card">
-            <h3>Elastomery i materiały elastyczne</h3>
-            <p>Tworzywa gumopodobne o różnym stopniu twardości Shore'a do wyciszania drgań, uszczelnień i elastycznych osłon.</p>
-            <div class="materials-cloud">
-              <span class="material-tag">TPU 95A (elastyczny, odporny na ścieranie)</span>
-              <span class="material-tag">TPU 85A / 90A</span>
-              <span class="material-tag">Podpory dedykowane</span>
-            </div>
+          <div class="tech-card" style="padding: 2.25rem; border-color: rgba(56, 189, 248, 0.3);">
+            <h3 style="color: #fff; margin-bottom: 1rem;">Wykończenie i dodatkowa obróbka:</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <span style="color: var(--emerald);">✓</span>
+                <div><strong>Wprasowywane wkładki gwintowane:</strong> montaż mosiężnych gwintów M3–M8 odpornych na wielokrotne wkręcanie śrub.</div>
+              </li>
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <span style="color: var(--emerald);">✓</span>
+                <div><strong>Wygrzewanie odprężające (Annealing):</strong> podnoszenie odporności termicznej i krystalizacji polimerów.</div>
+              </li>
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <span style="color: var(--emerald);">✓</span>
+                <div><strong>Kalibracja otworów pasowanych:</strong> rozwiercanie precyzyjnych otworów pod sworznie i łożyska.</div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Zastosowania -->
+    <!-- FAQ -->
     <section class="section">
       <div class="container">
         <div class="section-head center">
-          <div class="eyebrow">Przykłady zastosowań</div>
-          <h2>Gdzie sprawdza się nasz druk 3D?</h2>
+          <div class="eyebrow">FAQ</div>
+          <h2>Pytania o techniczny druk 3D</h2>
         </div>
 
-        <div class="grid-3">
-          <div class="tech-card">
-            <div class="service-icon-wrap">🚗</div>
-            <h3>Rekonstrukcja części motoryzacyjnych</h3>
-            <p>Odtwarzanie niedostępnych kratek, uchwytów, mocowań kokpitu, zaślepek i spinek (np. do klasyków Datsun, BMW, Mercedes) z materiałów odpornych na słońce (ASA).</p>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Czy realizujecie krótkie serie produkcyjne?</div>
+            <div class="faq-answer">Tak. Wykonujemy zarówno pojedyncze prototypy badawcze, części zamienne, jak i krótkie serie produkcyjne od kilku do kilkuset sztuk z powtarzalnością wymiarową.</div>
           </div>
 
-          <div class="tech-card">
-            <div class="service-icon-wrap">⚙️</div>
-            <h3>Części zamienne do maszyn i urządzeń</h3>
-            <p>Koła zębate, prowadnice, krzywki, korpusy i tuleje redukujące przestoje linii produkcyjnych – wykonane ze wzmacnianego kompozytu PA-CF.</p>
-          </div>
-
-          <div class="tech-card">
-            <div class="service-icon-wrap">📦</div>
-            <h3>Obudowy, matryce i przyrządy montażowe</h3>
-            <p>Dedykowane obudowy urządzeń elektronicznych, szablony wiertarskie, chwytaki robotów oraz przyrządy kontrolno-pomiarowe.</p>
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Jakie formaty plików należy przesłać do wyceny?</div>
+            <div class="faq-answer">Najlepiej przesłać plik w formacie STEP (.stp, .step) lub Parasolid (.x_t). Akceptujemy również pliki siatek STL, 3MF i OBJ.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="section" style="padding-top: 0;">
+    <!-- Banner CTA -->
+    <section class="section section-highlight">
       <div class="container">
         <div class="subpage-cta">
-          <h2>Masz gotowy model 3D lub potrzebujesz kompletnej usługi ze skanowaniem?</h2>
+          <h2>Masz plik 3D lub potrzebujesz kompletnej części ze skanowaniem?</h2>
           <p>
-            Prześlij nam plik (STEP, STL, OBJ) lub opisz swój projekt – dobierzemy optymalny materiał i technologię wykonania.
+            Prześlij model lub zdjęcia — dobierzemy materiał pod obciążenia i przygotujemy bezpłatną wycenę.
           </p>
           <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="kalkulator.html" class="btn btn-primary btn-lg">Przelicz koszt w kalkulatorze</a>
-            <a href="kontakt.html" class="btn btn-secondary btn-lg">Skontaktuj się bezpośrednio</a>
+            <a href="kontakt.html" class="btn btn-primary btn-lg">Wyślij zapytanie o druk ➔</a>
+            <a href="kalkulator.html" class="btn btn-secondary btn-lg">Kalkulator skanowania i CAD</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Sticky Bottom Bar na telefonach -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">
+      📞 Zadzwoń
+    </a>
+    <a href="kontakt.html" class="sticky-bar-btn sticky-bar-cta">
+      Wyceń druk ➔
+    </a>
+  </div>
 
   <!-- Stopka -->
   <footer class="site-footer">
@@ -262,45 +348,47 @@
             </div>
           </a>
           <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
-            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz projektowania urządzeń dedykowanych.
+            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz automatyzacji.
           </p>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Podstrony oferty</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D & Digitalizacja</a></li>
-            <li><a href="modelowanie-cad.html">Modelowanie CAD & Inżynieria</a></li>
-            <li><a href="druk-3d.html">Druk 3D & Materiały Techniczne</a></li>
-            <li><a href="embedded.html">Automotive Embedded Software</a></li>
-            <li><a href="automatyzacja.html">Dedykowane Urządzenia & Automatyka</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
+            <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
+            <li><a href="druk-3d.html">Druk 3D techniczny</a></li>
+            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Narzędzia i Realizacje</h4>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Wiedza i Narzędzia</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="realizacje.html">Galeria projektów (Datsun)</a></li>
-            <li><a href="kalkulator.html">Kalkulator wyceny skanu</a></li>
-            <li><a href="kontakt.html">Dane kontaktowe i vCard</a></li>
+            <li><a href="kalkulator.html">Cennik i kalkulator</a></li>
+            <li><a href="realizacje.html">Case Studies</a></li>
+            <li><a href="odtwarzanie-czesci.html">Odtwarzanie części</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +48 533 491 374</p>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ kontakt@multicore.net.pl</p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">Darmowy kurier door-to-door w obie strony</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Darmowy kurier door-to-door w obie strony</p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">High-End 3D & Custom Machine Design</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">High-End 3D & Industrial Automation</div>
       </div>
     </div>
   </footer>
 
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
