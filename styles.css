@@ -379,6 +379,33 @@ a:hover {
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
+.btn-phone {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  gap: 0.45rem;
+}
+
+.btn-phone:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+  transform: translateY(-2px);
+}
+
+.phone-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--emerald);
+  box-shadow: 0 0 8px var(--emerald);
+  animation: pulseDot 1.8s infinite ease-in-out;
+  display: inline-block;
+}
+
 .btn-sm {
   padding: 0.55rem 1.15rem;
   font-size: 0.85rem;
