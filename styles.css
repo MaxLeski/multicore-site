@@ -1,40 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  /* Kolory bazowe - Modern Engineering Slate & Luminous Steel Navy (Rozjaśniony i czytelny) */
-  --bg-main: #0c152b;
-  --bg-secondary: #131f3e;
-  --bg-card: rgba(22, 36, 68, 0.78);
-  --bg-card-hover: rgba(30, 49, 92, 0.92);
-  --bg-card-solid: #162447;
-  --bg-glass: rgba(255, 255, 255, 0.06);
-  --bg-glass-strong: rgba(255, 255, 255, 0.12);
+  /* Kolory bazowe - High-End Luminous Slate Navy (Jasny, wyrazisty i czytelny) */
+  --bg-main: #111a33;
+  --bg-secondary: #19264a;
+  --bg-card: rgba(27, 42, 78, 0.82);
+  --bg-card-hover: rgba(36, 56, 102, 0.95);
+  --bg-card-solid: #1c2c52;
+  --bg-glass: rgba(255, 255, 255, 0.08);
+  --bg-glass-strong: rgba(255, 255, 255, 0.16);
 
   /* Akcenty laserowe i inżynieryjne */
   --cyan: #38bdf8;
-  --cyan-glow: rgba(56, 189, 248, 0.4);
+  --cyan-glow: rgba(56, 189, 248, 0.45);
   --blue: #3b82f6;
   --blue-light: #60a5fa;
   --emerald: #10b981;
-  --emerald-glow: rgba(16, 185, 129, 0.35);
+  --emerald-glow: rgba(16, 185, 129, 0.38);
   --amber: #f59e0b;
 
   /* Typografia i linie */
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
+  --text-main: #ffffff;
+  --text-muted: #e2e8f0;
   --text-dim: #94a3b8;
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --border-focus: rgba(56, 189, 248, 0.6);
-  --border-card: rgba(148, 163, 184, 0.22);
+  --border-subtle: rgba(255, 255, 255, 0.15);
+  --border-focus: rgba(56, 189, 248, 0.65);
+  --border-card: rgba(148, 163, 184, 0.28);
 
   /* Efekty i wymiary */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 20px 50px -10px rgba(0, 0, 0, 0.45), 0 0 30px rgba(56, 189, 248, 0.1);
-  --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.3);
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 50px -10px rgba(0, 0, 0, 0.4), 0 0 30px rgba(56, 189, 248, 0.14);
+  --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.35);
 
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Space Grotesk', var(--font-sans);
@@ -64,9 +64,9 @@ body {
   color: var(--text-main);
   background-color: var(--bg-main);
   background-image: 
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(56, 189, 248, 0.22), transparent 70%),
-    radial-gradient(circle at 100% 35%, rgba(59, 130, 246, 0.16), transparent 45%),
-    radial-gradient(circle at 0% 75%, rgba(16, 185, 129, 0.12), transparent 45%);
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(56, 189, 248, 0.28), transparent 70%),
+    radial-gradient(circle at 100% 35%, rgba(59, 130, 246, 0.2), transparent 50%),
+    radial-gradient(circle at 0% 75%, rgba(16, 185, 129, 0.15), transparent 50%);
   background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
@@ -180,7 +180,7 @@ a:hover {
   top: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(12, 21, 43, 0.88);
+  background: rgba(17, 26, 51, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
@@ -192,9 +192,9 @@ a:hover {
 }
 
 .site-header.scrolled {
-  background: rgba(12, 21, 43, 0.98);
-  border-bottom-color: rgba(56, 189, 248, 0.22);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  background: rgba(17, 26, 51, 0.98);
+  border-bottom-color: rgba(56, 189, 248, 0.28);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
 }
 
 .nav-wrapper {
@@ -410,7 +410,7 @@ a:hover {
 }
 
 .section-highlight {
-  background: linear-gradient(180deg, rgba(18, 30, 60, 0.6) 0%, rgba(12, 21, 43, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(25, 38, 74, 0.6) 0%, rgba(17, 26, 51, 0.9) 100%);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -2290,7 +2290,7 @@ a:hover {
   object-fit: cover;
   border-radius: var(--radius-sm);
   margin-bottom: 0.75rem;
-  background: #0c152b;
+  background: #111a33;
 }
 
 @media (max-width: 900px) {
@@ -2309,7 +2309,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
-  background: rgba(12, 21, 43, 0.75);
+  background: rgba(17, 26, 51, 0.75);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 0.85rem;
@@ -2338,11 +2338,11 @@ a:hover {
 
 .radar-hub-container {
   position: relative;
-  background: linear-gradient(145deg, rgba(20, 33, 64, 0.95), rgba(13, 22, 45, 0.98));
+  background: linear-gradient(145deg, rgba(27, 42, 80, 0.95), rgba(18, 28, 56, 0.98));
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.65), 0 0 35px rgba(56, 189, 248, 0.12);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 35px rgba(56, 189, 248, 0.14);
   overflow: hidden;
 }
 
@@ -2384,7 +2384,7 @@ a:hover {
 .radar-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.18);
 }
 .radar-ring-1 { width: 30%; height: 30%; }
 .radar-ring-2 { width: 60%; height: 60%; border-style: dashed; }
@@ -2396,7 +2396,7 @@ a:hover {
   right: 5%;
   top: 50%;
   height: 1px;
-  background: rgba(56, 189, 248, 0.18);
+  background: rgba(56, 189, 248, 0.2);
 }
 .radar-axis-v {
   position: absolute;
@@ -2404,7 +2404,7 @@ a:hover {
   bottom: 5%;
   left: 50%;
   width: 1px;
-  background: rgba(56, 189, 248, 0.18);
+  background: rgba(56, 189, 248, 0.2);
 }
 
 .radar-sweep-beam {
@@ -2414,7 +2414,7 @@ a:hover {
   top: 0;
   left: 0;
   transform-origin: 100% 100%;
-  background: conic-gradient(from 0deg at 100% 100%, rgba(56, 189, 248, 0.25) 0deg, rgba(56, 189, 248, 0.08) 45deg, transparent 90deg);
+  background: conic-gradient(from 0deg at 100% 100%, rgba(56, 189, 248, 0.28) 0deg, rgba(56, 189, 248, 0.1) 45deg, transparent 90deg);
   animation: radarSweep 8s linear infinite;
   pointer-events: none;
   z-index: 2;
@@ -2429,7 +2429,7 @@ a:hover {
 .radar-quadrant {
   position: relative;
   z-index: 5;
-  background: rgba(18, 29, 58, 0.88);
+  background: rgba(24, 38, 72, 0.9);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
   padding: 1.25rem;
@@ -2460,11 +2460,11 @@ a:hover {
 }
 .quadrant-cad:hover {
   border-color: var(--cyan);
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
   transform: translate(-3px, -3px);
 }
 .quadrant-cad::before {
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 70%);
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 70%);
 }
 
 /* Ćwiartka 2: Druk 3D */
@@ -2473,11 +2473,11 @@ a:hover {
 }
 .quadrant-print:hover {
   border-color: #60a5fa;
-  box-shadow: 0 0 25px rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 25px rgba(96, 165, 250, 0.35);
   transform: translate(3px, -3px);
 }
 .quadrant-print::before {
-  background: radial-gradient(circle at top right, rgba(96, 165, 250, 0.2), transparent 70%);
+  background: radial-gradient(circle at top right, rgba(96, 165, 250, 0.25), transparent 70%);
 }
 
 /* Ćwiartka 3: Automatyzacja & Maszyny */
@@ -2486,11 +2486,11 @@ a:hover {
 }
 .quadrant-auto:hover {
   border-color: var(--emerald);
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
   transform: translate(-3px, 3px);
 }
 .quadrant-auto::before {
-  background: radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.2), transparent 70%);
+  background: radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.25), transparent 70%);
 }
 
 /* Ćwiartka 4: Embedded */
@@ -2499,11 +2499,11 @@ a:hover {
 }
 .quadrant-embedded:hover {
   border-color: #f59e0b;
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
   transform: translate(3px, 3px);
 }
 .quadrant-embedded::before {
-  background: radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.2), transparent 70%);
+  background: radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.25), transparent 70%);
 }
 
 .radar-quadrant:hover::before {
@@ -2525,10 +2525,10 @@ a:hover {
   border-radius: 4px;
   text-transform: uppercase;
 }
-.quadrant-cad .quadrant-tag { color: var(--cyan); background: rgba(56, 189, 248, 0.12); }
-.quadrant-print .quadrant-tag { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
-.quadrant-auto .quadrant-tag { color: var(--emerald); background: rgba(16, 185, 129, 0.12); }
-.quadrant-embedded .quadrant-tag { color: #f59e0b; background: rgba(245, 158, 11, 0.12); }
+.quadrant-cad .quadrant-tag { color: var(--cyan); background: rgba(56, 189, 248, 0.15); }
+.quadrant-print .quadrant-tag { color: #60a5fa; background: rgba(96, 165, 250, 0.15); }
+.quadrant-auto .quadrant-tag { color: var(--emerald); background: rgba(16, 185, 129, 0.15); }
+.quadrant-embedded .quadrant-tag { color: #f59e0b; background: rgba(245, 158, 11, 0.15); }
 
 .quadrant-icon {
   font-size: 1.4rem;
@@ -2578,7 +2578,7 @@ a:hover {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: #0c152b;
+  background: #111a33;
   border: 2px solid var(--cyan);
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), inset 0 0 15px rgba(56, 189, 248, 0.3);
   display: grid;
