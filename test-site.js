@@ -141,6 +141,29 @@ assert(window.MULTICORE_CONFIG && window.MULTICORE_CONFIG.pricing, 'site-config.
 assert(window.MULTICORE_CONFIG.company.phone === '+48 533 491 374', 'Poprawny numer telefonu w konfiguracji');
 assert(window.MULTICORE_CONFIG.company.email === 'kontakt@multicore.net.pl', 'Poprawny email w konfiguracji');
 
+
+// 6. Testy konwersji i lejków CRO
+const indexHtml = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
+assert(indexHtml.includes("Masz uszkodzoną lub niedostępną część? Odtworzymy ją."), "index.html zawiera prawidłowy nagłówek CRO Hero");
+assert(indexHtml.includes("Z czym możemy Ci pomóc?"), "index.html zawiera sekcję wyboru intencji klienta");
+assert(indexHtml.includes("data-intent=\"odtwarzanie\""), "index.html zawiera kafelek intencji odtwarzania części");
+assert(indexHtml.includes("data-intent=\"skanowanie\""), "index.html zawiera kafelek intencji skanowania");
+assert(indexHtml.includes("data-intent=\"cad\""), "index.html zawiera kafelek intencji CAD");
+assert(indexHtml.includes("data-intent=\"druk\""), "index.html zawiera kafelek intencji druku 3D");
+assert(indexHtml.includes("Wyceń swój detal"), "index.html zawiera Primary CTA Wyceń swój detal");
+assert(indexHtml.includes("sticky-bottom-bar"), "index.html zawiera sticky mobile CTA");
+
+const scriptContent = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
+assert(scriptContent.includes("intent_card_clicked"), "script.js śledzi kliknięcia intencji");
+assert(scriptContent.includes("calculator_completed"), "script.js śledzi zakończenie kalkulacji");
+assert(scriptContent.includes("calculator_lead_submitted"), "script.js śledzi wysłanie leada z kalkulatora");
+assert(scriptContent.includes("file_uploaded"), "script.js śledzi upload plików");
+assert(scriptContent.includes("mc_traffic_meta"), "script.js obsługuje zachowanie parametrów UTM");
+
+const kalkulatorHtml = fs.readFileSync(path.join(ROOT_DIR, "kalkulator.html"), "utf8");
+assert(kalkulatorHtml.includes("Wyślij kalkulację i zdjęcia do bezpłatnej weryfikacji"), "kalkulator.html zawiera poprawiony CTA");
+assert(kalkulatorHtml.includes("id=\"formularz\""), "kalkulator.html zawiera osadzony formularz wyceny");
+
 console.log(`\n========================================`);
 console.log(`PODSUMOWANIE TESTÓW: ${passed} PASSED, ${errors.length} FAILED`);
 console.log(`========================================`);

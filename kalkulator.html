@@ -274,7 +274,7 @@
               </div>
 
               <button type="button" class="btn btn-primary btn-lg" id="calcSendQuoteBtn" style="width: 100%; margin-bottom: 1rem;" data-track-cta>
-                <span>Wyślij zdjęcia i potwierdź wycenę</span>
+                <span>Wyślij kalkulację i zdjęcia do bezpłatnej weryfikacji</span>
                 <span class="btn-icon">➔</span>
               </button>
             </div>
@@ -364,6 +364,103 @@
         </div>
       </div>
     </section>
+  
+    <!-- Formularz weryfikacji kalkulacji -->
+    <section id="formularz" class="section section-highlight">
+      <div class="container" style="max-width: 920px;">
+        <div class="section-head center" style="margin-bottom: 2rem;">
+          <div class="eyebrow">Weryfikacja inżynierska</div>
+          <h2>Prześlij kalkulację i zdjęcia do bezpłatnej oceny</h2>
+          <p class="subhead">
+            Załącz zdjęcia uszkodzonego elementu lub pliki – inżynier potwierdzi parametry i przygotuje dokładną ofertę.
+          </p>
+        </div>
+
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <div id="formCalcSummary" style="display: none; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.5rem; color: #fff;">
+            <div id="formCalcSummaryContent"></div>
+          </div>
+
+          <div id="formStatus" class="form-status"></div>
+
+          <form id="inquiryForm" novalidate>
+            <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryTopic">1. Zakres usługi *</label>
+              <select class="input-field" id="inquiryTopic" name="topic" required style="background: var(--bg-main);">
+                <option value="cad" selected>Inżynieria odwrotna i model CAD (STEP)</option>
+                <option value="skanowanie">Skanowanie 3D detalu</option>
+                <option value="druk">Techniczny druk 3D z kompozytów</option>
+                <option value="kompletna_usluga">Kompletna usługa: Skan + CAD + Wykonanie części</option>
+                <option value="inne">Inne</option>
+              </select>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryEmail">2. Adres e-mail (do przesłania oferty) *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="twoj-email@firma.pl" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inquiryPhone">3. Numer telefonu (opcjonalnie)</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 500 000 000" />
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryName">4. Imię / Nazwa firmy (opcjonalnie)</label>
+                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">5. Preferowany kontakt</label>
+                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="phone" /> Telefon
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryMessage">6. Dodatkowy opis detalu lub wymagań *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Opisz stan uszkodzenia, materiał lub wymagane tolerancje..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">7. Załącz zdjęcia lub pliki projektu (JPG, PNG, WEBP, PDF, STEP, STL, ZIP - max 25 MB)</label>
+              <div class="file-dropzone-modern" id="fileDropzone">
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".jpg,.jpeg,.png,.webp,.pdf,.step,.stp,.stl,.iges,.igs,.zip,.rar,.7z" />
+                <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📁</div>
+                <div style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">
+                  Przeciągnij i upuść zdjęcia tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz plik / zrób zdjęcie</label>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">
+                  Wskazówka: Zdjęcie z przyłożoną linijką lub suwmiarką przyspiesza weryfikację.
+                </div>
+                <div id="fileList" class="file-items-grid"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;">
+              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>. Twoje dane i pliki są przetwarzane wyłącznie w celu przygotowania wyceny.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Wyślij zapytanie do inżyniera</span>
+              <span class="btn-icon">➔</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Sticky Bottom Bar na telefonach -->

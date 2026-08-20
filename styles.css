@@ -2645,3 +2645,228 @@ a:hover {
     min-height: auto;
   }
 }
+
+
+/* ==========================================================
+   SEKCJA WYBORU INTENCJI KLIENTA (INTENT SELECTOR)
+   ========================================================== */
+.section-intent {
+  padding: 3rem 0 3.5rem;
+  background: rgba(14, 23, 44, 0.6);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.intent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.intent-card {
+  background: rgba(24, 38, 72, 0.65);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.intent-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.intent-card:hover {
+  transform: translateY(-4px);
+  background: rgba(30, 48, 88, 0.85);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+.intent-card:hover::before {
+  opacity: 1;
+}
+
+.intent-card-highlight {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: linear-gradient(145deg, rgba(27, 44, 82, 0.9), rgba(18, 30, 58, 0.85));
+}
+
+.intent-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.intent-card h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.intent-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.intent-card .btn-intent {
+  width: 100%;
+  text-align: center;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+  .intent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .intent-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   SOCIAL PROOF & RZETELNE WSKAŹNIKI DOWODOWE
+   ========================================================== */
+.section-social-proof {
+  padding: 3.5rem 0;
+  background: rgba(12, 19, 36, 0.75);
+}
+
+.trust-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.metric-card {
+  background: rgba(24, 38, 72, 0.5);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.metric-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(30, 48, 88, 0.7);
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 800;
+  color: var(--cyan);
+  margin-bottom: 0.35rem;
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.metric-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .trust-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .trust-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Szablon strukturalny Case Study */
+.case-study-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.case-study-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--cyan);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  text-transform: uppercase;
+}
+
+.case-study-grid-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+  background: rgba(14, 23, 44, 0.55);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.case-step-item {
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.case-step-item strong {
+  display: block;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.2rem;
+}
+
+.case-step-item span {
+  color: var(--text-muted);
+}
