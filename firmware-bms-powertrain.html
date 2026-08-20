@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Firmware do ładowarek indukcyjnych i systemów Qi | MULTICORE</title>
+  <title>Firmware BMS, Powertrain i Automotive EV | MULTICORE</title>
   <meta
     name="description"
-    content="Projektowanie i rozwój oprogramowania wbudowanego (Embedded C/C++) dla systemów bezprzewodowego transferu energii (WPT) i ładowarek zgodnych ze standardem Qi. Detekcja ciał obcych (FOD)."
+    content="Specjalistyczny firmware C/C++ dla Automotive i pojazdów elektrycznych (EV): sterowniki Powertrain, systemy BMS (Battery Management), magistrale CAN/LIN, protokoły UDS oraz testery produkcyjne EOL."
   />
-  <link rel="canonical" href="https://multicore.net.pl/firmware-qi-indukcja.html" />
+  <link rel="canonical" href="https://multicore.net.pl/firmware-bms-powertrain.html" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://multicore.net.pl/firmware-qi-indukcja.html" />
-  <meta property="og:title" content="Firmware do ładowarek indukcyjnych i systemów Qi | MULTICORE" />
-  <meta property="og:description" content="Inżynieria firmware'u dla bezprzewodowego transferu mocy (WPC Qi), algorytmy FOD i sterowanie mostkami mocy." />
+  <meta property="og:url" content="https://multicore.net.pl/firmware-bms-powertrain.html" />
+  <meta property="og:title" content="Firmware BMS, Powertrain i Automotive EV | MULTICORE" />
+  <meta property="og:description" content="Inżynieria systemów wbudowanych dla pojazdów elektrycznych, sterowników silników i akumulatorów." />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -22,13 +22,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Oprogramowanie do Ładowarek Indukcyjnych Qi",
+    "name": "Oprogramowanie Embedded dla Automotive, Powertrain i BMS",
     "provider": {
       "@type": "ProfessionalService",
       "name": "MULTICORE Maksym Leski",
       "url": "https://multicore.net.pl/"
     },
-    "description": "Specjalistyczny firmware C/C++ dla układów bezprzewodowego ładowania, elektromobilności i elektroniki użytkowej.",
+    "description": "Projektowanie oprogramowania wbudowanego dla napędów elektrycznych, systemów bateryjnych oraz urządzeń wspierających produkcję.",
     "areaServed": "Polska"
   }
   </script>
@@ -42,7 +42,7 @@
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
-          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D & Embedded</span>
         </div>
       </a>
 
@@ -51,30 +51,30 @@
           <li><a href="index.html" class="nav-link">Główna</a></li>
           
           <li class="nav-dropdown">
-            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle" aria-expanded="false">
+            <a href="embedded.html" class="nav-link dropdown-toggle" aria-expanded="false">
               Oferta
               <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </a>
             <div class="nav-dropdown-menu">
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP ze skanów 3D</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Przemysłowy druk 3D</strong>
+                <span>Kompozyty węglowe PA-CF, PC, ASA</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Projektowanie urządzeń</strong>
+                <span>Dedykowane maszyny, testery i automatyzacja</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Oprogramowanie embedded</strong>
+                <span>Automotive, EV, Powertrain, BMS, ARM</span>
+              </a>
               <a href="skanowanie-3d.html" class="nav-dropdown-item">
                 <strong>Skanowanie 3D</strong>
                 <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
-              </a>
-              <a href="modelowanie-cad.html" class="nav-dropdown-item">
-                <strong>Inżynieria odwrotna i CAD</strong>
-                <span>Parametryczne modele STEP/IGES ze skanu</span>
-              </a>
-              <a href="druk-3d.html" class="nav-dropdown-item">
-                <strong>Druk 3D techniczny</strong>
-                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
-              </a>
-              <a href="embedded.html" class="nav-dropdown-item">
-                <strong>Embedded i firmware</strong>
-                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
-              </a>
-              <a href="automatyzacja.html" class="nav-dropdown-item">
-                <strong>Urządzenia dedykowane</strong>
-                <span>Projektowanie maszyn, PLC i robotyka</span>
               </a>
             </div>
           </li>
@@ -87,7 +87,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="#formularz" class="btn btn-primary btn-sm">Omów projekt Qi</a>
+        <a href="#formularz" class="btn btn-primary btn-sm">Omów projekt EV</a>
       </div>
     </div>
   </header>
@@ -100,21 +100,21 @@
           <span class="breadcrumbs-sep">/</span>
           <a href="embedded.html">Embedded</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Firmware Qi i zasilanie indukcyjne</span>
+          <span>Firmware BMS & Powertrain</span>
         </div>
 
-        <div class="eyebrow" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.35); background: rgba(245, 158, 11, 0.1);">
-          <span class="eyebrow-dot" style="background: #f59e0b; box-shadow: 0 0 8px #f59e0b;"></span>
-          Wireless Power Consortium • Standard Qi
+        <div class="eyebrow" style="color: var(--cyan); border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.1);">
+          <span class="eyebrow-dot"></span>
+          Automotive & Elektromobilność (EV)
         </div>
-        <h1>Firmware do ładowarek indukcyjnych i bezprzewodowego transferu mocy (Qi)</h1>
+        <h1>Oprogramowanie sterowników Powertrain, systemów BMS i pojazdów elektrycznych</h1>
         <p class="subhead">
-          Specjalistyczny rozwój oprogramowania dla nadajników (Tx) i odbiorników (Rx) bezprzewodowego zasilania: algorytmy modulacji mocy, detekcja ciał obcych (FOD) oraz integracja mikrokontrolerów sterujących mostkami H.
+          Inżynieria systemów wbudowanych dla napędów elektrycznych, zarządzania akumulatorami trakcyjnymi, magistral pokładowych CAN/LIN oraz stanowisk testerów produkcyjnych.
         </p>
 
         <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-          <a href="#formularz" class="btn btn-primary btn-lg">Skonsultuj projekt zasilania bezprzewodowego ➔</a>
-          <a href="embedded.html" class="btn btn-secondary btn-lg">Pełna oferta Embedded C/C++</a>
+          <a href="#formularz" class="btn btn-primary btn-lg">Skonsultuj projekt systemów EV ➔</a>
+          <a href="embedded.html" class="btn btn-secondary btn-lg">Pełna oferta Embedded</a>
         </div>
       </div>
     </section>
@@ -123,41 +123,41 @@
       <div class="container">
         <div class="grid-3" style="gap: 1.5rem;">
           <div class="tech-card">
-            <h3>⚡ Regulacja pętli mocy (Control Loop)</h3>
-            <p>Implementacja cyfrowych regulatorów PID, modulacji częstotliwości (FM) i współczynnika wypełnienia (PWM) dla stabilnego transferu energii w zmiennych warunkach sprzężenia cewek.</p>
+            <h3>⚡ Sterowanie Powertrain</h3>
+            <p>Algorytmy sterowania falownikami trakcyjnymi, silnikami elektrycznymi (BLDC/PMSM), kontrola momentu obrotowego i zarządzanie rekuperacją.</p>
           </div>
           <div class="tech-card">
-            <h3>🛡️ Detekcja ciał obcych (FOD)</h3>
-            <p>Zaawansowane algorytmy strat mocy (Power Loss Accounting) oraz pomiaru dobroci obwodu Q-Factor, zapobiegające nagrzewaniu się przypadkowych metalowych przedmiotów (monety, klucze).</p>
+            <h3>🔋 Systemy BMS (Battery Management)</h3>
+            <p>Precyzyjne monitorowanie stanu ogniw, estymacja SOC/SOH, balansowanie, kontrola styczników HV i zabezpieczenia wielopoziomowe.</p>
           </div>
           <div class="tech-card">
-            <h3>🚗 Integracja Automotive & IoT</h3>
-            <p>Oprogramowanie ładowarek pokładowych w pojazdach z integracją magistrali CAN/LIN, usypianiem przy wyłączonym zapłonie (Low Power) i diagnostyką błędów.</p>
+            <h3>🏭 Urządzenia wspomagające produkcję</h3>
+            <p>Projektowanie i oprogramowanie automatycznych testerów End-of-Line (EOL), programatorów wsadowych i stanowisk kalibracyjnych.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Formularz Qi -->
+    <!-- Formularz EV -->
     <section id="formularz" class="section section-highlight">
       <div class="container" style="max-width: 900px;">
         <div class="section-head center" style="margin-bottom: 2rem;">
           <div class="eyebrow">Konsultacja techniczna</div>
-          <h2>Omów wymagania dla modułu ładowania bezprzewodowego</h2>
-          <p class="subhead">Podaj moc docelową (BPP 5W / EPP 15W lub rozwiązanie dedykowane) i mikrokontroler.</p>
+          <h2>Omów wymagania projektu Automotive / EV</h2>
+          <p class="subhead">Gwarantujemy podpisanie umowy NDA przed ujawnieniem schematów i założeń.</p>
         </div>
 
-        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(245, 158, 11, 0.35);">
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
           <div id="formStatus" class="form-status"></div>
 
           <form id="inquiryForm" novalidate>
             <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
-            <input type="hidden" name="topic" value="firmware_qi" />
+            <input type="hidden" name="topic" value="embedded_automotive" />
 
             <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
               <div class="form-group">
                 <label class="form-label" for="inquiryName">Imię i nazwisko / Firma *</label>
-                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski / R&D Electronics" required />
+                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski / R&D Automotive" required />
               </div>
 
               <div class="form-group">
@@ -186,12 +186,12 @@
             </div>
 
             <div class="form-group" style="margin-bottom: 1.25rem;">
-              <label class="form-label" for="inquiryMessage">Opis parametrów układu ładowania *</label>
-              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj moc docelową (np. 5W, 15W), układ Tx/Rx, topologię cewek oraz preferowany mikrokontroler..." required></textarea>
+              <label class="form-label" for="inquiryMessage">Opis parametrów układu / aplikacji *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Opisz sterownik (Powertrain / BMS / tester produkcyjny), wymagania magistral (CAN FD, LIN, BLE, Wi-Fi) oraz oczekiwany zakres prac..." required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-track-cta>
-              <span>Wyślij brief projektu Qi</span>
+              <span>Wyślij zapytanie inżynierskie</span>
               <span class="btn-icon">➔</span>
             </button>
           </form>
@@ -202,14 +202,14 @@
 
   <div class="sticky-bottom-bar">
     <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">📞 Zadzwoń</a>
-    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Projekt Qi ➔</a>
+    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Projekt EV ➔</a>
   </div>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
         <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Wireless Power Qi • Embedded C/C++ • Firmware Automotive</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Automotive EV • Powertrain • BMS • Embedded C/C++</div>
       </div>
     </div>
   </footer>

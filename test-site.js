@@ -32,7 +32,7 @@ const requiredFiles = [
   'skanowanie-czesci-maszyn.html',
   'rekonstrukcja-czesci-zabytkowych.html',
   'kontrola-jakosci-3d.html',
-  'firmware-qi-indukcja.html',
+  'firmware-bms-powertrain.html',
   'dziekujemy.html',
   'polityka-prywatnosci.html',
   '404.html',

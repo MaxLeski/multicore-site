@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Firmware embedded C/C++, CAN, UDS i Qi | MULTICORE</title>
+  <title>Oprogramowanie Embedded Automotive, EV, Powertrain i BMS | MULTICORE</title>
   <meta
     name="description"
-    content="Projektowanie i rozwój oprogramowania wbudowanego (Embedded C/C++): sterowniki pojazdów i ECU/VCU, magistrale CAN/LIN, protokoły UDS, ładowarki indukcyjne standardu Qi oraz standard MISRA C."
+    content="Inżynieria systemów wbudowanych C/C++ dla Automotive i pojazdów elektrycznych (EV). Doświadczenie w sterownikach Powertrain, systemach BMS, magistralach CAN/LIN, stosach Bluetooth/Wi-Fi oraz mikrokontrolerach ARM (NXP S32K, STM32, TI)."
   />
   <link rel="canonical" href="https://multicore.net.pl/embedded.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://multicore.net.pl/embedded.html" />
-  <meta property="og:title" content="Firmware embedded C/C++, CAN, UDS i Qi | MULTICORE" />
-  <meta property="og:description" content="Inżynieria systemów wbudowanych, sterowniki pojazdów elektrycznych, zasilanie Qi i bezpieczne bootloadery." />
+  <meta property="og:title" content="Oprogramowanie Embedded Automotive, EV, Powertrain i BMS | MULTICORE" />
+  <meta property="og:description" content="Inżynieria systemów wbudowanych dla branży automotive, elektromobilności (EV), sterowania napędami i bateriami oraz urządzeń produkcyjnych." />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -24,13 +24,13 @@
     "@graph": [
       {
         "@type": "Service",
-        "name": "Inżynieria Oprogramowania Embedded i Firmware",
+        "name": "Inżynieria Oprogramowania Embedded i Automotive",
         "provider": {
           "@type": "ProfessionalService",
           "name": "MULTICORE Maksym Leski",
           "url": "https://multicore.net.pl/"
         },
-        "description": "Projektowanie firmware'u w C/C++ na mikrokontrolery 32-bitowe, obsługa CAN/LIN/UDS, ładowanie indukcyjne Qi oraz audyty jakości MISRA C.",
+        "description": "Projektowanie firmware'u w C/C++ dla układów Powertrain, systemów BMS, pojazdów EV, magistral CAN/LIN, stosów Bluetooth/Wi-Fi oraz testerów produkcyjnych.",
         "areaServed": "Polska"
       },
       {
@@ -38,26 +38,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Czy możliwa jest praca na kodzie źródłowym klienta i dołączenie do trwającego projektu?",
+            "name": "Z jakimi mikrokontrolerami posiadacie doświadczenie?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tak. Dołączam do projektów na dowolnym etapie: implementacji konkretnego modułu komunikacyjnego (np. CAN FD), optymalizacji istniejącego firmware'u, audytu MISRA C lub diagnostyki błędów na stanowisku testowym."
+              "text": "Pracujemy ze wszystkimi głównymi rodzinami mikrokontrolerów ARM (Cortex-M0/M3/M4/M7, Cortex-R), w tym w szczególności NXP S32K (automotive grade), STMicroelectronics (STM32), Texas Instruments (TI C2000, Hercules) oraz NXP LPC."
             }
           },
           {
             "@type": "Question",
-            "name": "Jak wygląda przekazanie praw autorskich i repozytorium kodu?",
+            "name": "Jakie protokoły i stosy komunikacyjne wdrażacie?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Po zakończeniu etapu lub projektu przekazuję 100% praw majątkowych do wytworzonego kodu źródłowego, kompletną dokumentację techniczną oraz historię zmian w repozytorium Git."
+              "text": "Wdrażamy magistrale pojazdowe CAN 2.0A/B, CAN FD, LIN, protokoły diagnostyczne UDS (ISO 14229), bezpieczne bootloadery Flash, jak również bezprzewodowe stosy Bluetooth Low Energy (BLE) oraz Wi-Fi."
             }
           },
           {
             "@type": "Question",
-            "name": "Czy przed rozpoczęciem rozmów technicznych podpisujemy NDA?",
+            "name": "Czy realizujecie projekty dla pojazdów elektrycznych i systemów bateryjnych (BMS)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tak. Standardem przy projektach badawczo-rozwojowych i komercyjnych jest podpisanie formalnej umowy o zachowaniu poufności (NDA) przed ujawnieniem schematów elektronicznych i założeń systemu."
+              "text": "Tak. Posiadamy praktyczne doświadczenie w projektowaniu oprogramowania sterującego dla układów napędowych Powertrain (falowniki, silniki) oraz systemów zarządzania bateriami BMS (monitorowanie ogniw, estymacja SOC/SOH, balansowanie, zabezpieczenia)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy przed rozpoczęciem rozmów technicznych podpisujemy umowę NDA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Bezpieczeństwo własności intelektualnej i ochrona tajemnicy przedsiębiorstwa to fundament naszej współpracy. Zawsze przed ujawnieniem szczegółów technicznych podpisujemy formalną umowę NDA."
             }
           }
         ]
@@ -76,7 +84,7 @@
         <div class="brand-logo">M</div>
         <div class="brand-meta">
           <span class="brand-name">MULTICORE</span>
-          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D & Embedded</span>
         </div>
       </a>
 
@@ -85,30 +93,30 @@
           <li><a href="index.html" class="nav-link">Główna</a></li>
           
           <li class="nav-dropdown">
-            <a href="skanowanie-3d.html" class="nav-link active dropdown-toggle" aria-expanded="false">
+            <a href="embedded.html" class="nav-link active dropdown-toggle" aria-expanded="false">
               Oferta
               <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </a>
             <div class="nav-dropdown-menu">
+              <a href="modelowanie-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna i CAD</strong>
+                <span>Parametryczne modele STEP ze skanów 3D</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Przemysłowy druk 3D</strong>
+                <span>Kompozyty węglowe PA-CF, PC, ASA</span>
+              </a>
+              <a href="automatyzacja.html" class="nav-dropdown-item">
+                <strong>Projektowanie urządzeń</strong>
+                <span>Dedykowane maszyny, testery i automatyzacja</span>
+              </a>
+              <a href="embedded.html" class="nav-dropdown-item">
+                <strong>Oprogramowanie embedded</strong>
+                <span>Automotive, EV, Powertrain, BMS, ARM</span>
+              </a>
               <a href="skanowanie-3d.html" class="nav-dropdown-item">
                 <strong>Skanowanie 3D</strong>
                 <span>Pomiary geometrii z dokładnością do 0,02 mm</span>
-              </a>
-              <a href="modelowanie-cad.html" class="nav-dropdown-item">
-                <strong>Inżynieria odwrotna i CAD</strong>
-                <span>Parametryczne modele STEP/IGES ze skanu</span>
-              </a>
-              <a href="druk-3d.html" class="nav-dropdown-item">
-                <strong>Druk 3D techniczny</strong>
-                <span>Wytrzymałe kompozyty PA-CF, PC, ASA</span>
-              </a>
-              <a href="embedded.html" class="nav-dropdown-item">
-                <strong>Embedded i firmware</strong>
-                <span>C/C++, CAN, UDS, zasilanie Qi, STM32</span>
-              </a>
-              <a href="automatyzacja.html" class="nav-dropdown-item">
-                <strong>Urządzenia dedykowane</strong>
-                <span>Projektowanie maszyn, PLC i robotyka</span>
               </a>
             </div>
           </li>
@@ -134,7 +142,7 @@
   </header>
 
   <main id="main">
-    <!-- Subpage Hero (Dedykowany B2B) -->
+    <!-- Subpage Hero -->
     <section class="subpage-hero">
       <div class="container">
         <div class="breadcrumbs">
@@ -147,15 +155,15 @@
 
         <div class="eyebrow" style="color: var(--cyan); border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.1);">
           <span class="eyebrow-dot"></span>
-          Firmware • Automotive • Zasilanie Bezprzewodowe Qi
+          Automotive • Pojazdy Elektryczne (EV) • Powertrain • BMS
         </div>
-        <h1>Inżynieria Oprogramowania Embedded C/C++</h1>
+        <h1>Oprogramowanie Embedded C/C++ dla Automotive i Elektromobilności</h1>
         <p class="subhead">
-          Projektowanie i rozwój niezawodnego firmware'u dla sterowników mikrokontrolerowych (ARM Cortex/STM32), magistral pokładowych CAN/LIN, diagnostyki UDS oraz bezprzewodowego transferu mocy (standard Qi).
+          Projektowanie i wdrażanie niezawodnego firmware'u dla sterowników pojazdowych (ECU/VCU), układów napędowych Powertrain, systemów zarządzania bateriami (BMS), magistral CAN/LIN, stosów Bluetooth/Wi-Fi oraz urządzeń wspomagających procesy produkcyjne.
         </p>
 
         <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-          <a href="#konsultacja" class="btn btn-primary btn-lg">Umów konsultację techniczną ➔</a>
+          <a href="#konsultacja" class="btn btn-primary btn-lg">Umów konsultację inżynierską ➔</a>
           <a href="tel:+48533491374" class="btn btn-secondary btn-lg">Zadzwoń: +48 533 491 374</a>
         </div>
       </div>
@@ -170,79 +178,88 @@
         </div>
 
         <div class="grid-2" style="gap: 2rem;">
-          <!-- 1. Sterowniki pojazdów i CAN -->
+          <!-- 1. Powertrain i BMS (EV / Automotive) -->
           <div class="tech-card" style="border-color: rgba(56, 189, 248, 0.35);">
-            <div class="service-icon-wrap">🚗</div>
-            <h3>Sterowniki pojazdów i elektromobilność (ECU / VCU)</h3>
+            <div class="service-icon-wrap">⚡</div>
+            <h3>Powertrain, BMS i Elektromobilność (EV)</h3>
             <p style="margin-bottom: 1.25rem; font-size: 0.93rem; line-height: 1.65;">
-              Projektowanie i implementacja oprogramowania pokładowych sterowników mikroprocesorowych, integracja magistral komunikacyjnych oraz logiki sterowania:
+              Praktyczne doświadczenie w projektowaniu oprogramowania dla kluczowych podsystemów pojazdów elektrycznych i hybrydowych:
             </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-              <li><strong style="color: var(--cyan);">▸ Magistrale pokładowe:</strong> CAN 2.0A/B, CAN FD, LIN, UART, SPI, I2C.</li>
-              <li><strong style="color: var(--cyan);">▸ Sterowniki nadrzędne (VCU):</strong> zarządzanie trybami pracy, stanami załączenia i logiką napędu.</li>
-              <li><strong style="color: var(--cyan);">▸ Diagnostyka pokładowa:</strong> obsługa protokołów UDS (Unified Diagnostic Services) i kodów DTC.</li>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+              <li><strong style="color: var(--cyan);">▸ Układy Powertrain:</strong> sterowanie falownikami trakcyjnymi, algorytmy regulacji momentu i prędkości obrotowej, obsługa enkoderów i czujników prądowych.</li>
+              <li><strong style="color: var(--cyan);">▸ Systemy BMS (Battery Management):</strong> estymacja stanu naładowania (SOC) i stanu zdrowia (SOH), precyzyjny pomiar napięć i temperatur cel, balansowanie ogniw, kontrola styczników głównych i bezpieczne odłączanie pakietu.</li>
+              <li><strong style="color: var(--cyan);">▸ Jednostki VCU (Vehicle Control Unit):</strong> integracja stanów pracy pojazdu, interfejs kierowcy, rekuperacja energii i zarządzanie mocą.</li>
+            </ul>
+            <div class="materials-cloud">
+              <span class="material-tag accent">Powertrain</span>
+              <span class="material-tag accent">BMS (Battery Management)</span>
+              <span class="material-tag">Pojazdy Elektryczne (EV)</span>
+              <span class="material-tag">Sterowniki VCU / ECU</span>
+            </div>
+          </div>
+
+          <!-- 2. Mikrokontrolery ARM -->
+          <div class="tech-card" style="border-color: rgba(16, 185, 129, 0.35);">
+            <div class="service-icon-wrap" style="color: var(--emerald); background: rgba(16, 185, 129, 0.15);">🧠</div>
+            <h3>Architektury Mikrokontrolerów ARM</h3>
+            <p style="margin-bottom: 1.25rem; font-size: 0.93rem; line-height: 1.65;">
+              Wysokowydajny kod źródłowy w językach <strong>C i C++</strong> zoptymalizowany pod 32-bitowe mikrokontrolery przemysłowe i automotive:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+              <li><strong style="color: var(--emerald);">▸ NXP S32K:</strong> rodzina układów dla motoryzacji (S32K1xx, S32K3xx) ze sprzętowym wsparciem bezpieczeństwa funkcjonalnego (ASIL) i modułami CSEc.</li>
+              <li><strong style="color: var(--emerald);">▸ STMicroelectronics (STM32):</strong> serie STM32G4, STM32H7, STM32F4, układy sterowania silnikami oraz łączności bezprzewodowej.</li>
+              <li><strong style="color: var(--emerald);">▸ Texas Instruments (TI):</strong> procesory sygnałowe C2000 pod sterowanie przekształtnikami mocy oraz seria Hercules dla aplikacji o wysokiej niezawodności.</li>
+              <li><strong style="color: var(--emerald);">▸ Architektury:</strong> ARM Cortex-M0+/M3/M4/M7 oraz Cortex-R. Systemy Bare-Metal oraz RTOS (FreeRTOS).</li>
+            </ul>
+            <div class="materials-cloud">
+              <span class="material-tag accent">NXP S32K (Automotive)</span>
+              <span class="material-tag accent">STM32 (STMicroelectronics)</span>
+              <span class="material-tag">Texas Instruments (TI)</span>
+              <span class="material-tag">ARM Cortex-M / Cortex-R</span>
+            </div>
+          </div>
+
+          <!-- 3. Magistrale i Stosy Komunikacyjne -->
+          <div class="tech-card" style="border-color: rgba(96, 165, 250, 0.35);">
+            <div class="service-icon-wrap" style="color: #60a5fa; background: rgba(96, 165, 250, 0.15);">📡</div>
+            <h3>Magistrale Pokładowe i Łączność Bezprzewodowa</h3>
+            <p style="margin-bottom: 1.25rem; font-size: 0.93rem; line-height: 1.65;">
+              Niezawodna wymiana danych w warunkach silnych zakłóceń elektromagnetycznych oraz interfejsy bezprzewodowe:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+              <li><strong style="color: #60a5fa;">▸ CAN / CAN FD:</strong> konfiguracja ramek o wysokiej przepustowości, filtrowanie sprzętowe, obsługa protokołów wyższych warstw.</li>
+              <li><strong style="color: #60a5fa;">▸ LIN:</strong> komunikacja z podzespołami pomocniczymi, czujnikami i aktuatorami.</li>
+              <li><strong style="color: #60a5fa;">▸ Diagnostyka UDS:</strong> obsługa protokołu Unified Diagnostic Services (ISO 14229) oraz kodów błędów DTC.</li>
+              <li><strong style="color: #60a5fa;">▸ Bluetooth Stack (BLE) & Wi-Fi:</strong> profile diagnostyczne, telemetria bezprzewodowa, konfiguracja parametrów z poziomu aplikacji mobilnej.</li>
+              <li><strong style="color: #60a5fa;">▸ Bezpieczne Bootloadery:</strong> aktualizacja oprogramowania przez CAN / UART / OTA z weryfikacją kryptograficzną.</li>
             </ul>
             <div class="materials-cloud">
               <span class="material-tag accent">CAN / CAN FD</span>
-              <span class="material-tag accent">ECU / VCU</span>
+              <span class="material-tag accent">LIN Bus</span>
+              <span class="material-tag">Bluetooth Stack (BLE)</span>
+              <span class="material-tag">Wi-Fi Stack</span>
               <span class="material-tag">Diagnostyka UDS</span>
             </div>
           </div>
 
-          <!-- 2. Ładowarki bezprzewodowe Qi -->
-          <div class="tech-card" style="border-color: rgba(245, 158, 11, 0.35);">
-            <div class="service-icon-wrap" style="color: #f59e0b; background: rgba(245, 158, 11, 0.15);">⚡</div>
-            <h3>Ładowarki indukcyjne i transfer mocy (Standard Qi)</h3>
-            <p style="margin-bottom: 1.25rem; font-size: 0.93rem; line-height: 1.65;">
-              Oprogramowanie sterujące dla zaawansowanych układów bezprzewodowego transferu energii zgodnych ze standardem <strong>Qi</strong>:
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-              <li><strong style="color: #f59e0b;">▸ Regulacja mocy:</strong> pętle sprzężenia zwrotnego i modulacja częstotliwości/wypełnienia.</li>
-              <li><strong style="color: #f59e0b;">▸ Detekcja FOD:</strong> algorytmy wykrywania obcych obiektów metalowych (Foreign Object Detection).</li>
-              <li><strong style="color: #f59e0b;">▸ Zabezpieczenia:</strong> układy zabezpieczeń termicznych, nadprądowych i nadnapięciowych.</li>
-            </ul>
-            <div class="materials-cloud">
-              <span class="material-tag accent">Standard Qi</span>
-              <span class="material-tag accent">Wykrywanie FOD</span>
-              <span class="material-tag">Sterowanie mostkami H</span>
-            </div>
-          </div>
-
-          <!-- 3. Firmware C/C++ i STM32 -->
-          <div class="tech-card" style="border-color: rgba(16, 185, 129, 0.35);">
-            <div class="service-icon-wrap" style="color: var(--emerald); background: rgba(16, 185, 129, 0.15);">🧠</div>
-            <h3>Dedykowany Firmware C/C++ na mikrokontrolery</h3>
-            <p style="margin-bottom: 1.25rem; font-size: 0.93rem; line-height: 1.65;">
-              Wysokowydajny, deterministyczny i energooszczędny kod źródłowy w językach <strong>C i C++</strong> na popularne architektury 32-bitowe:
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-              <li><strong style="color: var(--emerald);">▸ Architektury:</strong> ARM Cortex-M0/M3/M4/M7, rodzina STM32, NXP, Microchip.</li>
-              <li><strong style="color: var(--emerald);">▸ Architektura oprogramowania:</strong> systemy czasu rzeczywistego (FreeRTOS) oraz Bare-Metal.</li>
-              <li><strong style="color: var(--emerald);">▸ Sterowniki peryferiów:</strong> DMA, timery zaawansowane, przetworniki ADC/DAC, pamięci Flash.</li>
-            </ul>
-            <div class="materials-cloud">
-              <span class="material-tag accent">C / C++ (C99, C11, C++17)</span>
-              <span class="material-tag accent">STM32 / ARM Cortex</span>
-              <span class="material-tag">FreeRTOS</span>
-            </div>
-          </div>
-
-          <!-- 4. Jakość kodu i Bootloadery -->
+          <!-- 4. Urządzenia wspomagające procesy produkcyjne -->
           <div class="tech-card" style="border-color: rgba(168, 85, 247, 0.35);">
-            <div class="service-icon-wrap" style="color: #a855f7; background: rgba(168, 85, 247, 0.15);">🛡️</div>
-            <h3>Bootloadery, audyt MISRA C i niezawodność</h3>
+            <div class="service-icon-wrap" style="color: #a855f7; background: rgba(168, 85, 247, 0.15);">🏭</div>
+            <h3>Urządzenia Wspomagające Produkcję i Testery EOL</h3>
             <p style="margin-bottom: 1.25rem; font-size: 0.93rem; line-height: 1.65;">
-              Wsparcie w zakresie bezpiecznej aktualizacji oprogramowania w polu i zgodności z normami jakościowymi:
+              Projektowanie i wdrażanie dedykowanych stanowisk inżynierskich wspierających procesy wytwórcze i kontrolę jakości:
             </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-              <li><strong style="color: #a855f7;">▸ Bezpieczne Bootloadery:</strong> aktualizacja firmware'u przez CAN / UART z weryfikacją sum kontrolnych i kryptografii.</li>
-              <li><strong style="color: #a855f7;">▸ Standard MISRA C:</strong> analiza statyczna kodu i eliminacja konstrukcji niebezpiecznych.</li>
-              <li><strong style="color: #a855f7;">▸ Debugging:</strong> diagnostyka problemów z synchronizacją, przerwaniami i wyciekami pamięci.</li>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+              <li><strong style="color: #a855f7;">▸ Testery End-of-Line (EOL):</strong> automatyczna weryfikacja poprawności zmontowanych płytek PCB i modułów elektronicznych przed wysyłką do klienta.</li>
+              <li><strong style="color: #a855f7;">▸ Programatory i kalibratory:</strong> stanowiska do automatycznego wgrywania firmware'u, nadawania numerów seryjnych oraz kalibracji czujników.</li>
+              <li><strong style="color: #a855f7;">▸ Symulatory HIL (Hardware-in-the-Loop):</strong> stanowiska symulujące sygnały pojazdu do testowania oprogramowania sterowników przed montażem na fizycznym pojeździe.</li>
+              <li><strong style="color: #a855f7;">▸ Zgodność ze standardami:</strong> pisanie kodu zgodnie z wytycznymi <strong>MISRA C</strong> oraz statyczna analiza jakości kodu.</li>
             </ul>
             <div class="materials-cloud">
-              <span class="material-tag accent">Flash Bootloadery</span>
-              <span class="material-tag accent">Standard MISRA C</span>
-              <span class="material-tag">Analiza statyczna</span>
+              <span class="material-tag accent">Testery End-of-Line (EOL)</span>
+              <span class="material-tag accent">Stanowiska HIL</span>
+              <span class="material-tag">Standard MISRA C</span>
+              <span class="material-tag">Programatory Produkcyjne</span>
             </div>
           </div>
         </div>
@@ -260,26 +277,26 @@
         <div class="grid-3" style="gap: 1.5rem;">
           <div class="tech-card">
             <div class="service-icon-wrap">🚀</div>
-            <h3>1. Kompleksowy projekt od podstaw</h3>
-            <p>Opracowanie architektury oprogramowania, dobór mikrokontrolera, warstwy HAL i aplikacji dla nowo powstającego urządzenia.</p>
+            <h3>1. Kompleksowy projekt oprogramowania</h3>
+            <p>Opracowanie architektury, warstwy sterowników (HAL/MCAL), stosów komunikacyjnych i logiki aplikacji dla nowo powstającego modułu.</p>
           </div>
 
           <div class="tech-card">
             <div class="service-icon-wrap">🧩</div>
-            <h3>2. Dołączenie do zespołu / Dopisanie modułu</h3>
-            <p>Implementacja konkretnego stosu komunikacyjnego (CAN FD, ładowanie Qi, bootloader) do istniejącej już bazy kodu klienta.</p>
+            <h3>2. Dołączenie do zespołu R&D</h3>
+            <p>Implementacja konkretnego modułu (np. stos CAN FD, moduł BMS, obsługa telemetrii BLE/Wi-Fi) w istniejącym projekcie klienta.</p>
           </div>
 
           <div class="tech-card">
             <div class="service-icon-wrap">🔍</div>
-            <h3>3. Audyt, refaktoryzacja i optymalizacja</h3>
-            <p>Przegląd jakościowy pod kątem MISRA C, eliminacja krytycznych błędów, przyspieszenie pętli sterowania i optymalizacja zużycia pamięci RAM/Flash.</p>
+            <h3>3. Audyt, optymalizacja i refaktoryzacja</h3>
+            <p>Przegląd jakościowy pod kątem standardów MISRA C, eliminacja błędów czasu rzeczywistego i optymalizacja wykorzystania zasobów mikrokontrolera.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Poufność i Zasady Projektowe -->
+    <!-- Poufność i Prawa Autorskie -->
     <section class="section">
       <div class="container">
         <div class="hero-grid">
@@ -287,20 +304,20 @@
             <div class="eyebrow">Standardy inżynierskie</div>
             <h2>Poufność, prawa autorskie i przekazanie kodu</h2>
             <p style="margin-bottom: 1.25rem;">
-              Pracuję w oparciu o przejrzyste zasady biznesowe dostosowane do wymagań firm technologicznych i działów R&D:
+              Współpraca odbywa się w oparciu o rygorystyczne standardy bezpieczeństwa danych i poufności przemysłowej:
             </p>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; margin-bottom: 2rem; color: var(--text-muted);">
               <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
                 <span style="color: var(--emerald);">✓</span>
-                <div><strong>100% przeniesienia praw majątkowych:</strong> kod źródłowy, dokumentacja i pliki konfiguracyjne stają się pełną własnością klienta.</div>
+                <div><strong>100% przeniesienia autorskich praw majątkowych:</strong> kompletny kod źródłowy, pliki konfiguracyjne i dokumentacja stają się wyłączną własnością klienta.</div>
               </li>
               <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
                 <span style="color: var(--emerald);">✓</span>
-                <div><strong>Umowa NDA przed rozpoczęciem rozmów:</strong> pełna ochrona Twoich schematów, pomysłów i własności intelektualnej.</div>
+                <div><strong>Umowa NDA przed rozpoczęciem rozmów:</strong> pełna prawna ochrona Twoich schematów, pomysłów i własności intelektualnej.</div>
               </li>
               <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
                 <span style="color: var(--emerald);">✓</span>
-                <div><strong>Praca w środowisku klienta:</strong> możliwość pracy na repozytoriach Git klienta (GitHub, GitLab, Bitbucket) i zintegrowanych systemach CI/CD.</div>
+                <div><strong>Praca w infrastrukturze klienta:</strong> możliwość pracy bezpośrednio na repozytoriach Git klienta z uwzględnieniem systemów CI/CD.</div>
               </li>
             </ul>
           </div>
@@ -308,15 +325,16 @@
           <div class="tech-card" style="padding: 2.25rem; border-color: rgba(56, 189, 248, 0.35);">
             <h3 style="color: #fff; margin-bottom: 1rem;">Narzędzia i środowiska pracy:</h3>
             <div class="materials-cloud" style="margin-bottom: 1.5rem;">
+              <span class="material-tag accent">NXP S32 Design Studio</span>
               <span class="material-tag accent">STM32CubeIDE / Keil MDK</span>
-              <span class="material-tag accent">GCC / Clang / Make / CMake</span>
-              <span class="material-tag">Git / GitHub / GitLab</span>
+              <span class="material-tag accent">TI Code Composer Studio</span>
+              <span class="material-tag">GCC / Clang / CMake / Make</span>
               <span class="material-tag">CANalyzer / PCAN / Wireshark</span>
               <span class="material-tag">Oscyloskopy cyfrowe i analizatory stanów</span>
-              <span class="material-tag">J-Link / ST-Link Debuggers</span>
+              <span class="material-tag">J-Link / ST-Link / PEmicro Debuggers</span>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-dim);">
-              Możliwość realizacji prac w modelu zdalnym z wykorzystaniem sprzętowych stanowisk testowych (Hardware-in-the-Loop).
+              Możliwość realizacji prac z wykorzystaniem sprzętowych stanowisk testowych (HIL) oraz fizycznych prototypów.
             </p>
           </div>
         </div>
@@ -328,30 +346,30 @@
       <div class="container">
         <div class="section-head center">
           <div class="eyebrow">FAQ</div>
-          <h2>Pytania o usługi Embedded</h2>
+          <h2>Pytania o usługi Embedded i Automotive</h2>
         </div>
 
         <div class="faq-grid">
           <div class="faq-card">
-            <div class="faq-question"><span class="faq-question-icon">?</span> Jak wygląda proces wyceny projektu firmware'u?</div>
-            <div class="faq-answer">Wycena bazuje na wstępnym briefie technicznym (wybór mikrokontrolera, liczba peryferiów, protokoły komunikacyjne, wymagania bezpieczeństwa). Ustalamy model rozliczenia: Fixed Price za zdefiniowany zakres lub Time & Material przy pracach R&D.</div>
+            <div class="faq-question"><span class="faq-question-icon">?</span> Jak wygląda rozpoczęcie współpracy przy projekcie firmware'u?</div>
+            <div class="faq-answer">Zaczynamy od podpisania umowy o zachowaniu poufności (NDA). Następnie analizujemy założenia techniczne (wybór mikrokontrolera, wymagane protokoły, biblioteki) i ustalamy model współpracy: wycena za zakres (Fixed Price) lub elastyczne rozliczenie czasowe (Time & Material).</div>
           </div>
 
           <div class="faq-card">
-            <div class="faq-question"><span class="faq-question-icon">?</span> Czy tworzycie również schematy PCB?</div>
-            <div class="faq-answer">Główny nacisk kładziemy na architekturę oprogramowania i firmware (C/C++), jednak ściśle współpracujemy z inżynierami hardware'u na etapie przeglądu schematów (Design for Firmware / pinout review) i pierwszego uruchomienia prototypów (Bring-up).</div>
+            <div class="faq-question"><span class="faq-question-icon">?</span> Czy tworzycie oprogramowanie do stanowisk testerów produkcyjnych?</div>
+            <div class="faq-answer">Tak. Projektujemy oprogramowanie dla testerów End-of-Line (EOL), stacji diagnostycznych oraz zautomatyzowanych stanowisk do wgrywania firmware'u i kalibracji parametrów produkcyjnych.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Dedykowany Formularz Zapytania Embedded -->
+    <!-- Formularz Zapytania Embedded -->
     <section id="konsultacja" class="section">
       <div class="container" style="max-width: 900px;">
         <div class="section-head center" style="margin-bottom: 2rem;">
           <div class="eyebrow">Brief techniczny</div>
           <h2>Omów projekt oprogramowania wbudowanego</h2>
-          <p class="subhead">Opisz krótko platformę sprzętową, protokoły i cel projektu — skontaktuję się w celu omówienia szczegółów technicznych.</p>
+          <p class="subhead">Opisz krótko platformę sprzętową, wymagania komunikacyjne i cel projektu — skontaktuję się w celu omówienia szczegółów.</p>
         </div>
 
         <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
@@ -394,7 +412,7 @@
 
             <div class="form-group" style="margin-bottom: 1.25rem;">
               <label class="form-label" for="inquiryMessage">Opis wymagań projektowych *</label>
-              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj platformę (np. STM32G4, CAN FD, FreeRTOS), zakres prac (nowy projekt / dołączenie do trwającego / audyt MISRA) oraz oczekiwany harmonogram..." required></textarea>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj platformę sprzętową (np. NXP S32K, STM32, TI), protokoły (CAN FD, LIN, BLE, Wi-Fi), zakres prac (Powertrain, BMS, sterownik pojazdu, tester produkcyjny) oraz oczekiwany harmonogram..." required></textarea>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
@@ -446,18 +464,18 @@
             </div>
           </a>
           <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
-            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz oprogramowania embedded.
+            Kompleksowe usługi inżynierii odwrotnej, skanowania 3D, druku przemysłowego oraz oprogramowania embedded dla automotive i przemysłu.
           </p>
         </div>
 
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
             <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
             <li><a href="druk-3d.html">Druk 3D techniczny</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny i testery</a></li>
             <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
-            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
           </ul>
         </div>
 
