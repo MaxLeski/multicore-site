@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skanowanie 3D detali – niebieski laser i dokładność od 0,025 mm | MULTICORE</title>
+  <title>Skanowanie 3D i inżynieria odwrotna CAD STEP | MULTICORE</title>
   <meta
     name="description"
-    content="Precyzyjne skanowanie 3D w technologii niebieskiego lasera i światła strukturalnego. Dokładność od 0,025 mm, rozdzielczość do 0,05 mm, digitalizacja części maszyn, motoryzacji i odlewów. Kurier door-to-door w cenie."
+    content="Precyzyjne skanowanie 3D w technologii niebieskiego lasera (dokładność od 0,025 mm, rozdzielczość 0,05 mm) oraz inżynieria odwrotna CAD (STEP, IGES, Parasolid). Bezpłatny kurier door-to-door w cenie."
   />
   <link rel="canonical" href="https://multicore.net.pl/skanowanie-3d.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://multicore.net.pl/skanowanie-3d.html" />
-  <meta property="og:title" content="Skanowanie 3D detali – niebieski laser i dokładność od 0,025 mm | MULTICORE" />
-  <meta property="og:description" content="Hybrydowe skanowanie 3D: 14 linii niebieskiego lasera + światło strukturalne. Dokładność od 0,025 mm, siatki STL i przygotowanie pod CAD." />
-  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/Screenshot_1.png" />
+  <meta property="og:title" content="Skanowanie 3D i inżynieria odwrotna CAD STEP | MULTICORE" />
+  <meta property="og:description" content="Hybrydowe skanowanie 3D i rekonstrukcja parametryczna brył CAD. Od uszkodzonego elementu po gotowy model STEP pod CNC i formy." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/2.png" />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -25,13 +25,13 @@
     "@graph": [
       {
         "@type": "Service",
-        "name": "Skanowanie 3D i digitalizacja optyczno-laserowa",
+        "name": "Skanowanie 3D i Inżynieria Odwrotna CAD",
         "provider": {
           "@type": "ProfessionalService",
           "name": "MULTICORE Maksym Leski",
           "url": "https://multicore.net.pl/"
         },
-        "description": "Precyzyjny pomiar geometrii hybrydowym systemem niebieskiego lasera i światła strukturalnego o dokładności od 0,025 mm i rozdzielczości do 0,05 mm.",
+        "description": "Precyzyjny pomiar geometrii skanerami laserowo-optycznymi o dokładności od 0,025 mm oraz rekonstrukcja parametrycznych brył CAD (STEP/IGES) pod obróbkę CNC.",
         "areaServed": "Polska"
       },
       {
@@ -39,18 +39,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "W jakich warunkach uzyskuje się dokładność od 0,025 mm?",
+            "name": "Czym różni się plik siatki STL od modelu CAD STEP?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dokładność od 0,025 mm osiągana jest na skalibrowanym stanowisku optyczno-laserowym przy kontrolowanej temperaturze (20°C) dla sztywnych elementów mechanicznych w trybie niebieskiego lasera. Dokładność objętościowa wynosi 0,025 mm + 0,05 mm × L (m)."
+              "text": "Plik STL składa się z milionów trójkątów i nie zawiera informacji o osiach, promieniach czy gwintach – nadaje się wyłącznie do druku 3D. Model STEP to parametryczna bryła B-Rep z nominalnymi płaszczyznami, gotowa do obróbki na frezarkach CNC, w formach wtryskowych i edytowalna w programach CAD."
             }
           },
           {
             "@type": "Question",
-            "name": "Jak skanowane są elementy ciemne, metaliczne lub błyszczące?",
+            "name": "W jakich warunkach uzyskuje się dokładność od 0,025 mm?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dzięki zastosowaniu niebieskiego lasera o dużej gęstości wiązki, wiele powierzchni ciemnych i metalicznych jest skanowanych bezpośrednio bez matowienia. W przypadku trudnych powierzchni lustrzanych stosujemy bezpieczny spray sublimacyjny, który samoczynnie ulatnia się po kilku godzinach."
+              "text": "Dokładność od 0,025 mm osiągana jest na skalibrowanym stanowisku w kontrolowanej temperaturze (20°C) dla sztywnych elementów mechanicznych w trybie niebieskiego lasera. Dokładność objętościowa wynosi 0,025 mm + 0,05 mm × L (m)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy można odtworzyć połamany lub zużyty detal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Skanujemy ocalałe fragmenty, a w procesie inżynierii odwrotnej wyznaczamy osie symetrii, kompensujemy wytarte powierzchnie i odbudowujemy brakujące zatrzaski bezpośrednio w środowisku CAD."
             }
           },
           {
@@ -91,13 +99,13 @@
               <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </a>
             <div class="nav-dropdown-menu">
-              <a href="modelowanie-cad.html" class="nav-dropdown-item">
-                <strong>Inżynieria odwrotna i CAD</strong>
-                <span>Parametryczne modele STEP ze skanów 3D</span>
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D i inżynieria odwrotna</strong>
+                <span>Pomiary laserowe od 0,025 mm i modele CAD STEP</span>
               </a>
               <a href="druk-3d.html" class="nav-dropdown-item">
                 <strong>Przemysłowy druk 3D</strong>
-                <span>Kompozyty węglowe PA-CF, PC, ASA</span>
+                <span>Kompozyty PA-CF, PA12, PC, ASA, ABS, PET-G</span>
               </a>
               <a href="automatyzacja.html" class="nav-dropdown-item">
                 <strong>Projektowanie urządzeń</strong>
@@ -106,10 +114,6 @@
               <a href="embedded.html" class="nav-dropdown-item">
                 <strong>Oprogramowanie embedded</strong>
                 <span>Automotive, EV, Powertrain, BMS, ARM</span>
-              </a>
-              <a href="skanowanie-3d.html" class="nav-dropdown-item">
-                <strong>Skanowanie 3D</strong>
-                <span>Pomiary optyczno-laserowe od 0,025 mm</span>
               </a>
             </div>
           </li>
@@ -122,7 +126,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wyceń skan</a>
+        <a href="kalkulator.html" class="btn btn-primary btn-sm">Wycena skanu / CAD</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -143,21 +147,21 @@
           <span class="breadcrumbs-sep">/</span>
           <a href="index.html#oferta">Oferta</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Skanowanie 3D</span>
+          <span>Skanowanie 3D i Inżynieria Odwrotna CAD</span>
         </div>
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Hybrydowa Technologia: Niebieski Laser & Światło Strukturalne
+          Niebieski Laser • Dokładność od 0,025 mm • Parametryczne Modele CAD STEP
         </div>
-        <h1>Skanowanie 3D detali o dokładności od 0,025 mm</h1>
+        <h1>Skanowanie 3D i Inżynieria Odwrotna CAD STEP</h1>
         <p class="subhead">
-          Precyzyjna digitalizacja geometrii części maszyn, elementów motoryzacyjnych, odlewów i prototypów. Łączymy wieloliniowy niebieski laser z pełnopolowym światłem strukturalnym, zapewniając bezpłatną obsługę kurierską door-to-door w całej Polsce.
+          Precyzyjnie digitalizujemy geometrię fizycznych części maszyn, elementów motoryzacyjnych i prototypów, a następnie przekształcamy chmury punktów w parametryczne, edytowalne modele bryłowe CAD (STEP, IGES, Parasolid) zoptymalizowane pod CNC, formy i druk 3D.
         </p>
 
         <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
           <a href="kalkulator.html" class="btn btn-primary btn-lg">Oblicz koszt w kalkulatorze ➔</a>
-          <a href="kontakt.html" class="btn btn-secondary btn-lg">Wyślij zdjęcia do wyceny</a>
+          <a href="kontakt.html" class="btn btn-secondary btn-lg">Prześlij zdjęcia do wyceny</a>
         </div>
       </div>
     </section>
@@ -181,10 +185,10 @@
           </div>
 
           <div class="spec-card">
-            <div class="spec-icon">📊</div>
-            <div class="spec-label">Rozdzielczość siatki</div>
-            <div class="spec-value">Do 0,05 mm (50 µm)</div>
-            <div class="spec-desc">Próbkowanie do 800 tys. pkt/s w trybie laserowym i do 7 mln pkt/s w trybie pełnopolowym.</div>
+            <div class="spec-icon">🛠️</div>
+            <div class="spec-label">Formaty B-Rep / STEP</div>
+            <div class="spec-value">STEP AP214 / AP242</div>
+            <div class="spec-desc">Parametryczne bryły i powierzchnie NURBS (IGES, Parasolid x_t, SAT, PDF 2D).</div>
           </div>
 
           <div class="spec-card">
@@ -240,91 +244,136 @@
       </div>
     </section>
 
-    <!-- Co klient rzeczywiście otrzymuje -->
+    <!-- Różnica STL vs STEP -->
     <section class="section section-highlight">
       <div class="container">
-        <div class="section-head center">
-          <div class="eyebrow">Zakres opracowania</div>
-          <h2>Co rzeczywiście otrzymujesz po skanowaniu?</h2>
-          <p class="subhead">
-            Dopasowujemy format i stopień przetworzenia danych do Twojego docelowego celu produkcyjnego.
-          </p>
-        </div>
-
-        <div class="grid-3" style="gap: 1.5rem;">
-          <div class="tech-card">
-            <div class="service-icon-wrap">🌐</div>
-            <h3>1. Surowy skan 3D (Chmura punktów / OBJ)</h3>
-            <p>Zarejestrowana chmura punktów lub surowa siatka ze stanowiska pomiarowego. Idealna do wstępnych przymiarek cyfrowych lub archiwizacji wzorca.</p>
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <div class="section-head" style="margin-bottom: 2rem;">
+            <div class="eyebrow">Istotna różnica technologiczna</div>
+            <h2>Siatka STL vs Parametryczny model CAD STEP</h2>
+            <p class="subhead">
+              Dlaczego sam surowy skan 3D nie wystarczy do frezowania CNC lub produkcji seryjnej?
+            </p>
           </div>
 
-          <div class="tech-card">
-            <div class="service-icon-wrap">⚡</div>
-            <h3>2. Oczyszczona siatka STL (Pod druk 3D)</h3>
-            <p>Siatka trójkątów po usunięciu szumów, zamknięciu otworów („watertight”) i zoptymalizowaniu wielkości pliku pod slicery drukarek 3D.</p>
-          </div>
+          <div class="grid-2" style="gap: 2rem;">
+            <div style="background: rgba(6, 9, 19, 0.7); border: 1px solid var(--border-card); border-radius: var(--radius-sm); padding: 1.5rem;">
+              <h3 style="color: var(--cyan); margin-bottom: 0.75rem;">Siatka trójkątów (STL / OBJ)</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                <li>❌ Brak informacji o osiach otworów, promieniach i gwintach.</li>
+                <li>❌ Bardzo trudna lub niemożliwa edycja w środowiskach CAD.</li>
+                <li>❌ Przenosi wszelkie zarysowania, zużycie i wady oryginału.</li>
+                <li>✔️ Idealna do bezpośredniego druku 3D (slicery).</li>
+              </ul>
+            </div>
 
-          <div class="tech-card">
-            <div class="service-icon-wrap">📐</div>
-            <h3>3. Model parametryczny CAD STEP (Pod CNC)</h3>
-            <p>Pełna inżynieria odwrotna (B-Rep / bryła CAD) z nominalnymi wymiarami, osiami symetrii i kompensacją zużycia, gotowa do obróbki na maszynach CNC.</p>
+            <div style="background: rgba(6, 9, 19, 0.7); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-sm); padding: 1.5rem;">
+              <h3 style="color: var(--emerald); margin-bottom: 0.75rem;">Model parametryczny CAD (STEP / Parasolid)</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--text-main);">
+                <li>✔️ Prawdziwe płaszczyzny, cylindry, stożki i krzywizny B-Rep.</li>
+                <li>✔️ W 100% edytowalny w SolidWorks, Inventor, Fusion, NX, CATIA.</li>
+                <li>✔️ Skompensowane zużycie i przywrócone wymiary nominalne.</li>
+                <li>✔️ Gotowy do wygenerowania ścieżek CAM pod frezarki CNC.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Ograniczenia i warunki dokładności (Uczciwość techniczna) -->
+    <!-- 3 Filary Inżynierii Odwrotnej -->
     <section class="section">
       <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Uczciwość techniczna</div>
-          <h2>Czynniki wpływające na dokładność i specyfika pomiaru</h2>
-          <p class="subhead">
-            Przedstawiamy realne parametry fizyczne i metody przygotowania powierzchni.
-          </p>
+        <div class="section-head center">
+          <div class="eyebrow">Metodologia rekonstrukcji</div>
+          <h2>Jak przebiega proces inżynierii odwrotnej CAD?</h2>
+          <p class="subhead">Nie stosujemy prymitywnego automatycznego trasowania — tworzymy czyste, logiczne drzewa operacji inżynierskich.</p>
         </div>
 
-        <div class="grid-2" style="gap: 2rem;">
+        <div class="grid-3" style="gap: 1.5rem;">
           <div class="tech-card">
-            <h3 style="color: #fff; margin-bottom: 0.75rem;">🔍 Warunki uzyskania optymalnej dokładności</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; color: var(--text-muted);">
-              <li><strong style="color: var(--cyan);">▸ Sztywne materiały:</strong> metale, tworzywa konstrukcyjne, odlewy i laminaty.</li>
-              <li><strong style="color: var(--cyan);">▸ Gabaryt optymalny:</strong> elementy od 10 mm do 300 mm na stoliku; do 1000 mm z markerami.</li>
-              <li><strong style="color: var(--cyan);">▸ Stabilność termiczna:</strong> pomiar w skalibrowanej temperaturze 20°C.</li>
-              <li><strong style="color: var(--cyan);">▸ Praca z ciemnymi powierzchniami:</strong> niebieski laser pozwala skanować większość czarnych elementów bez matowienia.</li>
-            </ul>
+            <div class="service-icon-wrap">📐</div>
+            <h3>1. Wyznaczenie baz i symetrii</h3>
+            <p>Identyfikacja głównych płaszczyzn montażowych, osi obrotu, rozstawu śrub i osi symetrii uszkodzonego elementu.</p>
           </div>
 
           <div class="tech-card">
-            <h3 style="color: #fff; margin-bottom: 0.75rem;">⚠️ Trudne powierzchnie i rozwiązania</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; color: var(--text-muted);">
-              <li><strong style="color: var(--cyan);">▸ Powierzchnie lustrzane i chrom:</strong> stosujemy bezpieczny spray sublimacyjny (ulatnia się bez śladu po kilku godzinach).</li>
-              <li><strong style="color: var(--cyan);">▸ Elementy przezroczyste:</strong> szkło i PMMA wymagają tymczasowej mikro-warstwy antyrefleksyjnej.</li>
-              <li><strong style="color: var(--cyan);">▸ Głębokie wąskie kanały:</strong> strefy niewidoczne dla promienia lasera uzupełniamy pomiarem mechanicznym i rekonstruujemy w CAD.</li>
-              <li><strong style="color: var(--cyan);">▸ Części elastyczne:</strong> gumy i miękkie uszczelki stabilizujemy na dedykowanych bazach pomiarowych.</li>
+            <div class="service-icon-wrap">🩹</div>
+            <h3>2. Odbudowa ubytków i kompensacja</h3>
+            <p>Odtworzenie wyłamanych zatrzasków, przywrócenie grubości zużytych ścianek oraz rekonstrukcja zębów kół przekładni.</p>
+          </div>
+
+          <div class="tech-card">
+            <div class="service-icon-wrap">🔄</div>
+            <h3>3. Optymalizacja technologiczna (Redesign)</h3>
+            <p>Wzmocnienie newralgicznych stref podatnych na pęknięcia, dodanie użebrowania lub zmiana mocowań pod nowe komponenty.</p>
+          </div>
+        </div>
+
+        <!-- Format cloud -->
+        <div style="margin-top: 3rem; text-align: center;">
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.05rem;">Dostarczane formaty plików produkcyjnych:</h4>
+          <div class="materials-cloud" style="justify-content: center;">
+            <span class="material-tag accent">.STEP / .STP (AP214 / AP242)</span>
+            <span class="material-tag accent">.IGES / .IGS</span>
+            <span class="material-tag accent">.x_t (Parasolid)</span>
+            <span class="material-tag">.STL / .3MF (Druk 3D)</span>
+            <span class="material-tag">.DXF / .DWG / PDF (Rysunki 2D GD&T)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Przykład Realizacji Datsun -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Studium przypadku</div>
+            <h2>Przykład z portfolio: Osłona kolumny Datsun 240Z</h2>
+            <p style="margin-bottom: 1.25rem;">
+              Oryginalna część z lat 70. była połamana, z wykruszonymi gniazdami śrub i odkształceniami termicznymi.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+              <li><strong style="color: var(--cyan);">▸ Skan 3D:</strong> precyzyjny pomiar połamanych połówek obudowy w trybie niebieskiego lasera.</li>
+              <li><strong style="color: var(--cyan);">▸ Prace CAD:</strong> wyznaczenie osi kolumny, odbudowa zatrzasków, symetryzacja bryły i przywrócenie nominalnych grubości ścianek.</li>
+              <li><strong style="color: var(--cyan);">▸ Rezultat:</strong> parametryczny model CAD STEP oraz bezpośredni wydruk techniczny z tworzywa ASA odpornego na UV i temperaturę.</li>
             </ul>
+            <a href="realizacje.html" class="btn btn-outline">Zobacz wszystkie case studies ➔</a>
+          </div>
+
+          <div class="tech-card" style="padding: 1.5rem; border-color: rgba(56, 189, 248, 0.3);">
+            <img src="galeria/Datsun_osłona_kierownicy/2.png" alt="Rekonstrukcja CAD osłony Datsun" style="width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem;" />
+            <div style="font-size: 0.85rem; color: var(--text-dim); text-align: center;">
+              Drzewo operacji CAD: wyznaczenie płaszczyzny podziału i odbudowa mocowań.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section section-highlight">
+    <section class="section">
       <div class="container">
         <div class="section-head center">
           <div class="eyebrow">FAQ</div>
-          <h2>Najczęstsze pytania o skanowanie 3D</h2>
+          <h2>Najczęstsze pytania o skanowanie 3D i inżynierię odwrotną</h2>
         </div>
 
         <div class="faq-grid">
           <div class="faq-card">
-            <div class="faq-question"><span class="faq-question-icon">?</span> Ile kosztuje skanowanie 3D?</div>
-            <div class="faq-answer">Koszt zależy od gabarytów, geometrii i wybranego formatu wyjściowego. Cena za sam skan (siatka STL) prostego detalu zaczyna się od 350 zł netto, a kompletny parametryczny model CAD STEP to koszt od 1400 zł netto. Dokładny szacunek sprawdzisz w kalkulatorze.</div>
+            <div class="faq-question"><span class="faq-question-icon">?</span> Ile kosztuje skanowanie 3D i wykonanie modelu CAD?</div>
+            <div class="faq-answer">Cena zależy od gabarytów, stopnia skomplikowania powierzchni i oczekiwanego formatu. Koszt samego skanu (siatka STL) zaczyna się od 350 zł netto, natomiast kompletny model bryłowy CAD STEP z kompensacją zużycia to koszt od 1400 zł netto. Szczegółowy szacunek sprawdzisz w naszym kalkulatorze.</div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question"><span class="faq-question-icon">?</span> Czy mogę przesłać własny plik skanu STL do zrobienia CAD?</div>
+            <div class="faq-answer">Tak. Jeśli posiadasz już wykonany skan 3D (siatkę STL, OBJ, PLY) z innego źródła, możemy wykonać samą usługę inżynierii odwrotnej i zamienić go na parametryczny model STEP.</div>
           </div>
 
           <div class="faq-card">
             <div class="faq-question"><span class="faq-question-icon">?</span> Jak duże elementy można zeskanować?</div>
-            <div class="faq-answer">Pracujemy z elementami od małych (od ok. 10 mm – spinki, zębatki, dźwigienki) po elementy o gabarytach do 1 metra (obudowy, kolektory, panele karoserii).</div>
+            <div class="faq-answer">Pracujemy z elementami od drobnych (od ok. 10 mm – spinki, zębatki, dźwigienki) po elementy o gabarytach do 1 metra (obudowy, kolektory, panele karoserii).</div>
           </div>
 
           <div class="faq-card">
@@ -336,10 +385,10 @@
     </section>
 
     <!-- Banner CTA -->
-    <section class="section">
+    <section class="section section-highlight">
       <div class="container">
         <div class="subpage-cta">
-          <h2>Chcesz poznać koszt skanowania Twojego detalu?</h2>
+          <h2>Chcesz poznać koszt skanowania lub rekonstrukcji CAD Twojego detalu?</h2>
           <p>
             Skorzystaj z kalkulatora lub prześlij zdjęcia — ocenimy geometrię i przygotujemy bezpłatną wycenę.
           </p>
@@ -358,7 +407,7 @@
       📞 Zadzwoń
     </a>
     <a href="kalkulator.html" class="sticky-bar-btn sticky-bar-cta">
-      Wycena skanu ➔
+      Wycena skanu / CAD ➔
     </a>
   </div>
 
@@ -382,11 +431,10 @@
         <div>
           <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Oferta</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="modelowanie-cad.html">Modelowanie CAD STEP</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D i inżynieria CAD</a></li>
             <li><a href="druk-3d.html">Druk 3D techniczny</a></li>
-            <li><a href="automatyzacja.html">Dedykowane maszyny</a></li>
+            <li><a href="automatyzacja.html">Dedykowane maszyny i testery</a></li>
             <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
-            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
           </ul>
         </div>
 

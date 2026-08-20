@@ -1,20 +1,20 @@
-# MULTICORE - Canonical & Security Rules
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  
-  # Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteEngine On
+RewriteBase /
 
-  # Redirect /index.html to /
-  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-  RewriteRule ^index\.html$ https://multicore.net.pl/ [R=301,L]
-</IfModule>
+# Przekierowanie index.html do /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
 
-# Security Headers
+# Przekierowanie modelowanie-cad do skanowanie-3d
+RewriteRule ^modelowanie-cad\.html$ /skanowanie-3d.html [R=301,L]
+
+# Przekierowanie starej strony qi
+RewriteRule ^firmware-qi-indukcja\.html$ /firmware-bms-powertrain.html [R=301,L]
+
+# Bezpieczne nagłówki
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 </IfModule>

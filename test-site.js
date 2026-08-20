@@ -21,7 +21,6 @@ console.log('=== MULTICORE TEST SUITE ===\n');
 const requiredFiles = [
   'index.html',
   'skanowanie-3d.html',
-  'modelowanie-cad.html',
   'druk-3d.html',
   'embedded.html',
   'automatyzacja.html',
