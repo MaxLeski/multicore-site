@@ -747,6 +747,15 @@ function initQuoteForm() {
         formData.append("utm_source", trafficMeta.utm_source || "");
         formData.append("utm_medium", trafficMeta.utm_medium || "");
         formData.append("utm_campaign", trafficMeta.utm_campaign || "");
+
+        // Turnstile token jeśli obecny
+        const turnstileInput = form.querySelector("[name=\"cf-turnstile-response\"]");
+        if (turnstileInput && turnstileInput.value) {
+          formData.append("cf-turnstile-response", turnstileInput.value);
+        } else if (typeof window.turnstile !== "undefined") {
+          const token = window.turnstile.getResponse();
+          if (token) formData.append("cf-turnstile-response", token);
+        }
         
         if (calcData.estimatedPrice) {
           formData.append("calc_summary", JSON.stringify(calcData));
@@ -759,12 +768,30 @@ function initQuoteForm() {
           body: formData
         });
 
-        if (res.ok) {
+        const result = await res.json().catch(() => ({}));
+
+        if (res.ok && result.success !== false) {
           window.location.href = "dziekujemy.html";
+          return;
+        } else {
+          showError(result.error || "Wystąpił błąd podczas wysyłania zapytania do serwera. Spróbuj ponownie.");
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Wyślij zapytanie bezpośrednio</span> <span class="btn-icon">➔</span>`;
+          }
+          if (typeof window.turnstile !== "undefined") {
+            try { window.turnstile.reset(); } catch (e) {}
+          }
           return;
         }
       } catch (err) {
-        console.warn("Wysyłka do endpointu nie powiodła się, przechodzenie do potwierdzenia:", err);
+        console.error("Błąd połączenia z API:", err);
+        showError("Nie udało się połączyć z serwerem formularza. Sprawdź połączenie internetowe lub zadzwoń: +48 533 491 374.");
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<span>Wyślij zapytanie bezpośrednio</span> <span class="btn-icon">➔</span>`;
+        }
+        return;
       }
     }
 

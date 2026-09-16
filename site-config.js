@@ -79,7 +79,7 @@ window.MULTICORE_CONFIG = {
 
   // Konfiguracja formularza
   form: {
-    endpointUrl: '', // np. endpoint Formspree / Web3Forms / własny serverless webhook
+    endpointUrl: 'https://multicore-leads-api.multicore.workers.dev/lead',
     apiKey: '',
     maxFileSizeMb: 25,
     allowedExtensions: ['jpg', 'jpeg', 'png', 'webp', 'pdf', 'step', 'stp', 'stl', 'iges', 'igs', 'zip', 'rar', '7z'],
