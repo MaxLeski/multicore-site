@@ -443,7 +443,7 @@ PLIKI W R2 (${savedFilesMeta.length}):
 ${filesText}
           `.trim();
 
-          const emailResponse = await resend.emails.send({
+          let emailResponse = await resend.emails.send({
             from: fromEmail,
             to: recipientEmail,
             subject: `Nowe zapytanie MULTICORE [${topic || "Wycena"}] — ${name || email || leadId.slice(0, 8)}`,
@@ -452,8 +452,23 @@ ${filesText}
             replyTo: email || undefined,
           });
 
+          // Jeśli domena multicore.net.pl nie została jeszcze zweryfikowana w Resend (Etap 6)
+          if (emailResponse.error && (emailResponse.error.message?.includes("not verified") || emailResponse.error.name === "validation_error")) {
+            console.warn("Domena multicore.net.pl oczekuje na weryfikację DNS w Resend. Wysyłam przez testowy adres onboarding@resend.dev na maksym.leski@gmail.com...");
+            emailResponse = await resend.emails.send({
+              from: "MULTICORE Formularz <onboarding@resend.dev>",
+              to: "maksym.leski@gmail.com",
+              subject: `[MULTICORE] Nowe zapytanie [${topic || "Wycena"}] — ${name || email || leadId.slice(0, 8)}`,
+              html: htmlBody,
+              text: textBody,
+              replyTo: email || undefined,
+            });
+          }
+
           if (emailResponse.error) {
             console.error("Resend API error:", emailResponse.error);
+          } else {
+            console.log("E-mail wysłany pomyślnie przez Resend. ID:", emailResponse.data?.id);
           }
         } catch (emailErr) {
           console.error("Nie udało się wysłać powiadomienia e-mail przez Resend:", emailErr);
