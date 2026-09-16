@@ -410,33 +410,55 @@ function initCalculator() {
     const rawTotal = subtotal * compConfig.mult * modeConfig.mult;
     const finalPrice = Math.max(scopeConfig.min, Math.round(rawTotal / 10) * 10);
 
-    const minRange = Math.max(scopeConfig.min, Math.round((finalPrice * 0.9) / 10) * 10);
-    const maxRange = Math.round((finalPrice * 1.15) / 10) * 10;
+    const minRange = Math.max(scopeConfig.min, Math.round((finalPrice * 0.85) / 50) * 50);
+    const maxRange = Math.round((finalPrice * 1.25) / 50) * 50;
+
+    // Diagnoza inżynierska zakresu projektu
+    const requirements = [];
+    if (scopeVal === "cad") {
+      requirements.push("Skanowanie optyczno-laserowe wielopozycyjne z markerami referencyjnymi");
+      requirements.push("Analiza geometrii nominalnej, baz pomiarowych i osi symetrii");
+      requirements.push("Rekonstrukcja parametryczna w środowisku CAD (model bryłowy)");
+      if (complexityVal === "high" || complexityVal === "medium") {
+        requirements.push("Kompensacja zużycia eksploatacyjnego i odbudowa wyłamanych mocowań");
+      }
+      requirements.push("Przygotowanie modelu produkcyjnego STEP (AP214/AP242) pod CNC / formy");
+    } else if (scopeVal === "mesh") {
+      requirements.push("Precyzyjne skanowanie laserowe o rozdzielczości od 0,05 mm");
+      requirements.push("Oczyszczenie chmury punktów i wypełnienie mikroubytków");
+      requirements.push("Generowanie zamkniętej, zoptymalizowanej siatki trójkątów STL do druku 3D");
+    } else {
+      requirements.push("Bezkontaktowy pomiar metrologiczny o dokładności od 0,025 mm");
+      requirements.push("Wygenerowanie surowej chmury punktów / siatki poligonowej OBJ/PLY");
+      requirements.push("Zestawienie wymiarów gabarytowych i orientacji przestrzennej");
+    }
 
     if (priceValEl) {
       priceValEl.textContent = `${finalPrice.toLocaleString("pl-PL")}`;
     }
     if (priceRangeEl) {
-      priceRangeEl.textContent = `Przedział szacunkowy: od ~${minRange} do ~${maxRange} zł netto`;
+      priceRangeEl.textContent = `Orientacyjny budżet: od ~${minRange} do ~${maxRange} zł netto`;
     }
 
     if (breakdownListEl) {
-      const items = [
-        { label: "Kalibracja i stanowisko pomiarowe", val: `${setupCost} zł` },
-        { label: `Gabaryt max (${maxDimCm.toFixed(1)} cm)`, val: sizeCost ? `+${sizeCost} zł` : "W cenie bazowej" },
-        { label: `Objętość robocza (${Math.round(volumeCm3)} cm³)`, val: volCost ? `+${volCost} zł` : "W cenie bazowej" },
-        { label: `Powierzchnia (${surfConfig.label})`, val: surfConfig.surcharge ? `+${surfConfig.surcharge} zł` : "Standard" },
-        { label: `Zakres usługi (${scopeConfig.label})`, val: scopeConfig.surcharge ? `+${scopeConfig.surcharge} zł` : "W cenie bazowej" },
-        { label: `Złożoność (${compConfig.label})`, val: `x${compConfig.mult}` },
-        { label: `Tryb realizacji (${modeConfig.label})`, val: `x${modeConfig.mult}` }
-      ];
-
-      breakdownListEl.innerHTML = items.map(item => `
-        <li class="breakdown-item">
-          <span>${item.label}</span>
-          <strong>${item.val}</strong>
-        </li>
-      `).join("");
+      breakdownListEl.innerHTML = `
+        <div class="scope-checklist">
+          <div class="scope-checklist-title">Ten projekt prawdopodobnie wymaga:</div>
+          <ul class="scope-checklist-items">
+            ${requirements.map(r => `
+              <li class="scope-checklist-item">
+                <span class="scope-check-icon">✓</span>
+                <span>${r}</span>
+              </li>
+            `).join("")}
+          </ul>
+        </div>
+        <div class="budget-range-display">
+          <div class="budget-range-label">Szacunkowy budżet inżynierski (netto)</div>
+          <div class="budget-range-val">${minRange.toLocaleString("pl-PL")} – ${maxRange.toLocaleString("pl-PL")} zł</div>
+          <div class="budget-range-note">Ostateczny koszt potwierdzamy po bezpłatnej ocenie zdjęć. Zależy od stopnia uszkodzenia, ubytków i tolerancji pasowania.</div>
+        </div>
+      `;
     }
 
     if (sendQuoteBtn) {
@@ -445,10 +467,10 @@ function initCalculator() {
           max_dim_cm: maxDimCm,
           scope: scopeVal,
           complexity: complexityVal,
-          estimated_price: finalPrice
+          estimated_price: `${minRange}–${maxRange} zł`
         });
         window.multicoreAnalytics?.track("calculator_lead_started", {
-          estimated_price: finalPrice,
+          estimated_price: `${minRange}–${maxRange} zł`,
           scope: scopeVal
         });
 
@@ -461,7 +483,8 @@ function initCalculator() {
           scope: scopeConfig.label,
           scopeVal: scopeVal,
           mode: modeConfig.label,
-          estimatedPrice: `${finalPrice} zł netto (przedział ${minRange}–${maxRange} zł)`
+          estimatedPrice: `${minRange}–${maxRange} zł netto`,
+          requirements: requirements
         };
 
         try {
@@ -513,14 +536,14 @@ function applyCalcDataToForm(calcData) {
       <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
         <div>
           <strong style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase;">
-            ✓ Parametry przeniesione z kalkulatora:
+            ✓ Zdiagnozowany zakres prac z estymatora:
           </strong>
           <div style="margin-top: 0.35rem; line-height: 1.5; font-size: 0.88rem;">
             • Wymiary: <strong>${calcData.dimensions}</strong> | Zakres: <strong>${calcData.scope}</strong><br />
-            • Szacunek z kalkulatora: <strong style="color: #fff;">${calcData.estimatedPrice}</strong>
+            • Szacunkowy budżet: <strong style="color: #fff;">${calcData.estimatedPrice}</strong>
           </div>
         </div>
-        <button type="button" class="btn btn-outline btn-sm" id="btnResetCalcSummary" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Zmień kalkulację</button>
+        <button type="button" class="btn btn-outline btn-sm" id="btnResetCalcSummary" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Zmień parametry</button>
       </div>
     `;
 
@@ -537,17 +560,15 @@ function applyCalcDataToForm(calcData) {
     }
   }
 
-  if (messageInput && (!messageInput.value || messageInput.value.includes("Wycena z kalkulatora") || messageInput.value.includes("Parametry z kalkulatora"))) {
+  if (messageInput && (!messageInput.value || messageInput.value.includes("Wycena z kalkulatora") || messageInput.value.includes("Parametry z kalkulatora") || messageInput.value.includes("Zdiagnozowany zakres"))) {
     messageInput.value = `Dzień dobry,
 
-Proszę o potwierdzenie wyceny i terminu dla skanowania 3D:
+Proszę o ocenę wykonalności i potwierdzenie zakresu prac:
 • Wymiary: ${calcData.dimensions}
-• Zakres usługi: ${calcData.scope}
-• Stopień złożoności: ${calcData.complexity}
-• Powierzchnia: ${calcData.surface}
-• Szacunkowy koszt z kalkulatora: ${calcData.estimatedPrice}
+• Oczekiwany rezultat: ${calcData.scope}
+• Szacunkowy budżet z estymatora: ${calcData.estimatedPrice}
 
-Załączam zdjęcia/pliki detalu do bezpłatnej oceny technologicznej.`;
+W załączeniu przesyłam zdjęcia detalu (z widocznymi miejscami zużycia / uszkodzeń).`;
   }
 }
 
@@ -665,6 +686,45 @@ function initQuoteForm() {
     }
   }
 
+  const qualPills = form.querySelectorAll(".qual-pill");
+  qualPills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      const group = pill.closest(".qualification-pills");
+      if (!group) return;
+      const isAlready = pill.classList.contains("selected");
+      group.querySelectorAll(".qual-pill").forEach(p => p.classList.remove("selected"));
+      if (!isAlready) {
+        pill.classList.add("selected");
+      }
+      const qualType = group.getAttribute("data-qual-type") || "project";
+      const qualVal = pill.classList.contains("selected") ? pill.getAttribute("data-value") : "";
+      window.multicoreAnalytics?.track("lead_qualification_selected", { type: qualType, value: qualVal });
+    });
+  });
+
+  // Obsługa przycisków "Mam podobny problem" z Case Studies
+  document.querySelectorAll("[data-case-study-cta]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const studyTitle = btn.getAttribute("data-case-study-cta") || "Realizacja";
+      window.multicoreAnalytics?.track("case_study_similar_clicked", { title: studyTitle });
+      const contactSection = document.getElementById("formularz") || document.getElementById("kontakt");
+      const msgInput = document.getElementById("inquiryMessage");
+      if (msgInput) {
+        msgInput.value = `Dzień dobry,
+
+Mam problem techniczny podobny do realizacji: ${studyTitle}.
+Opis mojego detalu i uszkodzeń:
+`;
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(() => {
+          if (msgInput) msgInput.focus();
+        }, 600);
+      }
+    });
+  });
+
   let formStarted = false;
   form.addEventListener("focusin", () => {
     if (!formStarted) {
@@ -700,7 +760,7 @@ function initQuoteForm() {
     const email = form.querySelector("[name=\"email\"]")?.value?.trim() || "";
     const phone = form.querySelector("[name=\"phone\"]")?.value?.trim() || "";
     const topic = form.querySelector("[name=\"topic\"]")?.value || "skanowanie";
-    const message = form.querySelector("[name=\"message\"]")?.value?.trim() || "";
+    const rawMessage = form.querySelector("[name=\"message\"]")?.value?.trim() || "";
     const contactPref = form.querySelector("[name=\"preferredContact\"]:checked")?.value || "email";
 
     if (!email && !phone) {
@@ -713,10 +773,22 @@ function initQuoteForm() {
       return;
     }
 
-    if (!message) {
-      showError("Opisz krótko swój detal lub projekt inżynierski.");
+    if (!rawMessage) {
+      showError("Opisz krótko swój detal lub problem techniczny.");
       return;
     }
+
+    // Odczyt opcjonalnych pytań kwalifikujących
+    const selectedTypePill = form.querySelector('.qualification-pills[data-qual-type="project-type"] .qual-pill.selected');
+    const selectedCountPill = form.querySelector('.qualification-pills[data-qual-type="part-count"] .qual-pill.selected');
+    const projectType = selectedTypePill ? selectedTypePill.getAttribute("data-value") : "";
+    const partCount = selectedCountPill ? selectedCountPill.getAttribute("data-value") : "";
+
+    let qualificationSummary = "";
+    if (projectType || partCount) {
+      qualificationSummary = `\n\n[Kwalifikacja leadu]${projectType ? ` Typ projektu: ${projectType}` : ""}${partCount ? ` | Liczba sztuk: ${partCount}` : ""}`;
+    }
+    const message = rawMessage + qualificationSummary;
 
     let trafficMeta = {};
     try {
@@ -744,6 +816,8 @@ function initQuoteForm() {
       topic,
       preferredContact: contactPref,
       message,
+      projectType,
+      partCount,
       attachedFilesCount: attachedFiles.length,
       fileNames: attachedFiles.map(f => f.name),
       calcData: calcData.estimatedPrice ? calcData : null,

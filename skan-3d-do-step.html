@@ -3,37 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odtwarzanie części bez dokumentacji 3D | MULTICORE</title>
+  <title>Skan 3D do STEP | Konwersja skanu na model bryłowy CAD | MULTICORE</title>
   <meta
     name="description"
-    content="Odtwarzanie uszkodzonych, zużytych lub niedostępnych części maszyn i pojazdów. Skanowanie 3D od 0,025 mm, odbudowa brakującej geometrii w CAD i wykonanie gotowego detalu."
+    content="Precyzyjna konwersja skanu 3D na parametryczny model CAD STEP (AP214/AP242). Odtwarzamy osie, płaszczyzny bazowe i gwinty gotowe do obróbki na obrabiarkach CNC."
   />
-  <link rel="canonical" href="https://multicore.net.pl/odtwarzanie-czesci.html" />
+  <link rel="canonical" href="https://multicore.net.pl/skan-3d-do-step.html" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://multicore.net.pl/odtwarzanie-czesci.html" />
-  <meta property="og:title" content="Odtwarzanie części bez dokumentacji 3D | MULTICORE" />
-  <meta property="og:description" content="Kompleksowa regeneracja od uszkodzonego wzorca po plik STEP i gotowy detal z kompozytów lub CNC." />
-  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" />
+  <meta property="og:url" content="https://multicore.net.pl/skan-3d-do-step.html" />
+  <meta property="og:title" content="Skan 3D do STEP | Konwersja skanu na model bryłowy CAD | MULTICORE" />
+  <meta property="og:description" content="Przekształcanie siatek 3D na analityczne bryły CAD STEP pod frezowanie CNC i formy." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/2.png" />
 
-    <script>
+  <script>
     (function(){try{var t=localStorage.getItem("mc_theme");if(t==="light"||(!t&&window.matchMedia("(prefers-color-scheme: light)").matches)){document.documentElement.setAttribute("data-theme","light");}else{document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();
   </script>
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Odtwarzanie części bez dokumentacji technicznej",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "MULTICORE Maksym Leski",
-      "url": "https://multicore.net.pl/"
-    },
-    "description": "Inżynieria odtworzeniowa części wycofanych z produkcji, uszkodzonych i zużytych bez oryginalnych rysunków wykonawczych.",
-    "areaServed": "Polska"
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Główna",
+            "item": "https://multicore.net.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Skan 3D do STEP",
+            "item": "https://multicore.net.pl/skan-3d-do-step.html"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Konwersja Skanu 3D do STEP",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MULTICORE Maksym Leski",
+          "url": "https://multicore.net.pl/"
+        },
+        "description": "Przekształcanie siatek poligonowych ze skanera 3D w analityczne modele bryłowe CAD STEP gotowe do programowania obrabiarek CNC w środowiskach CAM.",
+        "areaServed": "Polska"
+      }
+    ]
   }
   </script>
 </head>
@@ -55,7 +75,7 @@
           <li><a href="index.html" class="nav-link">Główna</a></li>
           
           <li class="nav-dropdown">
-            <a href="odtwarzanie-czesci.html" class="nav-link dropdown-toggle active" aria-expanded="false">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle active" aria-expanded="false">
               Usługi
               <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </a>
@@ -84,7 +104,8 @@
           </li>
 
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#dla-przemyslu" class="nav-link">Dla przemysłu</a></li>
+          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
           <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
@@ -100,7 +121,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           ZADZWOŃ TERAZ
         </a>
-        <a href="#formularz" class="btn btn-primary btn-sm">Wyceń odtworzenie</a>
+        <a href="#formularz" class="btn btn-primary btn-sm">Wyślij plik</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -118,80 +139,93 @@
         <div class="breadcrumbs">
           <a href="index.html">Główna</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Odtwarzanie części bez dokumentacji</span>
+          <span>Skan 3D do formatu STEP</span>
         </div>
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Inżynieria Odtworzeniowa (Reverse Engineering)
+          Konwersja Inżynierska • Mesh-to-Solid
         </div>
-        <h1>Odtwarzanie uszkodzonych części bez dokumentacji technicznej</h1>
+        <h1>Konwersja skanu 3D do formatu STEP (AP214 / AP242) pod CNC</h1>
         <p class="subhead">
-          Producent maszyny zakończył działalność? Część jest niedostępna na rynku lub kosztuje fortunę? Zeskanujemy ocalały wzorzec, odbudujemy geometrię w CAD i wykonamy gotowy element.
+          Masz surowy skan 3D lub siatkę trójkątów i nie możesz jej obrobić w programie CAM ani zmodyfikować w CAD? Przekształcamy dane pomiarowe w analityczny model bryłowy STEP z poprawnie zdefiniowanymi płaszczyznami, osiami otworów i promieniami.
         </p>
 
         <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-          <a href="#formularz" class="btn btn-primary btn-lg">Wyślij zdjęcia części do wyceny ➔</a>
-          <a href="kalkulator.html" class="btn btn-secondary btn-lg">Sprawdź kalkulator wyceny</a>
+          <a href="#formularz" class="btn btn-primary btn-lg">Wyceń konwersję skanu do STEP ➔</a>
+          <a href="kalkulator.html" class="btn btn-secondary btn-lg">Estymator zakresu prac</a>
         </div>
       </div>
     </section>
 
-    <!-- Krok po kroku -->
+    <!-- Dlaczego STEP, a nie STL? -->
     <section class="section" style="padding-top: 3.5rem;">
       <div class="container">
         <div class="section-head center">
-          <div class="eyebrow">Kompletny proces</div>
-          <h2>Jak odtwarzamy brakujące lub zużyte elementy?</h2>
+          <div class="eyebrow">Różnica technologiczna</div>
+          <h2>Dlaczego frezowanie CNC wymaga pliku STEP?</h2>
         </div>
 
-        <div class="workflow-pipeline">
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 1</span>
-            <div class="pipeline-step-title">Fizyczny detal</div>
-            <div class="pipeline-step-desc">Kurier odbiera od Ciebie pękniętą, zużytą lub zdeformowaną część.</div>
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3>📐 Geometria analityczna B-Rep</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              W formacie STEP cylinder jest analityczną powierzchnią walcową o zdefiniowanej osi i promieniu. W STL cylinder to zbiór tysięcy płaskich fasetek, co uniemożliwia automatyczne rozpoznanie operacji wiercenia w CAM.
+            </p>
           </div>
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 2</span>
-            <div class="pipeline-step-title">Skanowanie 3D</div>
-            <div class="pipeline-step-desc">Precyzyjny pomiar optyczny 360° z rozdzielczością od 0,025 mm.</div>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 3</span>
-            <div class="pipeline-step-title">Rekonstrukcja CAD</div>
-            <div class="pipeline-step-desc">Odbudowa ubytków, skasowanie luzów i wygenerowanie pliku STEP.</div>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 4</span>
-            <div class="pipeline-step-title">Wytworzenie detalu</div>
-            <div class="pipeline-step-desc">Druk 3D z kompozytu PA-CF/ASA lub przekazanie plików pod obróbkę CNC.</div>
-          </div>
-        </div>
 
-        <div class="grid-3" style="gap: 1.5rem; margin-top: 2.5rem;">
           <div class="tech-card">
-            <h3>🏭 Części maszyn produkcyjnych</h3>
-            <p>Zębatki, krzywki, korpusy, tuleje, zabieraki i prowadnice linii produkcyjnych, których brak wstrzymuje pracę zakładu.</p>
+            <h3>⚡ Kompatybilność CAM i narzędziowni</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Oprogramowanie Mastercam, Fusion 360, Hypermill, NX czy Edgecam operuje na krawędziach bryłowych STEP. Generowanie ścieżek narzędzia na bryle gwarantuje brak bicia i przewidywalną chropowatość powierzchni.
+            </p>
           </div>
+
           <div class="tech-card">
-            <h3>🏎️ Elementy motoryzacji klasycznej</h3>
-            <p>Obudowy przełączników, kratki nawiewów, klamki, mocowania reflektorów i listwy ozdobne do youngtimerów i aut zabytkowych.</p>
-          </div>
-          <div class="tech-card">
-            <h3>🛠️ Oprzyrządowanie i adaptery</h3>
-            <p>Adaptery montażowe, redukcje średnic, obudowy elektroniki i przyrządy bazujące projektowane pod istniejący osprzęt.</p>
+            <h3>🔧 Edytowalność w SolidWorks / Inventor</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Plik STEP można zaimportować do dowolnego systemu CAD, dodać fazy, zmienić rozstaw śrub, dodać rowki pod oringi lub połączyć detal w większe złożenie asocjacyjne.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Formularz wyceny na stronie -->
-    <section id="formularz" class="section section-highlight">
+    <!-- Standardy i formaty -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Formaty wyjściowe</div>
+          <h2>Jakie formaty CAD dostarczamy?</h2>
+        </div>
+
+        <div class="grid-2" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3 style="color: var(--cyan);">STEP AP214 / AP242 (ISO 10303)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
+              Najbardziej uniwersalny format wymiany geometrii bryłowej na świecie. Obsługuje kolory ścianek (kluczowe do oznaczania pasowań i tolerancji H7/g6) oraz topologię brył złożonych.
+            </p>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--emerald);">Zastosowanie: CNC, wtryskarki, formy, druk 3D SLA/SLS</span>
+          </div>
+
+          <div class="tech-card">
+            <h3 style="color: var(--cyan);">Parasolid (.x_t / .x_b) & IGES</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
+              Natywne jądro modelowania geometrycznego dla systemów Siemens NX, SolidWorks i SolidEdge. Zapewnia brak błędów translacji przy importowaniu skomplikowanych powierzchni swobodnych.
+            </p>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--emerald);">Zastosowanie: zaawansowane formy tłoczne, matryce</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formularz zlecenia -->
+    <section id="formularz" class="section">
       <div class="container" style="max-width: 900px;">
         <div class="section-head center" style="margin-bottom: 2rem;">
-          <div class="eyebrow">Wycena odtworzenia</div>
-          <h2>Prześlij zdjęcia uszkodzonej części</h2>
-          <p class="subhead">Ocenimy stan geometrii i podamy orientacyjny koszt oraz czas odtworzenia.</p>
+          <div class="eyebrow">Prześlij plik do oceny</div>
+          <h2>Masz skan lub siatkę i potrzebujesz pliku STEP?</h2>
+          <p class="subhead">Załącz plik (STL, OBJ, PLY) lub zdjęcia detalu. Zweryfikujemy geometrię i prześlemy wycenę wykonania modelu bryłowego.</p>
         </div>
 
         <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
@@ -199,62 +233,46 @@
 
           <form id="inquiryForm" novalidate>
             <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
-            <input type="hidden" name="topic" value="odtwarzanie_czesci" />
+            <input type="hidden" name="topic" value="cad" />
 
             <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
               <div class="form-group">
-                <label class="form-label" for="inquiryName">Imię i nazwisko / Firma *</label>
-                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski" required />
+                <label class="form-label" for="inquiryEmail">Twój adres e-mail *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="konstruktor@twoja-firma.pl" required />
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="inquiryEmail">Adres e-mail *</label>
-                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="jan@firma.pl" required />
-              </div>
-            </div>
-
-            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
-              <div class="form-group">
-                <label class="form-label" for="inquiryPhone">Telefon</label>
-                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 ..." />
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Preferowany kontakt</label>
-                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
-                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
-                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
-                  </label>
-                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
-                    <input type="radio" name="preferredContact" value="phone" /> Telefon
-                  </label>
-                </div>
+                <label class="form-label" for="inquiryPhone">Numer telefonu (opcjonalnie)</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 500 000 000" />
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.25rem;">
-              <label class="form-label" for="inquiryMessage">Opis uszkodzenia i części *</label>
-              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj materiał, orientacyjne wymiary, opis uszkodzeń (np. ułamane 2 z 4 zatrzasków) oraz czy potrzebujesz samego pliku CAD czy również gotowego wydruku 3D..." required></textarea>
+              <label class="form-label" for="inquiryMessage">Wymagania dotyczące modelu STEP *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj docelowe przeznaczenie modelu (frezowanie CNC, forma, modyfikacja CAD), pożądane tolerancje lub wskaż kluczowe powierzchnie bazowe..." required></textarea>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
-              <label class="form-label">Załącz zdjęcia uszkodzonego elementu (JPG, PNG, max 25 MB)</label>
+              <label class="form-label">Załącz pliki skanu lub zdjęcia (STL, OBJ, PLY, ZIP, STEP - max 25 MB)</label>
               <div class="file-dropzone-modern" id="fileDropzone">
-                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".jpg,.jpeg,.png,.webp,.pdf,.step,.stl,.zip" />
-                <div style="font-size: 1.5rem; margin-bottom: 0.35rem;">📷</div>
-                <div style="font-weight: 600; color: #fff; font-size: 0.9rem;">
-                  Przeciągnij zdjęcia tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz pliki</label>
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".stl,.obj,.ply,.step,.stp,.zip,.rar,.7z,image/*" />
+                <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📁</div>
+                <div style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">
+                  Przeciągnij plik tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz z dysku</label>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">
+                  W przypadku plików większych niż 25 MB możesz wkleić w treści link do WeTransfer / Google Drive.
                 </div>
                 <div id="fileList" class="file-items-grid"></div>
               </div>
             </div>
 
-            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.5;">
-              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>.
+            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;">
+              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>. Gwarantujemy poufność powierzonych plików 3D.
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-track-cta>
-              <span>Wyślij zapytanie o odtworzenie części</span>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Wyślij plik do wyceny inżynierskiej</span>
               <span class="btn-icon">➔</span>
             </button>
           </form>
@@ -265,7 +283,7 @@
 
   <div class="sticky-bottom-bar">
     <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">📞 Zadzwoń</a>
-    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Wycena części ➔</a>
+    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Wyślij plik ➔</a>
   </div>
 
   <footer class="site-footer">
@@ -289,11 +307,7 @@
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
             <li><a href="odtwarzanie-czesci.html">Odtwarzanie części</a></li>
             <li><a href="reverse-engineering-cad.html">Inżynieria odwrotna / CAD</a></li>
-            <li><a href="odtwarzanie-czesci-maszyn.html">Części maszyn & UR</a></li>
-            <li><a href="odtwarzanie-czesci-samochodowych.html">Części samochodowe</a></li>
-            <li><a href="oprzyrzadowanie-produkcyjne.html">Oprzyrządowanie (Jigs & Fixtures)</a></li>
             <li><a href="skan-3d-do-step.html">Skan 3D do STEP</a></li>
-            <li><a href="stl-do-step.html">Konwersja STL do STEP</a></li>
             <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
             <li><a href="druk-3d.html">Przemysłowy druk 3D</a></li>
           </ul>
@@ -305,7 +319,6 @@
             <li><a href="kalkulator.html">Estymator projektu</a></li>
             <li><a href="realizacje.html">Case Studies i realizacje</a></li>
             <li><a href="automatyzacja.html">Budowa maszyn i urządzeń</a></li>
-            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
             <li><a href="polityka-prywatnosci.html">Polityka prywatności (RODO)</a></li>
           </ul>
         </div>
@@ -320,7 +333,7 @@
 
       <div class="footer-bottom">
         <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Reverse Engineering • CAD Reconstruction • 3D Metrology</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">3D Scan to STEP • Solid CAD Reconstruction • CAM Ready</div>
       </div>
     </div>
   </footer>

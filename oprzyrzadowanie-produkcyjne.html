@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oprzyrządowanie produkcyjne, Jigs & Fixtures | MULTICORE</title>
+  <meta
+    name="description"
+    content="Projektowanie i produkcja oprzyrządowania produkcyjnego: szablony montażowe, sprawdziany kształtu, gniazda pozycjonujące, chwytaki robotów. Inżynieria CAD i kompozyty."
+  />
+  <link rel="canonical" href="https://multicore.net.pl/oprzyrzadowanie-produkcyjne.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://multicore.net.pl/oprzyrzadowanie-produkcyjne.html" />
+  <meta property="og:title" content="Oprzyrządowanie produkcyjne, Jigs & Fixtures | MULTICORE" />
+  <meta property="og:description" content="Projektowanie przyrządów montażowych, sprawdzianów jakościowych i gniazd bazujących pod produkcję seryjną." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/sprzet/bambu-lab-h2d.jpg" />
+
+  <script>
+    (function(){try{var t=localStorage.getItem("mc_theme");if(t==="light"||(!t&&window.matchMedia("(prefers-color-scheme: light)").matches)){document.documentElement.setAttribute("data-theme","light");}else{document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Główna",
+            "item": "https://multicore.net.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Oprzyrządowanie produkcyjne",
+            "item": "https://multicore.net.pl/oprzyrzadowanie-produkcyjne.html"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Projektowanie i Produkcja Oprzyrządowania Produkcyjnego (Jigs & Fixtures)",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MULTICORE Maksym Leski",
+          "url": "https://multicore.net.pl/"
+        },
+        "description": "Konstrukcja CAD i wytwarzanie sprawdzianów kształtu, gniazd montażowych, szablonów pozycjonujących i chwytaków robotów.",
+        "areaServed": "Polska"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link" aria-label="Strona główna MULTICORE">
+        <div class="brand-logo">M</div>
+        <div class="brand-meta">
+          <span class="brand-name">MULTICORE</span>
+          <span class="brand-tagline">Maksym Leski • Inżynieria 3D</span>
+        </div>
+      </a>
+
+      <nav aria-label="Główna nawigacja">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Główna</a></li>
+          
+          <li class="nav-dropdown">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle active" aria-expanded="false">
+              Usługi
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="odtwarzanie-czesci.html" class="nav-dropdown-item">
+                <strong>Odtwarzanie części</strong>
+                <span>Rekonstrukcja detali bez dokumentacji technicznej</span>
+              </a>
+              <a href="oprzyrzadowanie-produkcyjne.html" class="nav-dropdown-item">
+                <strong>Oprzyrządowanie produkcyjne</strong>
+                <span>Jigs & fixtures, szablony, sprawdziany i gniazda</span>
+              </a>
+              <a href="reverse-engineering-cad.html" class="nav-dropdown-item">
+                <strong>Inżynieria odwrotna / CAD</strong>
+                <span>Chmury punktów → modele parametryczne CAD STEP</span>
+              </a>
+              <a href="skanowanie-3d.html" class="nav-dropdown-item">
+                <strong>Skanowanie 3D</strong>
+                <span>Pomiary laserowe od 0,025 mm i inspekcja wymiarowa</span>
+              </a>
+              <a href="druk-3d.html" class="nav-dropdown-item">
+                <strong>Produkcja / Druk 3D</strong>
+                <span>Części funkcjonalne z kompozytów PA-CF, PC, ASA</span>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
+          <li><a href="index.html#dla-przemyslu" class="nav-link active">Dla przemysłu</a></li>
+          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
+          <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
+          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-theme-toggle" type="button" aria-label="Przełącz motyw (jasny/ciemny)" title="Przełącz motyw (jasny/ciemny)">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a href="tel:+48533491374" class="btn btn-phone btn-sm" aria-label="Zadzwoń teraz: +48 533 491 374">
+          <span class="phone-pulse-dot"></span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          ZADZWOŃ TERAZ
+        </a>
+        <a href="#formularz" class="btn btn-primary btn-sm">Wyceń przyrząd</a>
+        <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Główna</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span>Oprzyrządowanie produkcyjne (Jigs & Fixtures)</span>
+        </div>
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Jigs & Fixtures • Przyrządy Poka-Yoke
+        </div>
+        <h1>Oprzyrządowanie produkcyjne: szablony, sprawdziany i gniazda montażowe</h1>
+        <p class="subhead">
+          Projektujemy i wytwarzamy dedykowane przyrządy montażowe, sprawdziany kształtu (GO/NO-GO), gniazda pozycjonujące i chwytaki manipulatorów. Łączymy inżynierię CAD, precyzyjny skan 3D bazy montażowej i wytrzymałe kompozyty zbrojone włóknem węglowym (PA-CF).
+        </p>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="#formularz" class="btn btn-primary btn-lg">Opisz wymagania przyrządu ➔</a>
+          <a href="tel:+48533491374" class="btn btn-secondary btn-lg">Konsultacja inżynierska: +48 533 491 374</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie oprzyrządowania -->
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Rozwiązania dla produkcji</div>
+          <h2>Typy oprzyrządowania stanowiskowego</h2>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3>🧩 Szablony montażowe (Poka-Yoke)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Przyrządy uniemożliwiające błędne ułożenie lub montaż komponentu. Przyspieszają proces montażu manualnego i eliminują błędy ludzkie na linii.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>📏 Sprawdziany jakościowe (GO / NO-GO)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Dedykowane sprawdziany stykowe do szybkiej kontroli wymiarowej detali wytłaczanych, odlewanych lub giętych bezpośrednio przy stanowisku operatora.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>🤖 Chwytaki robotów i manipulatorów</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Niezwykle lekkie i sztywne szczęki chwytaków z kompozytu węglowego PA-CF o podwyższonym współczynniku tarcia, dopasowane do geometrii chwytanego detalu.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>📍 Gniazda pozycjonujące i bazy obróbcze</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Formowane gniazda do stabilnego unieruchamiania skomplikowanych brył podczas skręcania, zgrzewania, klejenia lub pomiaru współrzędnościowego.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>⚡ Szablony spawalnicze i zgrzewalnicze</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Przyrządy pozycjonujące z tworzyw odpornych termicznie z wprasowanymi mosiężnymi wkładkami gwintowanymi i stalowymi kołkami ustalającymi.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>📦 Formaty podajników i tacki transportowe</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Tacki i wkładki transportowe zabezpieczające wrażliwe powierzchnie gotowych wyrobów przed zarysowaniem podczas transportu międzyoperacyjnego.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wartość biznesowa -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Efektywność produkcji</div>
+          <h2>Dlaczego warto wdrożyć oprzyrządowanie MULTICORE?</h2>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3 style="color: var(--cyan);">Czas realizacji w dniach, nie miesiącach</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Dzięki połączeniu CAD i addytywnych kompozytów węglowych gotowy sprawdzian lub chwytak dostarczamy w 3–7 dni, bez blokowania obrabiarek CNC.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3 style="color: var(--emerald);">Redukcja wagi o 60–70% względem stali</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Lekkie chwytaki z PA-CF pozwalają na stosowanie robotów o mniejszym udźwigu, zmniejszają zużycie przekładni i umożliwiają wyższe przyspieszenia osi.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3 style="color: var(--blue-light);">Precyzyjne odwzorowanie krzywizn</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Skanujemy rzeczywisty detal i generujemy gniazdo bazujące precyzyjnie dopasowane do jego powierzchni, eliminując ryzyko odgnieceń i luzów.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formularz wyceny przyrządu -->
+    <section id="formularz" class="section">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-head center" style="margin-bottom: 2rem;">
+          <div class="eyebrow">Wycena oprzyrządowania</div>
+          <h2>Opisz swój proces lub prześlij model części bazowej</h2>
+          <p class="subhead">Załącz plik CAD części montowanej lub zdjęcia stanowiska. Przygotujemy koncepcję inżynierską i wycenę przyrządu.</p>
+        </div>
+
+        <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+          <div id="formStatus" class="form-status"></div>
+
+          <form id="inquiryForm" novalidate>
+            <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="topic" value="automatyzacja" />
+
+            <div class="qualification-wrap">
+              <span class="qualification-label">Typ oprzyrządowania:</span>
+              <div class="qualification-pills" data-qual-type="project-type">
+                <span class="qual-pill selected" data-value="Szablon montażowy">Szablon montażowy / Poka-Yoke</span>
+                <span class="qual-pill" data-value="Sprawdzian GO/NO-GO">Sprawdzian kształtu (GO / NO-GO)</span>
+                <span class="qual-pill" data-value="Chwytak robota">Szczęki / Chwytak robota</span>
+                <span class="qual-pill" data-value="Gniazdo pozycjonujące">Gniazdo pozycjonujące</span>
+              </div>
+
+              <span class="qualification-label">Etap wdrożenia:</span>
+              <div class="qualification-pills" data-qual-type="part-count">
+                <span class="qual-pill selected" data-value="Mam model detalu">Mam plik CAD części, potrzebuję projektu przyrządu</span>
+                <span class="qual-pill" data-value="Mam gotowy projekt przyrządu">Mam gotowy projekt CAD przyrządu, potrzebuję wykonania</span>
+                <span class="qual-pill" data-value="Mam tylko fizyczny detal">Mam fizyczny detal (wymagane skanowanie i projekt)</span>
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryEmail">Twój adres e-mail *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="inzynier@twoja-firma.pl" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inquiryPhone">Numer telefonu</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 500 000 000" />
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="inquiryName">Nazwa firmy / Imię i nazwisko</label>
+                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Automotive Poland Sp. z o.o." />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Preferowany kontakt</label>
+                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
+                    <input type="radio" name="preferredContact" value="phone" /> Telefon
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label" for="inquiryMessage">Opis procesu montażu lub założeń przyrządu *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Opisz operację (np. montaż wiązki, wciskanie tulei, kontrola odchyłek), wymagania dotyczące trwałości lub ergonomii..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">Załącz pliki CAD lub zdjęcia (STEP, STL, PDF, ZIP - max 25 MB)</label>
+              <div class="file-dropzone-modern" id="fileDropzone">
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".step,.stp,.stl,.iges,.igs,.pdf,.zip,.rar,image/*" />
+                <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📁</div>
+                <div style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">
+                  Przeciągnij pliki tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz z dysku</label>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">
+                  Możesz załączyć plik STEP bazowego detalu, rysunek techniczny lub zdjęcia stanowiska.
+                </div>
+                <div id="fileList" class="file-items-grid"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;">
+              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>. Gwarancja poufności procesowej (NDA).
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Wyślij zapytanie do inżyniera</span>
+              <span class="btn-icon">➔</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-bottom-bar">
+    <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">📞 Zadzwoń</a>
+    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Wyceń przyrząd ➔</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 1rem;">
+            <div class="brand-logo">M</div>
+            <div class="brand-meta">
+              <span class="brand-name">MULTICORE</span>
+              <span class="brand-tagline">Maksym Leski</span>
+            </div>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Inżynieria odwrotna CAD, skanowanie 3D, techniczny druk z kompozytów PA-CF, budowa maszyn dedykowanych oraz systemy embedded.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Usługi</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="odtwarzanie-czesci.html">Odtwarzanie części</a></li>
+            <li><a href="oprzyrzadowanie-produkcyjne.html">Oprzyrządowanie (Jigs & Fixtures)</a></li>
+            <li><a href="reverse-engineering-cad.html">Inżynieria odwrotna / CAD</a></li>
+            <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
+            <li><a href="druk-3d.html">Przemysłowy druk 3D</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Wycena & B2B</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="kalkulator.html">Estymator projektu</a></li>
+            <li><a href="realizacje.html">Case Studies i realizacje</a></li>
+            <li><a href="automatyzacja.html">Budowa maszyn i urządzeń</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności (RODO)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1rem;">Kontakt</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 <a href="tel:+48533491374" style="color: #fff;">+48 533 491 374</a></p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:kontakt@multicore.net.pl" style="color: #fff;">kontakt@multicore.net.pl</a></p>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">🚚 Obsługa wysyłkowa door-to-door w całej Polsce</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Jigs & Fixtures • Assembly Tooling • Production Engineering</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

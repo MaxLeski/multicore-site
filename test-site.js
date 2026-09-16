@@ -28,6 +28,12 @@ const requiredFiles = [
   'kalkulator.html',
   'kontakt.html',
   'odtwarzanie-czesci.html',
+  'reverse-engineering-cad.html',
+  'odtwarzanie-czesci-maszyn.html',
+  'skan-3d-do-step.html',
+  'stl-do-step.html',
+  'odtwarzanie-czesci-samochodowych.html',
+  'oprzyrzadowanie-produkcyjne.html',
   'skanowanie-czesci-maszyn.html',
   'rekonstrukcja-czesci-zabytkowych.html',
   'kontrola-jakosci-3d.html',
@@ -144,13 +150,13 @@ assert(window.MULTICORE_CONFIG.company.email === 'kontakt@multicore.net.pl', 'Po
 
 // 6. Testy konwersji i lejków CRO
 const indexHtml = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
-assert(indexHtml.includes("Masz uszkodzoną lub niedostępną część? Odtworzymy ją."), "index.html zawiera prawidłowy nagłówek CRO Hero");
-assert(indexHtml.includes("Z czym możemy Ci pomóc?"), "index.html zawiera sekcję wyboru intencji klienta");
+assert(indexHtml.includes("Odtwarzamy części, których nie da się już kupić."), "index.html zawiera prawidłowy nagłówek CRO Hero");
+assert(indexHtml.includes("Z czym trafiają do nas klienci?"), "index.html zawiera sekcję problemów / intencji klienta");
 assert(indexHtml.includes("data-intent=\"odtwarzanie\""), "index.html zawiera kafelek intencji odtwarzania części");
 assert(indexHtml.includes("data-intent=\"skanowanie\""), "index.html zawiera kafelek intencji skanowania");
 assert(indexHtml.includes("data-intent=\"cad\""), "index.html zawiera kafelek intencji CAD");
 assert(indexHtml.includes("data-intent=\"druk\""), "index.html zawiera kafelek intencji druku 3D");
-assert(indexHtml.includes("Wyceń swój detal"), "index.html zawiera Primary CTA Wyceń swój detal");
+assert(indexHtml.includes("Wyślij projekt") || indexHtml.includes("Wyślij zdjęcie do bezpłatnej oceny"), "index.html zawiera Primary CTA");
 assert(indexHtml.includes("sticky-bottom-bar"), "index.html zawiera sticky mobile CTA");
 
 const scriptContent = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");

@@ -3,37 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odtwarzanie części bez dokumentacji 3D | MULTICORE</title>
+  <title>Konwersja STL do STEP | Zamiana siatki 3D na model CAD | MULTICORE</title>
   <meta
     name="description"
-    content="Odtwarzanie uszkodzonych, zużytych lub niedostępnych części maszyn i pojazdów. Skanowanie 3D od 0,025 mm, odbudowa brakującej geometrii w CAD i wykonanie gotowego detalu."
+    content="Masz plik STL i potrzebujesz modelu CAD STEP do obróbki CNC lub formy? Przekształcamy siatki fasetkowe w edytowalne bryły parametryczne B-Rep (STEP/Parasolid)."
   />
-  <link rel="canonical" href="https://multicore.net.pl/odtwarzanie-czesci.html" />
+  <link rel="canonical" href="https://multicore.net.pl/stl-do-step.html" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://multicore.net.pl/odtwarzanie-czesci.html" />
-  <meta property="og:title" content="Odtwarzanie części bez dokumentacji 3D | MULTICORE" />
-  <meta property="og:description" content="Kompleksowa regeneracja od uszkodzonego wzorca po plik STEP i gotowy detal z kompozytów lub CNC." />
-  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/osłona_kierownicy.png" />
+  <meta property="og:url" content="https://multicore.net.pl/stl-do-step.html" />
+  <meta property="og:title" content="Konwersja STL do STEP | Zamiana siatki 3D na model CAD | MULTICORE" />
+  <meta property="og:description" content="Profesjonalna inżynierska konwersja siatek STL na edytowalne modele bryłowe CAD STEP." />
+  <meta property="og:image" content="https://multicore.net.pl/galeria/Datsun_osłona_kierownicy/2.png" />
 
-    <script>
+  <script>
     (function(){try{var t=localStorage.getItem("mc_theme");if(t==="light"||(!t&&window.matchMedia("(prefers-color-scheme: light)").matches)){document.documentElement.setAttribute("data-theme","light");}else{document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();
   </script>
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Odtwarzanie części bez dokumentacji technicznej",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "MULTICORE Maksym Leski",
-      "url": "https://multicore.net.pl/"
-    },
-    "description": "Inżynieria odtworzeniowa części wycofanych z produkcji, uszkodzonych i zużytych bez oryginalnych rysunków wykonawczych.",
-    "areaServed": "Polska"
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Główna",
+            "item": "https://multicore.net.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Konwersja STL do STEP",
+            "item": "https://multicore.net.pl/stl-do-step.html"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Konwersja STL do Modelu CAD STEP",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MULTICORE Maksym Leski",
+          "url": "https://multicore.net.pl/"
+        },
+        "description": "Profesjonalna inżynierska rekonstrukcja siatek poligonowych STL do parametrycznych brył CAD B-Rep (STEP AP214 / AP242).",
+        "areaServed": "Polska"
+      }
+    ]
   }
   </script>
 </head>
@@ -55,7 +75,7 @@
           <li><a href="index.html" class="nav-link">Główna</a></li>
           
           <li class="nav-dropdown">
-            <a href="odtwarzanie-czesci.html" class="nav-link dropdown-toggle active" aria-expanded="false">
+            <a href="skanowanie-3d.html" class="nav-link dropdown-toggle active" aria-expanded="false">
               Usługi
               <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
             </a>
@@ -84,7 +104,8 @@
           </li>
 
           <li><a href="realizacje.html" class="nav-link">Realizacje</a></li>
-          <li><a href="kalkulator.html" class="nav-link">Cennik i kalkulator</a></li>
+          <li><a href="index.html#dla-przemyslu" class="nav-link">Dla przemysłu</a></li>
+          <li><a href="embedded.html" class="nav-link">Embedded</a></li>
           <li><a href="index.html#o-firmie" class="nav-link">O firmie</a></li>
           <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
         </ul>
@@ -100,7 +121,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           ZADZWOŃ TERAZ
         </a>
-        <a href="#formularz" class="btn btn-primary btn-sm">Wyceń odtworzenie</a>
+        <a href="#formularz" class="btn btn-primary btn-sm">Wyślij STL</a>
         <button class="btn-mobile-toggle" type="button" aria-label="Przełącz menu mobilne">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -118,80 +139,119 @@
         <div class="breadcrumbs">
           <a href="index.html">Główna</a>
           <span class="breadcrumbs-sep">/</span>
-          <span>Odtwarzanie części bez dokumentacji</span>
+          <span>Konwersja STL do STEP</span>
         </div>
 
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Inżynieria Odtworzeniowa (Reverse Engineering)
+          Mesh-to-Solid • Rekonstrukcja Inżynierska
         </div>
-        <h1>Odtwarzanie uszkodzonych części bez dokumentacji technicznej</h1>
+        <h1>Konwersja STL do STEP: z siatki trójkątów do edytowalnej bryły CAD</h1>
         <p class="subhead">
-          Producent maszyny zakończył działalność? Część jest niedostępna na rynku lub kosztuje fortunę? Zeskanujemy ocalały wzorzec, odbudujemy geometrię w CAD i wykonamy gotowy element.
+          Darmowe konwertery internetowe jedynie pakują miliony fasetek w kontener STEP, co zawiesza programy CAM i CAD. W MULTICORE wykonujemy rekonstrukcję inżynierską: identyfikujemy geometrie pierwotne, wyznaczamy osie i tworzymy prawdziwą bryłę B-Rep.
         </p>
 
         <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-          <a href="#formularz" class="btn btn-primary btn-lg">Wyślij zdjęcia części do wyceny ➔</a>
-          <a href="kalkulator.html" class="btn btn-secondary btn-lg">Sprawdź kalkulator wyceny</a>
+          <a href="#formularz" class="btn btn-primary btn-lg">Prześlij plik STL do bezpłatnej wyceny ➔</a>
+          <a href="tel:+48533491374" class="btn btn-secondary btn-lg">Rozmowa z inżynierem: +48 533 491 374</a>
         </div>
       </div>
     </section>
 
-    <!-- Krok po kroku -->
+    <!-- Dlaczego automatyczne konwertery zawodzą? -->
     <section class="section" style="padding-top: 3.5rem;">
       <div class="container">
         <div class="section-head center">
-          <div class="eyebrow">Kompletny proces</div>
-          <h2>Jak odtwarzamy brakujące lub zużyte elementy?</h2>
+          <div class="eyebrow">Fakty techniczne</div>
+          <h2>Dlaczego automatyczny konwerter „STL to STEP” nie działa w praktyce?</h2>
         </div>
 
-        <div class="workflow-pipeline">
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 1</span>
-            <div class="pipeline-step-title">Fizyczny detal</div>
-            <div class="pipeline-step-desc">Kurier odbiera od Ciebie pękniętą, zużytą lub zdeformowaną część.</div>
+        <div class="comparison-table-wrap">
+          <div class="comparison-box">
+            <div class="comparison-box-head">
+              <span class="eyebrow" style="color: #f87171; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.1);">Automatyczny konwerter</span>
+              <h3>Pseudokonwersja (Fasetkowy STEP)</h3>
+            </div>
+            <ul class="comparison-list">
+              <li class="comparison-list-item">
+                <span class="comparison-icon-fail">✕</span>
+                <span>Każdy trójkąt z pliku STL zamienia się w osobną płaszczyznę B-Rep — plik waży setki megabajtów.</span>
+              </li>
+              <li class="comparison-list-item">
+                <span class="comparison-icon-fail">✕</span>
+                <span>Programy SolidWorks, Inventor czy NX zawieszają się podczas próby edycji lub zaokrąglenia krawędzi.</span>
+              </li>
+              <li class="comparison-list-item">
+                <span class="comparison-icon-fail">✕</span>
+                <span>Brak osi symetrii i brak rozpoznawalnych otworów w systemach CAM (operator CNC nie może wybrać operacji wiercenia).</span>
+              </li>
+            </ul>
           </div>
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 2</span>
-            <div class="pipeline-step-title">Skanowanie 3D</div>
-            <div class="pipeline-step-desc">Precyzyjny pomiar optyczny 360° z rozdzielczością od 0,025 mm.</div>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 3</span>
-            <div class="pipeline-step-title">Rekonstrukcja CAD</div>
-            <div class="pipeline-step-desc">Odbudowa ubytków, skasowanie luzów i wygenerowanie pliku STEP.</div>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-step-num">Krok 4</span>
-            <div class="pipeline-step-title">Wytworzenie detalu</div>
-            <div class="pipeline-step-desc">Druk 3D z kompozytu PA-CF/ASA lub przekazanie plików pod obróbkę CNC.</div>
-          </div>
-        </div>
 
-        <div class="grid-3" style="gap: 1.5rem; margin-top: 2.5rem;">
-          <div class="tech-card">
-            <h3>🏭 Części maszyn produkcyjnych</h3>
-            <p>Zębatki, krzywki, korpusy, tuleje, zabieraki i prowadnice linii produkcyjnych, których brak wstrzymuje pracę zakładu.</p>
-          </div>
-          <div class="tech-card">
-            <h3>🏎️ Elementy motoryzacji klasycznej</h3>
-            <p>Obudowy przełączników, kratki nawiewów, klamki, mocowania reflektorów i listwy ozdobne do youngtimerów i aut zabytkowych.</p>
-          </div>
-          <div class="tech-card">
-            <h3>🛠️ Oprzyrządowanie i adaptery</h3>
-            <p>Adaptery montażowe, redukcje średnic, obudowy elektroniki i przyrządy bazujące projektowane pod istniejący osprzęt.</p>
+          <div class="comparison-box highlight">
+            <div class="comparison-box-head">
+              <span class="eyebrow" style="color: var(--emerald); border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">Rekonstrukcja MULTICORE</span>
+              <h3>Analityczny model bryłowy CAD (STEP)</h3>
+            </div>
+            <ul class="comparison-list">
+              <li class="comparison-list-item">
+                <span class="comparison-icon-pass">✓</span>
+                <span>Trójkąty są zastępowane prawdziwymi analitycznymi płaszczyznami, walcami, stożkami i toroidami.</span>
+              </li>
+              <li class="comparison-list-item">
+                <span class="comparison-icon-pass">✓</span>
+                <span>Lekki, zoptymalizowany plik (zazwyczaj 1–5 MB), otwierający się błyskawicznie w każdym systemie CAD.</span>
+              </li>
+              <li class="comparison-list-item">
+                <span class="comparison-icon-pass">✓</span>
+                <span>Pełna edytowalność: możliwość dodawania naddatków na obróbkę, korekty grubości ścianek czy zmiany otworów.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Formularz wyceny na stronie -->
-    <section id="formularz" class="section section-highlight">
+    <!-- Kiedy zlecić konwersję -->
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Scenariusze inżynierskie</div>
+          <h2>Kiedy konstruktorzy i firmy produkcyjne zlecają konwersję STL do STEP?</h2>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem;">
+          <div class="tech-card">
+            <h3>Frezowanie CNC części</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Dysponujesz modelem ze skanu lub biblioteki internetowej w formacie STL, ale narzędziownia odmawia obróbki bez pliku STEP lub IGES.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>Modyfikacja geometrii w CAD</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Chcesz dodać żebra wzmacniające, zmienić gniazda śrub lub wkomponować detal w większe złożenie asocjacyjne w SolidWorks / NX.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>Projektowanie form wtryskowych</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Konstrukcja gniazd formierskich wymaga naddatków skurczowych oraz kątów pochylenia ścianek, których nie da się nadać na siatce trójkątów.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formularz wyceny konwersji -->
+    <section id="formularz" class="section">
       <div class="container" style="max-width: 900px;">
         <div class="section-head center" style="margin-bottom: 2rem;">
-          <div class="eyebrow">Wycena odtworzenia</div>
-          <h2>Prześlij zdjęcia uszkodzonej części</h2>
-          <p class="subhead">Ocenimy stan geometrii i podamy orientacyjny koszt oraz czas odtworzenia.</p>
+          <div class="eyebrow">Wycena pliku STL</div>
+          <h2>Prześlij plik STL do analizy i wyceny konwersji</h2>
+          <p class="subhead">Załącz plik STL / OBJ / 3MF. Sprawdzimy geometrię i podamy koszt oraz termin wykonania modelu STEP.</p>
         </div>
 
         <div class="tech-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
@@ -199,62 +259,46 @@
 
           <form id="inquiryForm" novalidate>
             <input type="text" name="company_fax_or_url" class="visually-hidden-field" tabindex="-1" autocomplete="off" />
-            <input type="hidden" name="topic" value="odtwarzanie_czesci" />
+            <input type="hidden" name="topic" value="cad" />
 
             <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
               <div class="form-group">
-                <label class="form-label" for="inquiryName">Imię i nazwisko / Firma *</label>
-                <input type="text" class="input-field" id="inquiryName" name="name" placeholder="np. Jan Kowalski" required />
+                <label class="form-label" for="inquiryEmail">Twój adres e-mail *</label>
+                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="konstruktor@twoja-firma.pl" required />
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="inquiryEmail">Adres e-mail *</label>
-                <input type="email" class="input-field" id="inquiryEmail" name="email" placeholder="jan@firma.pl" required />
-              </div>
-            </div>
-
-            <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
-              <div class="form-group">
-                <label class="form-label" for="inquiryPhone">Telefon</label>
-                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 ..." />
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Preferowany kontakt</label>
-                <div style="display: flex; gap: 1.5rem; align-items: center; height: 48px;">
-                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
-                    <input type="radio" name="preferredContact" value="email" checked /> E-mail
-                  </label>
-                  <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer; color: #fff;">
-                    <input type="radio" name="preferredContact" value="phone" /> Telefon
-                  </label>
-                </div>
+                <label class="form-label" for="inquiryPhone">Numer telefonu (opcjonalnie)</label>
+                <input type="tel" class="input-field" id="inquiryPhone" name="phone" placeholder="+48 500 000 000" />
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.25rem;">
-              <label class="form-label" for="inquiryMessage">Opis uszkodzenia i części *</label>
-              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj materiał, orientacyjne wymiary, opis uszkodzeń (np. ułamane 2 z 4 zatrzasków) oraz czy potrzebujesz samego pliku CAD czy również gotowego wydruku 3D..." required></textarea>
+              <label class="form-label" for="inquiryMessage">Wymagania dotyczące docelowego modelu STEP *</label>
+              <textarea class="textarea-field" id="inquiryMessage" name="message" rows="4" placeholder="Podaj przeznaczenie detalu (CNC, forma, modyfikacja), kluczowe wymiary lub tolerancje..." required></textarea>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
-              <label class="form-label">Załącz zdjęcia uszkodzonego elementu (JPG, PNG, max 25 MB)</label>
+              <label class="form-label">Załącz plik siatki (STL, OBJ, 3MF, ZIP - max 25 MB)</label>
               <div class="file-dropzone-modern" id="fileDropzone">
-                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".jpg,.jpeg,.png,.webp,.pdf,.step,.stl,.zip" />
-                <div style="font-size: 1.5rem; margin-bottom: 0.35rem;">📷</div>
-                <div style="font-weight: 600; color: #fff; font-size: 0.9rem;">
-                  Przeciągnij zdjęcia tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz pliki</label>
+                <input type="file" id="inquiryFiles" multiple class="visually-hidden-field" accept=".stl,.obj,.3mf,.zip,.rar,.7z" />
+                <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📁</div>
+                <div style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">
+                  Przeciągnij plik STL tutaj lub <label for="inquiryFiles" style="color: var(--cyan); cursor: pointer; text-decoration: underline;">wybierz z dysku</label>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">
+                  W przypadku plików powyżej 25 MB możesz wkleić w wiadomości link do dysku chmurowego.
                 </div>
                 <div id="fileList" class="file-items-grid"></div>
               </div>
             </div>
 
-            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.5;">
-              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>.
+            <div style="margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;">
+              Wysyłając formularz akceptujesz <a href="polityka-prywatnosci.html" style="color: var(--cyan);" target="_blank">Politykę Prywatności</a>. Gwarantujemy pełną poufność powierzonej geometrii.
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-track-cta>
-              <span>Wyślij zapytanie o odtworzenie części</span>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Wyślij plik STL do inżyniera</span>
               <span class="btn-icon">➔</span>
             </button>
           </form>
@@ -265,7 +309,7 @@
 
   <div class="sticky-bottom-bar">
     <a href="tel:+48533491374" class="sticky-bar-btn sticky-bar-call">📞 Zadzwoń</a>
-    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Wycena części ➔</a>
+    <a href="#formularz" class="sticky-bar-btn sticky-bar-cta">Wyślij STL ➔</a>
   </div>
 
   <footer class="site-footer">
@@ -289,10 +333,6 @@
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
             <li><a href="odtwarzanie-czesci.html">Odtwarzanie części</a></li>
             <li><a href="reverse-engineering-cad.html">Inżynieria odwrotna / CAD</a></li>
-            <li><a href="odtwarzanie-czesci-maszyn.html">Części maszyn & UR</a></li>
-            <li><a href="odtwarzanie-czesci-samochodowych.html">Części samochodowe</a></li>
-            <li><a href="oprzyrzadowanie-produkcyjne.html">Oprzyrządowanie (Jigs & Fixtures)</a></li>
-            <li><a href="skan-3d-do-step.html">Skan 3D do STEP</a></li>
             <li><a href="stl-do-step.html">Konwersja STL do STEP</a></li>
             <li><a href="skanowanie-3d.html">Skanowanie 3D</a></li>
             <li><a href="druk-3d.html">Przemysłowy druk 3D</a></li>
@@ -305,7 +345,6 @@
             <li><a href="kalkulator.html">Estymator projektu</a></li>
             <li><a href="realizacje.html">Case Studies i realizacje</a></li>
             <li><a href="automatyzacja.html">Budowa maszyn i urządzeń</a></li>
-            <li><a href="embedded.html">Oprogramowanie Embedded</a></li>
             <li><a href="polityka-prywatnosci.html">Polityka prywatności (RODO)</a></li>
           </ul>
         </div>
@@ -320,7 +359,7 @@
 
       <div class="footer-bottom">
         <div>© <span class="current-year">2026</span> MULTICORE Maksym Leski. Wszelkie prawa zastrzeżone.</div>
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Reverse Engineering • CAD Reconstruction • 3D Metrology</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">STL to STEP Conversion • B-Rep Solid Modeling • Reverse Engineering</div>
       </div>
     </div>
   </footer>
