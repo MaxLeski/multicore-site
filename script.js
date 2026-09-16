@@ -7,10 +7,10 @@
 (function initThemeEarly() {
   try {
     const saved = localStorage.getItem("mc_theme");
-    if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-      document.documentElement.setAttribute("data-theme", "light");
-    } else {
+    if (saved === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
     }
   } catch (e) {}
 })();
@@ -103,8 +103,8 @@ function initThemeToggle() {
 
   toggleBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme") || "dark";
-      const next = current === "light" ? "dark" : "light";
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      const next = current === "dark" ? "light" : "dark";
       updateTheme(next);
     });
   });
