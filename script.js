@@ -3,6 +3,18 @@
  * Skanowanie 3D • Inżynieria Odwrotna CAD • Druk 3D • Embedded & Automatyka
  */
 
+// 0. Wczesna inicjalizacja motywu (Jasny / Ciemny)
+(function initThemeEarly() {
+  try {
+    const saved = localStorage.getItem("mc_theme");
+    if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {}
+})();
+
 // 1. Globalna warstwa analityczna i zarządzanie parametrami UTM
 (function initAnalyticsLayer() {
   const params = new URLSearchParams(window.location.search);
@@ -64,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const curYear = new Date().getFullYear();
   yearEls.forEach(el => (el.textContent = curYear));
 
+  initThemeToggle();
   initNavigation();
   initIntentSelector();
   initCalculator();
@@ -72,6 +85,30 @@ document.addEventListener("DOMContentLoaded", () => {
   initGlobalConversionTracking();
   initSmoothScroll();
 });
+
+/* ==========================================================
+   PRZEŁĄCZNIK MOTYWU (THEME TOGGLE)
+   ========================================================== */
+function initThemeToggle() {
+  const toggleBtns = document.querySelectorAll(".btn-theme-toggle");
+  if (toggleBtns.length === 0) return;
+
+  function updateTheme(newTheme) {
+    document.documentElement.setAttribute("data-theme", newTheme);
+    try {
+      localStorage.setItem("mc_theme", newTheme);
+    } catch (e) {}
+    window.multicoreAnalytics?.track("theme_changed", { theme: newTheme });
+  }
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = current === "light" ? "dark" : "light";
+      updateTheme(next);
+    });
+  });
+}
 
 /* ==========================================================
    NAWIGACJA & STICKY HEADER & DROPDOWN
