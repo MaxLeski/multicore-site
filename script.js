@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initThemeToggle();
   initNavigation();
+  initActiveNavLink();
   initIntentSelector();
   initCalculator();
   initQuoteForm();
@@ -137,7 +138,7 @@ function initNavigation() {
       document.body.classList.toggle("nav-open", isOpen);
     });
 
-    navMenu.querySelectorAll(".nav-link:not(.dropdown-toggle)").forEach(link => {
+    navMenu.querySelectorAll(".nav-link:not(.dropdown-toggle), .nav-dropdown-item").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("open");
         mobileToggle.setAttribute("aria-expanded", "false");
@@ -151,7 +152,7 @@ function initNavigation() {
     const toggle = dropdown.querySelector(".dropdown-toggle");
     if (toggle) {
       toggle.addEventListener("click", (e) => {
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 1024) {
           e.preventDefault();
           dropdown.classList.toggle("open");
           const isExp = dropdown.classList.contains("open");
@@ -169,6 +170,22 @@ function initNavigation() {
       });
     }
   });
+
+  // Obsługa przycisku "Wyślij projekt" w nagłówku - jeśli strona ma formularz, płynnie do niego przewiń
+  const headerCta = document.querySelector(".site-header .nav-actions a.btn-primary");
+  if (headerCta) {
+    headerCta.addEventListener("click", (e) => {
+      const currentFile = window.location.pathname.split("/").pop() || "index.html";
+      if (currentFile === "index.html" || currentFile === "" || currentFile === "kontakt.html") {
+        const localForm = document.getElementById("formularz");
+        if (localForm) {
+          e.preventDefault();
+          localForm.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (history.pushState) history.pushState(null, "", "#formularz");
+        }
+      }
+    });
+  }
 }
 
 /* ==========================================================
@@ -1062,17 +1079,80 @@ function initGlobalConversionTracking() {
 }
 
 /* ==========================================================
-   PŁYNNE PRZEWIJANIE DO KOTWIC
+   PŁYNNE PRZEWIJANIE DO KOTWIC (CROSS-PAGE & SAME-PAGE)
    ========================================================== */
 function initSmoothScroll() {
-  document.querySelectorAll("a[href^=\"#\"]:not([href=\"#\"])").forEach(anchor => {
+  document.querySelectorAll('a[href*="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
-      const targetId = this.getAttribute("href").substring(1);
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        e.preventDefault();
-        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      const href = this.getAttribute("href");
+      if (!href) return;
+
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) return;
+      const targetHash = href.substring(hashIndex);
+      if (!targetHash || targetHash === "#") return;
+
+      const pathPart = href.substring(0, hashIndex);
+      const currentFile = window.location.pathname.split("/").pop() || "index.html";
+      const isSamePage = !pathPart || pathPart === currentFile || (currentFile === "index.html" && (pathPart === "" || pathPart === "index.html"));
+
+      if (isSamePage) {
+        const targetEl = document.querySelector(targetHash);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (history.pushState) {
+            history.pushState(null, "", targetHash);
+          }
+        }
       }
     });
   });
+}
+
+/* ==========================================================
+   DYNAMICZNE WYRÓŻNIANIE AKTYWNEJ STRONY W MENU (ACTIVE STATE)
+   ========================================================== */
+function initActiveNavLink() {
+  const currentFile = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll(".site-header .nav-link");
+  const dropdownItems = document.querySelectorAll(".site-header .nav-dropdown-item");
+
+  navLinks.forEach(link => link.classList.remove("active"));
+  dropdownItems.forEach(item => item.classList.remove("active"));
+
+  const servicePages = [
+    "odtwarzanie-czesci.html", "reverse-engineering-cad.html", "skanowanie-3d.html",
+    "druk-3d.html", "automatyzacja.html", "skan-3d-do-step.html", "stl-do-step.html",
+    "odtwarzanie-czesci-maszyn.html", "odtwarzanie-czesci-samochodowych.html",
+    "oprzyrzadowanie-produkcyjne.html", "rekonstrukcja-czesci-zabytkowych.html",
+    "skanowanie-czesci-maszyn.html", "kontrola-jakosci-3d.html"
+  ];
+
+  if (servicePages.includes(currentFile)) {
+    const servicesToggle = document.querySelector(".site-header .dropdown-toggle");
+    if (servicesToggle) servicesToggle.classList.add("active");
+
+    dropdownItems.forEach(item => {
+      const href = item.getAttribute("href");
+      if (href && href.split("#")[0] === currentFile) {
+        item.classList.add("active");
+      }
+    });
+    return;
+  }
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href || href.includes("#")) return;
+    const linkFile = href.split("#")[0] || "index.html";
+    if (linkFile === currentFile) {
+      link.classList.add("active");
+    }
+  });
+
+  if (currentFile === "index.html" || currentFile === "") {
+    const homeLink = document.querySelector('.site-header .nav-link[href="index.html"]');
+    if (homeLink) homeLink.classList.add("active");
+  }
 }
