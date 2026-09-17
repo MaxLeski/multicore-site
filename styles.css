@@ -3048,8 +3048,9 @@ a:hover {
   }
 }
 
-@media (max-width: 640px) {
-  .site-header .btn-phone {
+@media (max-width: 768px) {
+  .site-header .btn-phone,
+  .site-header .nav-actions .btn-primary {
     display: none;
   }
 }
@@ -3113,8 +3114,20 @@ a:hover {
 
 [data-theme="light"] .option-tile.selected,
 [data-theme="light"] .option-tile:has(input:checked) {
-  background: rgba(2, 132, 199, 0.06);
+  background: rgba(2, 132, 199, 0.08);
   border-color: var(--cyan);
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.15);
+}
+
+[data-theme="light"] .option-tile.selected .option-tile-title,
+[data-theme="light"] .option-tile:has(input:checked) .option-tile-title {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+[data-theme="light"] .option-tile.selected .option-tile-desc,
+[data-theme="light"] .option-tile:has(input:checked) .option-tile-desc {
+  color: #334155;
 }
 
 [data-theme="light"] .file-dropzone-modern {
@@ -3596,6 +3609,11 @@ a:hover {
 
 [data-theme="light"] .case-study-hero-card {
   background: #ffffff;
+  border-color: rgba(203, 213, 225, 0.9);
+}
+
+[data-theme="light"] .case-study-details {
+  background: #f1f5f9;
   border-color: rgba(203, 213, 225, 0.9);
 }
 
